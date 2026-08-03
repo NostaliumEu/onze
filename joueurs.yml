@@ -1,0 +1,50 @@
+# ONZE — mise à jour hebdomadaire du dataset
+#
+# À placer dans ton dépôt sous  .github/workflows/joueurs.yml
+#
+# Gratuit : les dépôts publics ont des minutes GitHub Actions illimitées.
+# Le job dure environ une minute.
+#
+# Il ne commit que si le fichier a réellement changé, donc pas d'historique
+# pollué par des commits vides.
+
+name: Mise à jour des joueurs
+
+on:
+  schedule:
+    # Tous les lundis à 4h UTC. Le mercato bouge surtout en fin de semaine,
+    # le lundi matin capte donc les mouvements du week-end.
+    - cron: "0 4 * * 1"
+  workflow_dispatch:        # permet aussi un lancement manuel depuis l'onglet Actions
+
+permissions:
+  contents: write           # nécessaire pour committer le fichier régénéré
+
+jobs:
+  extraire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install requests
+
+      - name: Extraire depuis Wikidata
+        run: python extraire_joueurs.py joueurs.json
+
+      - name: Committer si le fichier a changé
+        run: |
+          if git diff --quiet -- joueurs.json; then
+            echo "Aucun changement, rien à committer."
+            exit 0
+          fi
+          NB=$(python -c "import json;print(len(json.load(open('joueurs.json'))))")
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add joueurs.json
+          git commit -m "Données joueurs — $NB entrées"
+          git push
