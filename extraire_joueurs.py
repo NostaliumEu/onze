@@ -110,7 +110,7 @@ CONTINENTS = {
 }
 
 REQUETE = """
-SELECT DISTINCT ?joueurLabel ?natLabel ?clubLabel ?ligue ?posteLabel ?naissance ?numero
+SELECT DISTINCT ?joueurLabel ?natLabel ?clubLabel ?ligue ?posteLabel ?naissance ?numero ?debut
 WHERE {
   VALUES ?ligue { %s }
 
@@ -185,7 +185,8 @@ def construire():
             continue
 
         # Compteurs de rejet : sans eux, un dataset vide est indébuggable.
-        rejets = {"libelle": 0, "naissance": 0, "poste": 0, "age": 0, "nation": 0}
+        rejets = {"libelle": 0, "naissance": 0, "poste": 0, "age": 0,
+                  "nation": 0, "debut": 0}
         gardes = 0
 
         for l in lignes:
@@ -222,6 +223,13 @@ def construire():
             # minorité de fiches, y compris pour des titulaires. Le jeu affiche
             # "—" et neutralise la comparaison quand il manque.
 
+            # Année d'arrivée au club : garantie présente, la requête l'exige.
+            try:
+                depuis = int(l["debut"]["value"][:4])
+            except (KeyError, ValueError):
+                rejets["debut"] += 1
+                continue
+
             nat = l["natLabel"]["value"]
             if nat in NAT_TROP_VAGUE:
                 rejets["nation"] += 1
@@ -236,6 +244,10 @@ def construire():
                     ancien["_rang"] = rang
                 if numero and not ancien["num"]:
                     ancien["num"] = numero
+                # Plusieurs appartenances au même club : on garde la plus ancienne,
+                # qui correspond à l'arrivée réelle plutôt qu'à une prolongation.
+                if depuis < ancien["depuis"]:
+                    ancien["depuis"] = depuis
                 continue
 
             joueurs[nom] = {
@@ -247,14 +259,13 @@ def construire():
                 "poste": poste,
                 "age": age,
                 "num": numero,
+                "depuis": depuis,
                 "_rang": rang,
             }
             gardes += 1
 
         print(f"  {len(lignes)} lignes reçues · {gardes} joueurs retenus", file=sys.stderr)
-        sans_num = sum(1 for j in joueurs.values() if j["champ"] == nom_champ and not j["num"])
-        if gardes:
-            print(f"  dont {sans_num} sans numéro de maillot (affichés « — »)", file=sys.stderr)
+
         if any(rejets.values()):
             detail = " · ".join(f"{k}: {v}" for k, v in rejets.items() if v)
             print(f"  rejets — {detail}", file=sys.stderr)
