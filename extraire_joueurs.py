@@ -37,6 +37,22 @@ EXCLUSIONS = set()
 # où les quatre nations jouent séparément. Sans pays plus précis, on écarte.
 NAT_TROP_VAGUE = {"Royaume-Uni", "United Kingdom"}
 
+# Wikidata renvoie parfois le nom officiel de l'État plutôt que l'usuel.
+NAT_ALIAS = {
+    "Royaume de Danemark": "Danemark",
+    "Royaume des Pays-Bas": "Pays-Bas",
+    "Royaume d'Espagne": "Espagne",
+    "Royaume de Belgique": "Belgique",
+    "Royaume du Maroc": "Maroc",
+    "République française": "France",
+    "République fédérale d'Allemagne": "Allemagne",
+    "République italienne": "Italie",
+    "République portugaise": "Portugal",
+    "République tchèque": "Tchéquie",
+    "République de Corée": "Corée du Sud",
+    "République démocratique du Congo": "RD Congo",
+}
+
 # ⚠ À VÉRIFIER avant la première exécution : ouvre chaque identifiant sur
 # wikidata.org pour confirmer qu'il pointe bien vers la bonne compétition.
 # Les identifiants ci-dessous sont donnés de mémoire et peuvent être erronés.
@@ -46,8 +62,6 @@ CHAMPIONNATS = {
     "Q324867": "Liga",
     "Q15804":  "Serie A",
     "Q82595":  "Bundesliga",
-    "Q194052": "Primeira Liga",
-    "Q223832": "Eredivisie",
 }
 
 # Correspondance par mots-clés et non par libellé exact : le service de
@@ -60,16 +74,20 @@ POSTES = [
     (("gardien", "goalkeeper"),                                  "GB",  3),
     (("arriere droit", "right-back", "right back", "lateral droit"), "DD", 3),
     (("arriere gauche", "left-back", "left back", "lateral gauche"), "DG", 3),
-    (("defenseur central", "centre-back", "center-back", "central defender"), "DC", 3),
+    (("defenseur central", "centre-back", "center-back", "central defender",
+      "stoppeur", "centerhalf", "centre half", "libero", "sweeper"), "DC", 3),
     (("milieu defensif", "defensive midfield"),                  "MDF", 3),
-    (("milieu offensif", "attacking midfield"),                  "MO",  3),
+    (("milieu offensif", "attacking midfield",
+      "meneur de jeu", "meneur", "playmaker"),                   "MO",  3),
+    (("demi-centre", "demi centre", "central midfield"),         "MC",  3),
     (("ailier droit", "right winger"),                           "AD",  3),
     (("ailier gauche", "left winger"),                           "AG",  3),
     (("avant-centre", "centre-forward", "center-forward", "striker"), "BU", 3),
     (("ailier", "winger"),                                       "AD",  2),
-    (("milieu", "midfield"),                                     "MC",  1),
-    (("defenseur", "defender", "arriere", "back"),               "DC",  1),
-    (("attaquant", "forward"),                                   "BU",  1),
+    # Génériques : on ne devine pas un poste précis à partir d'un libellé vague.
+    (("milieu", "midfield"),                                     "MIL", 1),
+    (("defenseur", "defender", "arriere", "back"),               "DEF", 1),
+    (("attaquant", "forward"),                                   "ATT", 1),
 ]
 
 
@@ -89,6 +107,7 @@ def poste_depuis(libelle):
 
 
 CONTINENTS = {
+    # Europe
     "France": "Europe", "Angleterre": "Europe", "Espagne": "Europe",
     "Italie": "Europe", "Allemagne": "Europe", "Portugal": "Europe",
     "Pays-Bas": "Europe", "Belgique": "Europe", "Croatie": "Europe",
@@ -96,71 +115,79 @@ CONTINENTS = {
     "Suède": "Europe", "Danemark": "Europe", "Suisse": "Europe",
     "Autriche": "Europe", "Écosse": "Europe", "Turquie": "Europe",
     "Géorgie": "Europe", "Hongrie": "Europe", "Ukraine": "Europe",
+    "Grèce": "Europe", "Roumanie": "Europe", "Bulgarie": "Europe",
+    "Tchéquie": "Europe", "Slovaquie": "Europe", "Slovénie": "Europe",
+    "Bosnie-Herzégovine": "Europe", "Monténégro": "Europe", "Albanie": "Europe",
+    "Kosovo": "Europe", "Macédoine du Nord": "Europe", "Islande": "Europe",
+    "Irlande": "Europe", "Irlande du Nord": "Europe", "Pays de Galles": "Europe",
+    "Finlande": "Europe", "Russie": "Europe", "Biélorussie": "Europe",
+    "Estonie": "Europe", "Lettonie": "Europe", "Lituanie": "Europe",
+    "Luxembourg": "Europe", "Chypre": "Europe", "Malte": "Europe",
+    "Moldavie": "Europe", "Arménie": "Europe", "Azerbaïdjan": "Europe",
+
+    # Amérique du Sud
     "Brésil": "Amérique du Sud", "Argentine": "Amérique du Sud",
     "Uruguay": "Amérique du Sud", "Colombie": "Amérique du Sud",
     "Équateur": "Amérique du Sud", "Chili": "Amérique du Sud",
+    "Pérou": "Amérique du Sud", "Paraguay": "Amérique du Sud",
+    "Venezuela": "Amérique du Sud", "Bolivie": "Amérique du Sud",
+    "Suriname": "Amérique du Sud",
+
+    # Amérique du Nord et Caraïbes
     "États-Unis": "Amérique du Nord", "Canada": "Amérique du Nord",
-    "Mexique": "Amérique du Nord",
+    "Mexique": "Amérique du Nord", "Costa Rica": "Amérique du Nord",
+    "Honduras": "Amérique du Nord", "Panama": "Amérique du Nord",
+    "Salvador": "Amérique du Nord", "Guatemala": "Amérique du Nord",
+    "Jamaïque": "Amérique du Nord", "Haïti": "Amérique du Nord",
+    "Cuba": "Amérique du Nord", "République dominicaine": "Amérique du Nord",
+    "Trinité-et-Tobago": "Amérique du Nord", "Curaçao": "Amérique du Nord",
+
+    # Afrique
     "Maroc": "Afrique", "Sénégal": "Afrique", "Nigeria": "Afrique",
     "Algérie": "Afrique", "Égypte": "Afrique", "Ghana": "Afrique",
     "Cameroun": "Afrique", "Côte d'Ivoire": "Afrique", "Mali": "Afrique",
+    "Tunisie": "Afrique", "Gabon": "Afrique", "Guinée": "Afrique",
+    "Guinée-Bissau": "Afrique", "Guinée équatoriale": "Afrique",
+    "Burkina Faso": "Afrique", "Gambie": "Afrique", "Liberia": "Afrique",
+    "RD Congo": "Afrique", "Congo": "Afrique", "Angola": "Afrique",
+    "Cap-Vert": "Afrique", "Comores": "Afrique", "Kenya": "Afrique",
+    "Tanzanie": "Afrique", "Zambie": "Afrique", "Zimbabwe": "Afrique",
+    "Afrique du Sud": "Afrique", "Togo": "Afrique", "Bénin": "Afrique",
+    "Niger": "Afrique", "Tchad": "Afrique", "Mauritanie": "Afrique",
+    "Sierra Leone": "Afrique", "Madagascar": "Afrique", "Mozambique": "Afrique",
+    "Libye": "Afrique", "Soudan": "Afrique", "Ouganda": "Afrique",
+    "Burundi": "Afrique", "Somalie": "Afrique", "Namibie": "Afrique",
+
+    # Asie
     "Japon": "Asie", "Corée du Sud": "Asie", "Iran": "Asie",
-    "Australie": "Océanie",
+    "Arabie saoudite": "Asie", "Israël": "Asie", "Koweït": "Asie",
+    "Qatar": "Asie", "Émirats arabes unis": "Asie", "Irak": "Asie",
+    "Syrie": "Asie", "Liban": "Asie", "Jordanie": "Asie",
+    "Ouzbékistan": "Asie", "Chine": "Asie", "Indonésie": "Asie",
+    "Thaïlande": "Asie", "Philippines": "Asie", "Inde": "Asie",
+    "Viêt Nam": "Asie", "Malaisie": "Asie",
+
+    # Océanie
+    "Australie": "Océanie", "Nouvelle-Zélande": "Océanie",
 }
 
-REQUETE = """
-SELECT DISTINCT ?joueurLabel ?natLabel ?clubLabel ?ligue ?posteLabel ?naissance ?numero ?debut ?artJoueur ?artClub
-WHERE {
-  VALUES ?ligue { %s }
 
-  ?club wdt:P118 ?ligue .
-
-  # Appartenance à un club SANS date de fin = club actuel
-  ?joueur p:P54 ?appartenance .
-  ?appartenance ps:P54 ?club .
-  FILTER NOT EXISTS { ?appartenance pq:P582 ?fin . }
-
-  # Filtrer sur une date d'arrivée récente écartait les joueurs fidèles à
-  # leur club (Saliba à Arsenal depuis 2019, Marquinhos au PSG depuis 2013),
-  # c'est-à-dire précisément les plus connus. On garde donc la date en
-  # information, sans en faire une condition.
-  OPTIONAL { ?appartenance pq:P580 ?debut . }
-
-  # Fin d'activité déclarée = carrière terminée. C'est le signal qui écarte
-  # les retraités dont l'appartenance au club n'a jamais été clôturée.
-  FILTER NOT EXISTS { ?joueur wdt:P2032 ?finCarriere . }
-
-  ?joueur wdt:P27 ?nat .
-  ?joueur wdt:P569 ?naissance .
-
-  OPTIONAL { ?joueur wdt:P413 ?poste . }
-  OPTIONAL { ?appartenance pq:P1618 ?numero . }
-
-  # Titres des articles Wikipédia anglophones : c'est la clé de rapprochement
-  # avec les tableaux d'effectifs, bien plus fiable qu'un nom affiché.
-  ?pageJ schema:about ?joueur ; schema:isPartOf <https://en.wikipedia.org/> ;
-         schema:name ?artJoueur .
-  ?pageC schema:about ?club ; schema:isPartOf <https://en.wikipedia.org/> ;
-         schema:name ?artClub .
-
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en". }
-}
-"""
+# Correspondance par mots-clés et non par libellé exact : le service de
+# libellés Wikidata renvoie l'anglais quand la traduction française manque,
+# et les valeurs vont du très générique ("défenseur") au très précis
+# ("arrière latéral droit"). L'ordre compte : le plus spécifique d'abord.
+# Le chiffre est un rang de précision, utilisé quand un joueur porte
+# plusieurs postes : on garde le plus informatif.
 
 
-
-# ── Effectifs actuels via Wikipédia ─────────────────────────────────────
-# Wikidata dit "ce joueur a appartenu à ce club et on n'a jamais clôturé".
-# Wikipédia dit "voici l'effectif d'aujourd'hui". C'est cette seconde
-# information qu'on veut, et le modèle {{fs player}} la structure :
-#     {{fs player|no=8|nat=FRA|name=[[William Saliba]]|pos=DF}}
-# On en tire le numéro de maillot, absent de Wikidata dans 90 % des cas.
 
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 
 MODELE_JOUEUR = re.compile(r"\{\{\s*[Ff]s player(.*?)\}\}", re.S)
 CHAMP_NUM     = re.compile(r"\bno\s*=\s*(\d+)")
 CHAMP_NOM     = re.compile(r"\bname\s*=\s*\[\[\s*([^\]|]+?)\s*[\]|]")
+# Libellé affiché quand le lien est de la forme [[Cible|Affiché]]
+ALIAS_LIEN    = re.compile(r"\bname\s*=\s*\[\[[^\]|]+\|\s*([^\]]+?)\s*\]\]")
 # Les sections de prêts sortants utilisent le même modèle : on coupe avant.
 SECTION_PRET  = re.compile(r"^=+\s*[^=]*\b([Oo]ut on loan|[Ll]oaned out)\b[^=]*=+\s*$", re.M)
 
@@ -201,7 +228,16 @@ def effectifs(titres):
                 if not nom:
                     continue
                 num = CHAMP_NUM.search(bloc)
-                squad[nom.group(1).strip()] = int(num.group(1)) if num else 0
+                cible = nom.group(1).strip()
+                numero = int(num.group(1)) if num else 0
+                # Deux clés : le titre d'article et sa forme normalisée. Les
+                # modèles pointent souvent vers une redirection dont le nom
+                # diffère du titre canonique enregistré dans Wikidata.
+                squad[cible] = numero
+                squad[sans_accents(cible)] = numero
+                alias = ALIAS_LIEN.search(bloc)
+                if alias:
+                    squad[sans_accents(alias.group(1).strip())] = numero
             if squad:
                 resultat[page["title"]] = squad
         time.sleep(0.5)
@@ -261,8 +297,11 @@ def construire():
         dans_effectif = {}
         for squad in squads.values():
             dans_effectif.update(squad)
-        print(f"  {len(squads)} effectifs lus · {len(dans_effectif)} joueurs listés",
+        # Un joueur produit plusieurs clés : on compte les titres canoniques.
+        listes = {k for k in dans_effectif if k and k[0].isupper()}
+        print(f"  {len(squads)} effectifs lus · {len(listes)} joueurs listés",
               file=sys.stderr)
+        apparies = set()
 
         # Compteurs de rejet : sans eux, un dataset vide est indébuggable.
         rejets = {"libelle": 0, "naissance": 0, "poste": 0, "age": 0,
@@ -295,11 +334,15 @@ def construire():
             # Si aucun effectif n'a pu être lu, on ne filtre pas — mieux vaut
             # un dataset bruité qu'un dataset vide.
             art = l.get("artJoueur", {}).get("value", "")
-            if dans_effectif and art not in dans_effectif:
+            cle = next((k for k in (art, sans_accents(art), sans_accents(nom))
+                        if k in dans_effectif), None)
+            if dans_effectif and cle is None:
                 rejets["hors_effectif"] += 1
                 continue
+            if cle:
+                apparies.add(cle)
 
-            nat = l["natLabel"]["value"]
+            nat = NAT_ALIAS.get(l["natLabel"]["value"], l["natLabel"]["value"])
             if nat in NAT_TROP_VAGUE:
                 rejets["nation"] += 1
                 continue
@@ -320,7 +363,7 @@ def construire():
                 numero = 0
             # Wikipédia tient les numéros à jour, Wikidata presque jamais :
             # le numéro de l'effectif publié prime quand il existe.
-            numero = dans_effectif.get(art, 0) or numero
+            numero = dans_effectif.get(cle, 0) if cle else numero
 
             # Année d'arrivée : facultative, 0 si absente.
             try:
@@ -359,6 +402,15 @@ def construire():
             gardes += 1
 
         print(f"  {len(lignes)} lignes reçues · {gardes} joueurs retenus", file=sys.stderr)
+
+        # Diagnostic clé : les joueurs présents dans l'effectif publié mais
+        # jamais rapprochés d'une fiche Wikidata. Si ce nombre est élevé,
+        # le problème est l'appariement, pas les données.
+        orphelins = sorted(n for n in listes if n not in apparies
+                           and sans_accents(n) not in apparies)
+        if orphelins:
+            print(f"  ⚠ {len(orphelins)} joueurs d'effectif sans fiche appariée, ex. : "
+                  + ", ".join(orphelins[:6]), file=sys.stderr)
 
         if any(rejets.values()):
             detail = " · ".join(f"{k}: {v}" for k, v in rejets.items() if v)
