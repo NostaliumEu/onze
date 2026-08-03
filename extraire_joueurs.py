@@ -20,6 +20,7 @@ prévoir une liste manuelle de corrections appliquée après extraction.
 """
 
 import json
+import re
 import sys
 import time
 from datetime import date
@@ -28,11 +29,9 @@ import requests
 
 ENDPOINT = "https://query.wikidata.org/sparql"
 
-# Une appartenance commencée avant cette date est considérée périmée.
-# Six ans conserve les joueurs fidèles à un même club sans ramener les
-# fiches jamais clôturées des années 2010. Combiné au plafond d'âge,
-# c'est ce qui écarte les retraités.
-DEPUIS = f"{date.today().year - 6}-01-01T00:00:00Z"
+# Joueurs à exclure à la main : Wikidata laisse passer quelques fiches
+# périmées qu'aucun filtre automatique ne rattrape. Ajoute les noms ici.
+EXCLUSIONS = set()
 
 # Wikidata donne "Royaume-Uni" comme citoyenneté : inutilisable pour du foot,
 # où les quatre nations jouent séparément. Sans pays plus précis, on écarte.
@@ -110,7 +109,7 @@ CONTINENTS = {
 }
 
 REQUETE = """
-SELECT DISTINCT ?joueurLabel ?natLabel ?clubLabel ?ligue ?posteLabel ?naissance ?numero ?debut
+SELECT DISTINCT ?joueurLabel ?natLabel ?clubLabel ?ligue ?posteLabel ?naissance ?numero ?debut ?artJoueur ?artClub
 WHERE {
   VALUES ?ligue { %s }
 
@@ -121,11 +120,15 @@ WHERE {
   ?appartenance ps:P54 ?club .
   FILTER NOT EXISTS { ?appartenance pq:P582 ?fin . }
 
-  # Un contrat sans date de fin ne suffit pas : des milliers d'appartenances
-  # anciennes n'ont jamais été clôturées sur Wikidata. On exige donc une date
-  # de début récente, ce qui écarte les joueurs partis depuis longtemps.
-  ?appartenance pq:P580 ?debut .
-  FILTER(?debut >= "%s"^^xsd:dateTime)
+  # Filtrer sur une date d'arrivée récente écartait les joueurs fidèles à
+  # leur club (Saliba à Arsenal depuis 2019, Marquinhos au PSG depuis 2013),
+  # c'est-à-dire précisément les plus connus. On garde donc la date en
+  # information, sans en faire une condition.
+  OPTIONAL { ?appartenance pq:P580 ?debut . }
+
+  # Fin d'activité déclarée = carrière terminée. C'est le signal qui écarte
+  # les retraités dont l'appartenance au club n'a jamais été clôturée.
+  FILTER NOT EXISTS { ?joueur wdt:P2032 ?finCarriere . }
 
   ?joueur wdt:P27 ?nat .
   ?joueur wdt:P569 ?naissance .
@@ -133,9 +136,76 @@ WHERE {
   OPTIONAL { ?joueur wdt:P413 ?poste . }
   OPTIONAL { ?appartenance pq:P1618 ?numero . }
 
+  # Titres des articles Wikipédia anglophones : c'est la clé de rapprochement
+  # avec les tableaux d'effectifs, bien plus fiable qu'un nom affiché.
+  ?pageJ schema:about ?joueur ; schema:isPartOf <https://en.wikipedia.org/> ;
+         schema:name ?artJoueur .
+  ?pageC schema:about ?club ; schema:isPartOf <https://en.wikipedia.org/> ;
+         schema:name ?artClub .
+
   SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en". }
 }
 """
+
+
+
+# ── Effectifs actuels via Wikipédia ─────────────────────────────────────
+# Wikidata dit "ce joueur a appartenu à ce club et on n'a jamais clôturé".
+# Wikipédia dit "voici l'effectif d'aujourd'hui". C'est cette seconde
+# information qu'on veut, et le modèle {{fs player}} la structure :
+#     {{fs player|no=8|nat=FRA|name=[[William Saliba]]|pos=DF}}
+# On en tire le numéro de maillot, absent de Wikidata dans 90 % des cas.
+
+WIKI_API = "https://en.wikipedia.org/w/api.php"
+
+MODELE_JOUEUR = re.compile(r"\{\{\s*[Ff]s player(.*?)\}\}", re.S)
+CHAMP_NUM     = re.compile(r"\bno\s*=\s*(\d+)")
+CHAMP_NOM     = re.compile(r"\bname\s*=\s*\[\[\s*([^\]|]+?)\s*[\]|]")
+# Les sections de prêts sortants utilisent le même modèle : on coupe avant.
+SECTION_PRET  = re.compile(r"^=+\s*[^=]*\b([Oo]ut on loan|[Ll]oaned out)\b[^=]*=+\s*$", re.M)
+
+
+def effectifs(titres):
+    """{titre_club: {titre_joueur: numero}} pour une liste d'articles."""
+    resultat = {}
+    # L'API accepte 50 titres par appel ; on reste à 20 par prudence.
+    for i in range(0, len(titres), 20):
+        lot = titres[i:i + 20]
+        try:
+            r = requests.get(
+                WIKI_API,
+                params={"action": "query", "prop": "revisions", "rvprop": "content",
+                        "rvslots": "main", "format": "json", "formatversion": "2",
+                        "titles": "|".join(lot)},
+                headers={"User-Agent": "ONZE-dataset/1.0 (jeu de devinette footballeurs)"},
+                timeout=90,
+            )
+            r.raise_for_status()
+            pages = r.json().get("query", {}).get("pages", [])
+        except Exception as e:
+            print(f"    ⚠ effectifs indisponibles pour ce lot : {e}", file=sys.stderr)
+            continue
+
+        for page in pages:
+            if "revisions" not in page:
+                continue
+            texte = page["revisions"][0]["slots"]["main"]["content"]
+
+            coupe = SECTION_PRET.search(texte)
+            if coupe:
+                texte = texte[:coupe.start()]
+
+            squad = {}
+            for bloc in MODELE_JOUEUR.findall(texte):
+                nom = CHAMP_NOM.search(bloc)
+                if not nom:
+                    continue
+                num = CHAMP_NUM.search(bloc)
+                squad[nom.group(1).strip()] = int(num.group(1)) if num else 0
+            if squad:
+                resultat[page["title"]] = squad
+        time.sleep(0.5)
+    return resultat
 
 
 def interroger(qid, essais=3):
@@ -145,7 +215,7 @@ def interroger(qid, essais=3):
         try:
             r = requests.get(
                 ENDPOINT,
-                params={"query": REQUETE % ("wd:" + qid, DEPUIS), "format": "json"},
+                params={"query": REQUETE % ("wd:" + qid), "format": "json"},
                 headers={
                     "User-Agent": "ONZE-dataset/1.0 (jeu de devinette footballeurs)",
                     "Accept": "application/sparql-results+json",
@@ -184,9 +254,19 @@ def construire():
             print(f"  ✗ abandon : {e}", file=sys.stderr)
             continue
 
+        # Effectifs actuels des clubs concernés, depuis Wikipédia.
+        clubs = sorted({l["artClub"]["value"] for l in lignes if "artClub" in l})
+        print(f"  {len(clubs)} clubs — lecture des effectifs Wikipédia…", file=sys.stderr)
+        squads = effectifs(clubs)
+        dans_effectif = {}
+        for squad in squads.values():
+            dans_effectif.update(squad)
+        print(f"  {len(squads)} effectifs lus · {len(dans_effectif)} joueurs listés",
+              file=sys.stderr)
+
         # Compteurs de rejet : sans eux, un dataset vide est indébuggable.
         rejets = {"libelle": 0, "naissance": 0, "poste": 0, "age": 0,
-                  "nation": 0, "debut": 0}
+                  "nation": 0, "exclu": 0, "hors_effectif": 0}
         gardes = 0
 
         for l in lignes:
@@ -219,16 +299,30 @@ def construire():
                 numero = int(float(l.get("numero", {}).get("value", 0)))
             except ValueError:
                 numero = 0
+            # Wikipédia tient les numéros à jour, Wikidata presque jamais.
+            numero = numero_wiki or numero
             # Le numéro reste facultatif : P1618 n'est renseigné que sur une
             # minorité de fiches, y compris pour des titulaires. Le jeu affiche
             # "—" et neutralise la comparaison quand il manque.
 
-            # Année d'arrivée au club : garantie présente, la requête l'exige.
+            # Année d'arrivée : facultative désormais, 0 si absente.
             try:
                 depuis = int(l["debut"]["value"][:4])
             except (KeyError, ValueError):
-                rejets["debut"] += 1
+                depuis = 0
+
+            if nom in EXCLUSIONS:
+                rejets["exclu"] += 1
                 continue
+
+            # Le filtre décisif : présent ou non dans l'effectif publié.
+            # Si aucun effectif n'a pu être lu, on ne filtre pas — mieux vaut
+            # un dataset bruité qu'un dataset vide.
+            art = l.get("artJoueur", {}).get("value", "")
+            if dans_effectif and art not in dans_effectif:
+                rejets["hors_effectif"] += 1
+                continue
+            numero_wiki = dans_effectif.get(art, 0)
 
             nat = l["natLabel"]["value"]
             if nat in NAT_TROP_VAGUE:
@@ -244,10 +338,11 @@ def construire():
                     ancien["_rang"] = rang
                 if numero and not ancien["num"]:
                     ancien["num"] = numero
-                # Plusieurs appartenances au même club : on garde la plus ancienne,
-                # qui correspond à l'arrivée réelle plutôt qu'à une prolongation.
-                if depuis < ancien["depuis"]:
-                    ancien["depuis"] = depuis
+                # Plusieurs appartenances ouvertes : la plus récente est le club
+                # actuel. Les anciennes sont des fiches jamais clôturées.
+                if depuis > ancien["depuis"]:
+                    ancien.update(club=l["clubLabel"]["value"], champ=nom_champ,
+                                  depuis=depuis)
                 continue
 
             joueurs[nom] = {
