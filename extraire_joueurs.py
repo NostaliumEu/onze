@@ -28,9 +28,11 @@ import requests
 
 ENDPOINT = "https://query.wikidata.org/sparql"
 
-# Une appartenance à un club commencée avant cette date est considérée périmée.
-# Quatre ans couvre les joueurs fidèles sans ramener les retraités.
-DEPUIS = f"{date.today().year - 4}-01-01T00:00:00Z"
+# Une appartenance commencée avant cette date est considérée périmée.
+# Six ans conserve les joueurs fidèles à un même club sans ramener les
+# fiches jamais clôturées des années 2010. Combiné au plafond d'âge,
+# c'est ce qui écarte les retraités.
+DEPUIS = f"{date.today().year - 6}-01-01T00:00:00Z"
 
 # Wikidata donne "Royaume-Uni" comme citoyenneté : inutilisable pour du foot,
 # où les quatre nations jouent séparément. Sans pays plus précis, on écarte.
@@ -183,8 +185,7 @@ def construire():
             continue
 
         # Compteurs de rejet : sans eux, un dataset vide est indébuggable.
-        rejets = {"libelle": 0, "naissance": 0, "poste": 0, "age": 0,
-                  "nation": 0, "sans_numero": 0}
+        rejets = {"libelle": 0, "naissance": 0, "poste": 0, "age": 0, "nation": 0}
         gardes = 0
 
         for l in lignes:
@@ -217,12 +218,9 @@ def construire():
                 numero = int(float(l.get("numero", {}).get("value", 0)))
             except ValueError:
                 numero = 0
-            # Un joueur d'effectif actuel a presque toujours un numéro
-            # renseigné. Son absence est le meilleur signal d'une fiche
-            # périmée, et un indice à zéro n'apporte rien au joueur.
-            if numero <= 0:
-                rejets["sans_numero"] += 1
-                continue
+            # Le numéro reste facultatif : P1618 n'est renseigné que sur une
+            # minorité de fiches, y compris pour des titulaires. Le jeu affiche
+            # "—" et neutralise la comparaison quand il manque.
 
             nat = l["natLabel"]["value"]
             if nat in NAT_TROP_VAGUE:
@@ -254,6 +252,9 @@ def construire():
             gardes += 1
 
         print(f"  {len(lignes)} lignes reçues · {gardes} joueurs retenus", file=sys.stderr)
+        sans_num = sum(1 for j in joueurs.values() if j["champ"] == nom_champ and not j["num"])
+        if gardes:
+            print(f"  dont {sans_num} sans numéro de maillot (affichés « — »)", file=sys.stderr)
         if any(rejets.values()):
             detail = " · ".join(f"{k}: {v}" for k, v in rejets.items() if v)
             print(f"  rejets — {detail}", file=sys.stderr)
