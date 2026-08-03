@@ -1,0 +1,837 @@
+<!--
+  ONZE — jeu de devinette de footballeurs
+  Prototype autonome. Aucune dépendance hors Google Fonts.
+
+  ⚠ DONNÉES : le tableau PLAYERS ci-dessous est un jeu d'amorce écrit à la main.
+  Certains clubs / âges peuvent être périmés. À remplacer par un export Wikidata
+  (SPARQL) avant toute publication. Format attendu identique.
+
+  ⚠ PERSISTANCE : volontairement absente (état en mémoire uniquement).
+  Pour un déploiement réel, brancher localStorage sur `stats` et `dailyDone`.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ONZE — devine le joueur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F7DED2;
+    --paper-deep:#EFCDBD;
+    --ink:#181310;
+    --ink-soft:#5C4A40;
+    --navy:#17325C;
+    --pitch:#1E6E3C;
+    --amber:#C6871A;
+    --dead:#9E8C82;
+    --rule:rgba(24,19,16,.18);
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Archivo',system-ui,sans-serif;
+    min-height:100vh;
+    padding:20px 14px 60px;
+    background-image:radial-gradient(rgba(24,19,16,.045) 1px,transparent 1px);
+    background-size:3px 3px;
+  }
+  .wrap{max-width:860px;margin:0 auto}
+
+  /* ── En-tête ─────────────────────────────── */
+  header{border-bottom:3px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+  .masthead{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  h1{
+    font-family:'Anton',sans-serif;
+    font-size:clamp(44px,11vw,86px);
+    line-height:.86;letter-spacing:-.02em;margin:0;text-transform:uppercase;
+  }
+  h1 span{color:var(--navy)}
+  .kicker{
+    font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-soft);text-align:right;line-height:1.7;
+  }
+  .strapline{
+    font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--ink-soft);
+    padding:7px 0;border-bottom:1px solid var(--rule);margin-bottom:22px;
+    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
+
+  /* ── Modes ───────────────────────────────── */
+  #serie{color:var(--navy);font-weight:700}
+
+  .modes{display:flex;gap:0;margin-bottom:20px;border:2px solid var(--ink);width:fit-content}
+  .modes button{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase;
+    padding:9px 20px;border:0;background:transparent;color:var(--ink);cursor:pointer;
+  }
+  .modes button+button{border-left:2px solid var(--ink)}
+  .modes button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  .modes button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+
+  /* ── Saisie ──────────────────────────────── */
+  .search{position:relative;margin-bottom:26px}
+  #guess{
+    width:100%;padding:15px 16px;font-family:'Archivo',sans-serif;font-size:17px;font-weight:600;
+    background:#fff;border:2px solid var(--ink);color:var(--ink);border-radius:0;
+  }
+  #guess::placeholder{color:var(--dead);font-weight:400}
+  #guess:focus{outline:0;box-shadow:4px 4px 0 var(--navy)}
+  #guess:disabled{background:var(--paper-deep);cursor:not-allowed}
+  .ac{
+    position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:20;
+    background:#fff;border:2px solid var(--ink);max-height:260px;overflow:auto;display:none;
+  }
+  .ac.open{display:block}
+  .ac div{padding:11px 15px;cursor:pointer;font-size:15px;display:flex;justify-content:space-between;gap:10px}
+  .ac div+div{border-top:1px solid var(--rule)}
+  .ac div.sel,.ac div:hover{background:var(--navy);color:#fff}
+  .ac small{font-family:'Roboto Mono',monospace;font-size:11px;opacity:.65}
+
+  /* ── Grille ──────────────────────────────── */
+  .board{width:100%;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;min-width:660px}
+  th{
+    font-family:'Roboto Mono',monospace;font-size:10px;font-weight:500;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);
+    text-align:left;padding:0 0 8px 4px;
+  }
+  td{padding:0 3px 6px 0}
+  .cell{
+    height:56px;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:5px 7px;font-size:12px;font-weight:600;line-height:1.2;
+    background:var(--dead);color:#fff;
+    transform-origin:center;animation:flip .42s ease-out both;
+  }
+  .cell.name{
+    justify-content:flex-start;text-align:left;background:transparent;color:var(--ink);
+    border:2px solid var(--ink);font-size:14px;font-weight:700;
+  }
+  .cell.hit{background:var(--pitch)}
+  .cell.near{background:var(--amber)}
+  .cell .arrow{font-size:17px;margin-left:4px}
+  @keyframes flip{
+    0%{transform:rotateX(-92deg);opacity:0}
+    60%{transform:rotateX(12deg);opacity:1}
+    100%{transform:rotateX(0);opacity:1}
+  }
+  @media (prefers-reduced-motion:reduce){.cell{animation:none}}
+
+  /* ── Pied ────────────────────────────────── */
+  .legend{
+    display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;padding-top:14px;
+    border-top:1px solid var(--rule);
+    font-family:'Roboto Mono',monospace;font-size:11px;color:var(--ink-soft);
+  }
+  .legend i{display:inline-block;width:11px;height:11px;margin-right:6px;vertical-align:-1px}
+  .result{
+    margin-top:24px;border:3px solid var(--ink);padding:20px;background:#fff;
+    box-shadow:7px 7px 0 var(--navy);
+  }
+  .result h2{font-family:'Anton',sans-serif;font-size:32px;margin:0 0 6px;text-transform:uppercase;letter-spacing:-.01em}
+  .result p{margin:0 0 16px;font-size:15px;color:var(--ink-soft)}
+  .result strong{color:var(--ink)}
+  .result button{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:13px;letter-spacing:.09em;
+    text-transform:uppercase;padding:12px 22px;background:var(--ink);color:var(--paper);
+    border:0;cursor:pointer;
+  }
+  .result button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+  .bilan{
+    font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:.06em;
+    color:var(--ink-soft);margin-bottom:14px;
+  }
+  .bilan b{font-family:'Anton',sans-serif;font-size:20px;color:var(--navy);
+    letter-spacing:0;vertical-align:-2px;margin-right:2px}
+
+  .actions{display:flex;gap:10px;flex-wrap:wrap}
+  #share{background:var(--navy)}
+  #share.ok{background:var(--pitch)}
+  .fallback{
+    display:none;width:100%;margin-top:12px;padding:10px;font-family:'Roboto Mono',monospace;
+    font-size:12px;line-height:1.5;border:2px solid var(--ink);background:var(--paper);
+    resize:vertical;min-height:130px;
+  }
+  .fallback.show{display:block}
+  .tries{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+
+  /* ── Statistiques ────────────────────────── */
+  .stats{margin-top:18px;padding-top:16px;border-top:2px solid var(--ink)}
+  .stats-head{
+    font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;
+  }
+  .big{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:18px}
+  .big div{min-width:110px}
+  .big b{
+    display:block;font-family:'Anton',sans-serif;font-size:40px;line-height:1;
+    color:var(--navy);letter-spacing:-.01em;
+  }
+  .big span{
+    font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--ink-soft);
+  }
+  .hist{display:flex;flex-direction:column;gap:4px}
+  .hrow{display:flex;align-items:center;gap:8px;font-family:'Roboto Mono',monospace;font-size:11px}
+  .hrow em{font-style:normal;width:26px;text-align:right;color:var(--ink-soft)}
+  .hbar{
+    height:19px;background:var(--dead);min-width:3px;
+    display:flex;align-items:center;justify-content:flex-end;
+    padding:0 6px;color:#fff;font-size:10px;transition:width .5s ease-out;
+  }
+  .hbar.me{background:var(--pitch)}
+  .pending{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--ink-soft)}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="masthead">
+      <h1>On<span>ze</span></h1>
+      <div class="kicker">Devine le joueur<br>essais illimités</div>
+    </div>
+  </header>
+  <div class="strapline">
+    <span id="modeLabel">Édition du jour</span>
+    <span id="dateLabel"></span>
+    <span id="source"></span>
+    <span id="serie"></span>
+  </div>
+
+  <div class="modes">
+    <button id="mDaily" aria-pressed="true">Quotidien</button>
+    <button id="mInf" aria-pressed="false">Infini</button>
+  </div>
+
+  <div class="search">
+    <input id="guess" autocomplete="off" placeholder="Nom d'un joueur…">
+    <div class="ac" id="ac"></div>
+  </div>
+
+  <div class="tries" id="tries">Essai 1 / 8</div>
+
+  <div class="board">
+    <table>
+      <thead>
+        <tr>
+          <th style="min-width:150px">Joueur</th>
+          <th>Nation</th><th>Championnat</th><th>Club</th>
+          <th>Poste</th><th>Âge</th><th>N°</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:var(--pitch)"></i>Exact</span>
+    <span><i style="background:var(--amber)"></i>Proche</span>
+    <span><i style="background:var(--dead)"></i>Faux</span>
+    <span>↑ plus grand &nbsp;·&nbsp; ↓ plus petit</span>
+  </div>
+
+  <div id="out"></div>
+</div>
+
+<script>
+/* ── Données d'amorce ───────────────────────────────────────────
+   À remplacer par un export Wikidata. Champs : nom, nat, cont,
+   championnat, club, poste, age, num                              */
+let PLAYERS = [
+  {nom:"Kylian Mbappé",nat:"France",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"BU",age:27,num:9},
+  {nom:"Erling Haaland",nat:"Norvège",cont:"Europe",champ:"Premier League",club:"Manchester City",poste:"BU",age:26,num:9},
+  {nom:"Vinícius Júnior",nat:"Brésil",cont:"Amérique du Sud",champ:"Liga",club:"Real Madrid",poste:"AG",age:26,num:7},
+  {nom:"Jude Bellingham",nat:"Angleterre",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"MO",age:23,num:5},
+  {nom:"Lamine Yamal",nat:"Espagne",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"AD",age:19,num:10},
+  {nom:"Pedri",nat:"Espagne",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"MC",age:23,num:8},
+  {nom:"Robert Lewandowski",nat:"Pologne",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"BU",age:37,num:9},
+  {nom:"Antoine Griezmann",nat:"France",cont:"Europe",champ:"Liga",club:"Atlético Madrid",poste:"MO",age:35,num:7},
+  {nom:"Mohamed Salah",nat:"Égypte",cont:"Afrique",champ:"Premier League",club:"Liverpool",poste:"AD",age:34,num:11},
+  {nom:"Virgil van Dijk",nat:"Pays-Bas",cont:"Europe",champ:"Premier League",club:"Liverpool",poste:"DC",age:35,num:4},
+  {nom:"Bukayo Saka",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Arsenal",poste:"AD",age:24,num:7},
+  {nom:"Declan Rice",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Arsenal",poste:"MDF",age:27,num:41},
+  {nom:"Cole Palmer",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Chelsea",poste:"MO",age:24,num:10},
+  {nom:"Rodri",nat:"Espagne",cont:"Europe",champ:"Premier League",club:"Manchester City",poste:"MDF",age:30,num:16},
+  {nom:"Bruno Fernandes",nat:"Portugal",cont:"Europe",champ:"Premier League",club:"Manchester United",poste:"MO",age:31,num:8},
+  {nom:"Son Heung-min",nat:"Corée du Sud",cont:"Asie",champ:"Premier League",club:"Tottenham",poste:"AG",age:34,num:7},
+  {nom:"Alisson",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Liverpool",poste:"GB",age:33,num:1},
+  {nom:"Ousmane Dembélé",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"AD",age:29,num:10},
+  {nom:"Marquinhos",nat:"Brésil",cont:"Amérique du Sud",champ:"Ligue 1",club:"Paris SG",poste:"DC",age:32,num:5},
+  {nom:"Vitinha",nat:"Portugal",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"MC",age:26,num:17},
+  {nom:"Achraf Hakimi",nat:"Maroc",cont:"Afrique",champ:"Ligue 1",club:"Paris SG",poste:"DD",age:27,num:2},
+  {nom:"Nuno Mendes",nat:"Portugal",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"DG",age:24,num:25},
+  {nom:"Bradley Barcola",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"AG",age:24,num:29},
+  {nom:"Mason Greenwood",nat:"Angleterre",cont:"Europe",champ:"Ligue 1",club:"Marseille",poste:"AD",age:24,num:10},
+  {nom:"Pierre-Emerick Aubameyang",nat:"Gabon",cont:"Afrique",champ:"Ligue 1",club:"Marseille",poste:"BU",age:37,num:10},
+  {nom:"Alexandre Lacazette",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Lyon",poste:"BU",age:35,num:10},
+  {nom:"Rayan Cherki",nat:"France",cont:"Europe",champ:"Premier League",club:"Manchester City",poste:"MO",age:23,num:18},
+  {nom:"Jonathan David",nat:"Canada",cont:"Amérique du Nord",champ:"Serie A",club:"Juventus",poste:"BU",age:26,num:30},
+  {nom:"Lautaro Martínez",nat:"Argentine",cont:"Amérique du Sud",champ:"Serie A",club:"Inter Milan",poste:"BU",age:29,num:10},
+  {nom:"Nicolò Barella",nat:"Italie",cont:"Europe",champ:"Serie A",club:"Inter Milan",poste:"MC",age:29,num:23},
+  {nom:"Rafael Leão",nat:"Portugal",cont:"Europe",champ:"Serie A",club:"Milan AC",poste:"AG",age:27,num:10},
+  {nom:"Victor Osimhen",nat:"Nigeria",cont:"Afrique",champ:"Süper Lig",club:"Galatasaray",poste:"BU",age:27,num:45},
+  {nom:"Paulo Dybala",nat:"Argentine",cont:"Amérique du Sud",champ:"Serie A",club:"AS Rome",poste:"MO",age:32,num:21},
+  {nom:"Harry Kane",nat:"Angleterre",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"BU",age:32,num:9},
+  {nom:"Jamal Musiala",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"MO",age:23,num:42},
+  {nom:"Joshua Kimmich",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"MDF",age:31,num:6},
+  {nom:"Manuel Neuer",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"GB",age:40,num:1},
+  {nom:"Florian Wirtz",nat:"Allemagne",cont:"Europe",champ:"Premier League",club:"Liverpool",poste:"MO",age:23,num:7},
+  {nom:"Lionel Messi",nat:"Argentine",cont:"Amérique du Sud",champ:"MLS",club:"Inter Miami",poste:"AD",age:39,num:10},
+  {nom:"Neymar",nat:"Brésil",cont:"Amérique du Sud",champ:"Brasileirão",club:"Santos",poste:"AG",age:34,num:10},
+  {nom:"Cristiano Ronaldo",nat:"Portugal",cont:"Europe",champ:"Saudi Pro League",club:"Al-Nassr",poste:"BU",age:41,num:7},
+  {nom:"Karim Benzema",nat:"France",cont:"Europe",champ:"Saudi Pro League",club:"Al-Ittihad",poste:"BU",age:38,num:9},
+  {nom:"Mike Maignan",nat:"France",cont:"Europe",champ:"Serie A",club:"Milan AC",poste:"GB",age:31,num:16},
+  {nom:"William Saliba",nat:"France",cont:"Europe",champ:"Premier League",club:"Arsenal",poste:"DC",age:25,num:2},
+  {nom:"Aurélien Tchouaméni",nat:"France",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"MDF",age:26,num:14},
+  {nom:"Eduardo Camavinga",nat:"France",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"MC",age:23,num:6},
+  {nom:"Michael Olise",nat:"France",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"AD",age:24,num:17},
+  {nom:"Khvicha Kvaratskhelia",nat:"Géorgie",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"AG",age:25,num:7},
+  {nom:"Federico Valverde",nat:"Uruguay",cont:"Amérique du Sud",champ:"Liga",club:"Real Madrid",poste:"MC",age:27,num:15},
+  {nom:"Antonio Rüdiger",nat:"Allemagne",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"DC",age:33,num:22},
+
+  {nom:"Thibaut Courtois",nat:"Belgique",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"GB",age:34,num:1},
+  {nom:"Dani Carvajal",nat:"Espagne",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"DD",age:34,num:2},
+  {nom:"Éder Militão",nat:"Brésil",cont:"Amérique du Sud",champ:"Liga",club:"Real Madrid",poste:"DC",age:28,num:3},
+  {nom:"Rodrygo",nat:"Brésil",cont:"Amérique du Sud",champ:"Liga",club:"Real Madrid",poste:"AD",age:25,num:11},
+  {nom:"Arda Güler",nat:"Turquie",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"MO",age:21,num:15},
+  {nom:"Trent Alexander-Arnold",nat:"Angleterre",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"DD",age:27,num:12},
+  {nom:"Dean Huijsen",nat:"Espagne",cont:"Europe",champ:"Liga",club:"Real Madrid",poste:"DC",age:21,num:24},
+  {nom:"Marc-André ter Stegen",nat:"Allemagne",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"GB",age:34,num:1},
+  {nom:"Ronald Araújo",nat:"Uruguay",cont:"Amérique du Sud",champ:"Liga",club:"FC Barcelone",poste:"DC",age:27,num:4},
+  {nom:"Jules Koundé",nat:"France",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"DD",age:27,num:23},
+  {nom:"Alejandro Balde",nat:"Espagne",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"DG",age:22,num:3},
+  {nom:"Frenkie de Jong",nat:"Pays-Bas",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"MC",age:29,num:21},
+  {nom:"Gavi",nat:"Espagne",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"MC",age:21,num:6},
+  {nom:"Raphinha",nat:"Brésil",cont:"Amérique du Sud",champ:"Liga",club:"FC Barcelone",poste:"AG",age:29,num:11},
+  {nom:"Ferran Torres",nat:"Espagne",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"BU",age:26,num:7},
+  {nom:"Dani Olmo",nat:"Espagne",cont:"Europe",champ:"Liga",club:"FC Barcelone",poste:"MO",age:28,num:20},
+  {nom:"Jan Oblak",nat:"Slovénie",cont:"Europe",champ:"Liga",club:"Atlético Madrid",poste:"GB",age:33,num:13},
+  {nom:"Julián Álvarez",nat:"Argentine",cont:"Amérique du Sud",champ:"Liga",club:"Atlético Madrid",poste:"BU",age:26,num:19},
+  {nom:"Alexander Sørloth",nat:"Norvège",cont:"Europe",champ:"Liga",club:"Atlético Madrid",poste:"BU",age:30,num:9},
+  {nom:"Nico Williams",nat:"Espagne",cont:"Europe",champ:"Liga",club:"Athletic Bilbao",poste:"AG",age:24,num:10},
+  {nom:"Iñaki Williams",nat:"Ghana",cont:"Afrique",champ:"Liga",club:"Athletic Bilbao",poste:"AD",age:32,num:9},
+  {nom:"Unai Simón",nat:"Espagne",cont:"Europe",champ:"Liga",club:"Athletic Bilbao",poste:"GB",age:29,num:1},
+
+  {nom:"Martin Ødegaard",nat:"Norvège",cont:"Europe",champ:"Premier League",club:"Arsenal",poste:"MO",age:27,num:8},
+  {nom:"Gabriel Magalhães",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Arsenal",poste:"DC",age:28,num:6},
+  {nom:"Gabriel Martinelli",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Arsenal",poste:"AG",age:25,num:11},
+  {nom:"Kai Havertz",nat:"Allemagne",cont:"Europe",champ:"Premier League",club:"Arsenal",poste:"BU",age:27,num:29},
+  {nom:"David Raya",nat:"Espagne",cont:"Europe",champ:"Premier League",club:"Arsenal",poste:"GB",age:30,num:22},
+  {nom:"Ederson",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Manchester City",poste:"GB",age:32,num:31},
+  {nom:"Bernardo Silva",nat:"Portugal",cont:"Europe",champ:"Premier League",club:"Manchester City",poste:"MC",age:31,num:20},
+  {nom:"Phil Foden",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Manchester City",poste:"MO",age:26,num:47},
+  {nom:"Joško Gvardiol",nat:"Croatie",cont:"Europe",champ:"Premier League",club:"Manchester City",poste:"DC",age:24,num:24},
+  {nom:"Rúben Dias",nat:"Portugal",cont:"Europe",champ:"Premier League",club:"Manchester City",poste:"DC",age:29,num:3},
+  {nom:"Alexander Isak",nat:"Suède",cont:"Europe",champ:"Premier League",club:"Liverpool",poste:"BU",age:26,num:14},
+  {nom:"Ryan Gravenberch",nat:"Pays-Bas",cont:"Europe",champ:"Premier League",club:"Liverpool",poste:"MDF",age:24,num:38},
+  {nom:"Dominik Szoboszlai",nat:"Hongrie",cont:"Europe",champ:"Premier League",club:"Liverpool",poste:"MC",age:25,num:8},
+  {nom:"Ibrahima Konaté",nat:"France",cont:"Europe",champ:"Premier League",club:"Liverpool",poste:"DC",age:27,num:5},
+  {nom:"Andy Robertson",nat:"Écosse",cont:"Europe",champ:"Premier League",club:"Liverpool",poste:"DG",age:32,num:26},
+  {nom:"Cody Gakpo",nat:"Pays-Bas",cont:"Europe",champ:"Premier League",club:"Liverpool",poste:"AG",age:27,num:18},
+  {nom:"Enzo Fernández",nat:"Argentine",cont:"Amérique du Sud",champ:"Premier League",club:"Chelsea",poste:"MC",age:25,num:8},
+  {nom:"Moisés Caicedo",nat:"Équateur",cont:"Amérique du Sud",champ:"Premier League",club:"Chelsea",poste:"MDF",age:25,num:25},
+  {nom:"Reece James",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Chelsea",poste:"DD",age:26,num:24},
+  {nom:"Casemiro",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Manchester United",poste:"MDF",age:34,num:18},
+  {nom:"Matthijs de Ligt",nat:"Pays-Bas",cont:"Europe",champ:"Premier League",club:"Manchester United",poste:"DC",age:27,num:4},
+  {nom:"Amad Diallo",nat:"Côte d'Ivoire",cont:"Afrique",champ:"Premier League",club:"Manchester United",poste:"AD",age:24,num:16},
+  {nom:"Bryan Mbeumo",nat:"Cameroun",cont:"Afrique",champ:"Premier League",club:"Manchester United",poste:"AD",age:27,num:19},
+  {nom:"Matheus Cunha",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Manchester United",poste:"BU",age:27,num:10},
+  {nom:"Cristian Romero",nat:"Argentine",cont:"Amérique du Sud",champ:"Premier League",club:"Tottenham",poste:"DC",age:28,num:17},
+  {nom:"Micky van de Ven",nat:"Pays-Bas",cont:"Europe",champ:"Premier League",club:"Tottenham",poste:"DC",age:25,num:37},
+  {nom:"James Maddison",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Tottenham",poste:"MO",age:29,num:10},
+  {nom:"Ollie Watkins",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Aston Villa",poste:"BU",age:30,num:11},
+  {nom:"Emiliano Martínez",nat:"Argentine",cont:"Amérique du Sud",champ:"Premier League",club:"Aston Villa",poste:"GB",age:34,num:23},
+  {nom:"Morgan Rogers",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Aston Villa",poste:"MO",age:24,num:27},
+  {nom:"Bruno Guimarães",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Newcastle",poste:"MC",age:28,num:39},
+  {nom:"Nick Pope",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Newcastle",poste:"GB",age:34,num:22},
+  {nom:"Jarrod Bowen",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"West Ham",poste:"AD",age:29,num:20},
+  {nom:"Lucas Paquetá",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"West Ham",poste:"MO",age:29,num:10},
+  {nom:"Eberechi Eze",nat:"Angleterre",cont:"Europe",champ:"Premier League",club:"Arsenal",poste:"MO",age:28,num:10},
+  {nom:"Jean-Philippe Mateta",nat:"France",cont:"Europe",champ:"Premier League",club:"Crystal Palace",poste:"BU",age:29,num:14},
+
+  {nom:"Lucas Chevalier",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"GB",age:24,num:30},
+  {nom:"Warren Zaïre-Emery",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"MC",age:20,num:33},
+  {nom:"João Neves",nat:"Portugal",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"MC",age:21,num:87},
+  {nom:"Désiré Doué",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"AD",age:21,num:14},
+  {nom:"Fabián Ruiz",nat:"Espagne",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"MC",age:30,num:8},
+  {nom:"Gonçalo Ramos",nat:"Portugal",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"BU",age:25,num:9},
+  {nom:"Willian Pacho",nat:"Équateur",cont:"Amérique du Sud",champ:"Ligue 1",club:"Paris SG",poste:"DC",age:24,num:51},
+  {nom:"Lucas Hernández",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Paris SG",poste:"DC",age:30,num:21},
+  {nom:"Geronimo Rulli",nat:"Argentine",cont:"Amérique du Sud",champ:"Ligue 1",club:"Marseille",poste:"GB",age:34,num:1},
+  {nom:"Leonardo Balerdi",nat:"Argentine",cont:"Amérique du Sud",champ:"Ligue 1",club:"Marseille",poste:"DC",age:27,num:5},
+  {nom:"Amine Gouiri",nat:"Algérie",cont:"Afrique",champ:"Ligue 1",club:"Marseille",poste:"BU",age:26,num:11},
+  {nom:"Nicolás Tagliafico",nat:"Argentine",cont:"Amérique du Sud",champ:"Ligue 1",club:"Lyon",poste:"DG",age:33,num:3},
+  {nom:"Corentin Tolisso",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Lyon",poste:"MC",age:32,num:88},
+  {nom:"Georges Mikautadze",nat:"Géorgie",cont:"Europe",champ:"Ligue 1",club:"Lyon",poste:"BU",age:25,num:69},
+  {nom:"Malick Fofana",nat:"Belgique",cont:"Europe",champ:"Ligue 1",club:"Lyon",poste:"AG",age:21,num:11},
+  {nom:"Jonathan Clauss",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Nice",poste:"DD",age:33,num:7},
+  {nom:"Ludovic Blas",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Rennes",poste:"MO",age:28,num:10},
+  {nom:"Benjamin Lecomte",nat:"France",cont:"Europe",champ:"Ligue 1",club:"Le Havre",poste:"GB",age:35,num:1},
+
+  {nom:"Alessandro Bastoni",nat:"Italie",cont:"Europe",champ:"Serie A",club:"Inter Milan",poste:"DC",age:27,num:95},
+  {nom:"Federico Dimarco",nat:"Italie",cont:"Europe",champ:"Serie A",club:"Inter Milan",poste:"DG",age:28,num:32},
+  {nom:"Hakan Çalhanoğlu",nat:"Turquie",cont:"Europe",champ:"Serie A",club:"Inter Milan",poste:"MDF",age:32,num:20},
+  {nom:"Marcus Thuram",nat:"France",cont:"Europe",champ:"Serie A",club:"Inter Milan",poste:"BU",age:29,num:9},
+  {nom:"Denzel Dumfries",nat:"Pays-Bas",cont:"Europe",champ:"Serie A",club:"Inter Milan",poste:"DD",age:30,num:2},
+  {nom:"Christian Pulisic",nat:"États-Unis",cont:"Amérique du Nord",champ:"Serie A",club:"Milan AC",poste:"AD",age:27,num:11},
+  {nom:"Luka Modrić",nat:"Croatie",cont:"Europe",champ:"Serie A",club:"Milan AC",poste:"MC",age:40,num:14},
+  {nom:"Dušan Vlahović",nat:"Serbie",cont:"Europe",champ:"Serie A",club:"Juventus",poste:"BU",age:26,num:9},
+  {nom:"Kenan Yıldız",nat:"Turquie",cont:"Europe",champ:"Serie A",club:"Juventus",poste:"AG",age:21,num:10},
+  {nom:"Khéphren Thuram",nat:"France",cont:"Europe",champ:"Serie A",club:"Juventus",poste:"MC",age:25,num:19},
+  {nom:"Kevin De Bruyne",nat:"Belgique",cont:"Europe",champ:"Serie A",club:"Naples",poste:"MO",age:35,num:11},
+  {nom:"Scott McTominay",nat:"Écosse",cont:"Europe",champ:"Serie A",club:"Naples",poste:"MC",age:29,num:8},
+  {nom:"Romelu Lukaku",nat:"Belgique",cont:"Europe",champ:"Serie A",club:"Naples",poste:"BU",age:33,num:11},
+  {nom:"Alessandro Buongiorno",nat:"Italie",cont:"Europe",champ:"Serie A",club:"Naples",poste:"DC",age:27,num:4},
+  {nom:"Ademola Lookman",nat:"Nigeria",cont:"Afrique",champ:"Serie A",club:"Atalanta",poste:"AG",age:28,num:11},
+  {nom:"Charles De Ketelaere",nat:"Belgique",cont:"Europe",champ:"Serie A",club:"Atalanta",poste:"MO",age:25,num:17},
+
+  {nom:"Alphonso Davies",nat:"Canada",cont:"Amérique du Nord",champ:"Bundesliga",club:"Bayern Munich",poste:"DG",age:25,num:19},
+  {nom:"Dayot Upamecano",nat:"France",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"DC",age:27,num:2},
+  {nom:"Serge Gnabry",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"AD",age:30,num:7},
+  {nom:"Leon Goretzka",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"MC",age:31,num:8},
+  {nom:"Jonathan Tah",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Bayern Munich",poste:"DC",age:30,num:4},
+  {nom:"Gregor Kobel",nat:"Suisse",cont:"Europe",champ:"Bundesliga",club:"Borussia Dortmund",poste:"GB",age:28,num:1},
+  {nom:"Nico Schlotterbeck",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Borussia Dortmund",poste:"DC",age:26,num:4},
+  {nom:"Karim Adeyemi",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Borussia Dortmund",poste:"AG",age:24,num:27},
+  {nom:"Julian Brandt",nat:"Allemagne",cont:"Europe",champ:"Bundesliga",club:"Borussia Dortmund",poste:"MO",age:30,num:19},
+  {nom:"Serhou Guirassy",nat:"Guinée",cont:"Afrique",champ:"Bundesliga",club:"Borussia Dortmund",poste:"BU",age:30,num:9},
+  {nom:"Patrik Schick",nat:"Tchéquie",cont:"Europe",champ:"Bundesliga",club:"Bayer Leverkusen",poste:"BU",age:30,num:14},
+
+  {nom:"Kaoru Mitoma",nat:"Japon",cont:"Asie",champ:"Premier League",club:"Brighton",poste:"AG",age:29,num:22},
+  {nom:"Takefusa Kubo",nat:"Japon",cont:"Asie",champ:"Liga",club:"Real Sociedad",poste:"AD",age:25,num:14},
+  {nom:"Kim Min-jae",nat:"Corée du Sud",cont:"Asie",champ:"Bundesliga",club:"Bayern Munich",poste:"DC",age:29,num:3},
+  {nom:"Mehdi Taremi",nat:"Iran",cont:"Asie",champ:"Serie A",club:"Inter Milan",poste:"BU",age:33,num:99},
+  {nom:"Yassine Bounou",nat:"Maroc",cont:"Afrique",champ:"Saudi Pro League",club:"Al-Hilal",poste:"GB",age:35,num:1},
+  {nom:"Sadio Mané",nat:"Sénégal",cont:"Afrique",champ:"Saudi Pro League",club:"Al-Nassr",poste:"AG",age:34,num:10},
+  {nom:"Riyad Mahrez",nat:"Algérie",cont:"Afrique",champ:"Saudi Pro League",club:"Al-Ahli",poste:"AD",age:35,num:7},
+  {nom:"N'Golo Kanté",nat:"France",cont:"Europe",champ:"Saudi Pro League",club:"Al-Ittihad",poste:"MDF",age:35,num:7},
+  {nom:"Théo Hernández",nat:"France",cont:"Europe",champ:"Saudi Pro League",club:"Al-Hilal",poste:"DG",age:28,num:19},
+  {nom:"Rodrigo De Paul",nat:"Argentine",cont:"Amérique du Sud",champ:"MLS",club:"Inter Miami",poste:"MC",age:32,num:7},
+  {nom:"Jordi Alba",nat:"Espagne",cont:"Europe",champ:"MLS",club:"Inter Miami",poste:"DG",age:37,num:18},
+  {nom:"Thomas Müller",nat:"Allemagne",cont:"Europe",champ:"MLS",club:"Vancouver Whitecaps",poste:"MO",age:36,num:13},
+  {nom:"Son Jun-ho",nat:"Corée du Sud",cont:"Asie",champ:"K League",club:"Jeonbuk",poste:"MC",age:34,num:6},
+  {nom:"Richarlison",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Tottenham",poste:"BU",age:29,num:9},
+  {nom:"Gabriel Jesus",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Arsenal",poste:"BU",age:29,num:9},
+  {nom:"Endrick",nat:"Brésil",cont:"Amérique du Sud",champ:"Liga",club:"Real Madrid",poste:"BU",age:20,num:16},
+  {nom:"Estêvão",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Chelsea",poste:"AD",age:19,num:41},
+  {nom:"Savinho",nat:"Brésil",cont:"Amérique du Sud",champ:"Premier League",club:"Manchester City",poste:"AD",age:22,num:26},
+  {nom:"Alexis Mac Allister",nat:"Argentine",cont:"Amérique du Sud",champ:"Premier League",club:"Liverpool",poste:"MC",age:27,num:10},
+  {nom:"Ángel Di María",nat:"Argentine",cont:"Amérique du Sud",champ:"Primera División",club:"Rosario Central",poste:"AD",age:38,num:11}
+];
+
+/* ── Chargement du dataset ──────────────────────────────────────
+   Le tableau ci-dessus n'est qu'un filet de sécurité. Au démarrage,
+   le jeu essaie de charger joueurs.json — régénéré chaque semaine
+   depuis Wikidata par GitHub Actions. Si le fichier est absent ou
+   trop maigre, on reste sur les données d'amorce plutôt que de
+   lancer une partie avec un dataset cassé.                        */
+async function chargerDataset(){
+  try{
+    const r = await fetch("joueurs.json", {cache:"no-cache"});
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    if(!Array.isArray(d) || d.length < 100) throw new Error("dataset trop court");
+    const requis = ["nom","nat","cont","champ","club","poste","age","num"];
+    if(!requis.every(k => k in d[0])) throw new Error("champs manquants");
+    PLAYERS = d;
+    $("source").textContent = `${d.length} joueurs · Wikidata`;
+  }catch(e){
+    $("source").textContent = `${PLAYERS.length} joueurs · données d'amorce`;
+  }
+}
+
+const FAMILLE={GB:"Gardien",DC:"Défenseur",DD:"Défenseur",DG:"Défenseur",
+  MDF:"Milieu",MC:"Milieu",MO:"Milieu",AG:"Attaquant",AD:"Attaquant",BU:"Attaquant"};
+
+/* ── Backend de statistiques ────────────────────────────────────
+   Renseigne ces deux valeurs pour brancher Supabase en production.
+   Le SQL de la table et de la fonction est fourni à part.          */
+const SUPABASE_URL = "";          // ex. https://xxxx.supabase.co
+const SUPABASE_KEY = "";          // clé publiable (anon)
+
+const jourISO = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+
+/* Trois implémentations, choisies au démarrage.
+   Toutes renvoient {total, mieuxQue, histo:{essais:nb}, source}     */
+const Stats = {
+  /* enregistrer = incrémente puis renvoie. consulter = lecture seule.
+     La distinction existe pour qu'un rechargement de page ne recompte
+     pas la partie déjà enregistrée.                                  */
+  enregistrer(jour, essais){ return this._appel(jour, essais, true); },
+  consulter(jour, essais){   return this._appel(jour, essais, false); },
+
+  async _appel(jour, essais, incr){
+    let histo, source;
+    if(SUPABASE_URL && SUPABASE_KEY){ histo = await this._supabase(jour, essais, incr); source="serveur"; }
+    else if(window.storage)         { histo = await this._partage(jour, essais, incr); source="partagé"; }
+    else                            { histo = this._local(essais, incr);                source="local"; }
+    return {...this._calculer(histo, essais), histo, source};
+  },
+
+  async _supabase(jour, essais, incr){
+    const fn   = incr ? "enregistrer_resultat" : "lire_resultats";
+    const body = incr ? {p_jour:jour, p_essais:essais} : {p_jour:jour};
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`,{
+      method:"POST",
+      headers:{"Content-Type":"application/json",apikey:SUPABASE_KEY,
+               Authorization:`Bearer ${SUPABASE_KEY}`},
+      body:JSON.stringify(body)
+    });
+    if(!r.ok) throw new Error("rpc "+r.status);
+    const d = await r.json();
+    return d.histo || {};
+  },
+
+  /* Stockage partagé entre joueurs (aperçu Claude uniquement).
+     Dernière écriture gagnante : quelques parties simultanées peuvent
+     se perdre. Acceptable pour une démo, pas pour la production.     */
+  async _partage(jour, essais, incr){
+    const cle = `onze:stats:${jour}`;
+    let histo = {};
+    try{ const r = await window.storage.get(cle, true); if(r) histo = JSON.parse(r.value); }
+    catch(e){ histo = {}; }
+    if(incr){
+      histo[essais] = (histo[essais]||0) + 1;
+      await window.storage.set(cle, JSON.stringify(histo), true);
+    }
+    return histo;
+  },
+
+  _localHisto:{},
+  _local(essais, incr){
+    if(incr) this._localHisto[essais] = (this._localHisto[essais]||0) + 1;
+    return this._localHisto;
+  },
+
+  _calculer(histo, essais){
+    const total = Object.values(histo).reduce((a,b)=>a+b,0);
+    const moins = Object.entries(histo)
+      .filter(([k])=>+k > essais).reduce((a,[,v])=>a+v,0);
+    return {total, mieuxQue: total ? Math.round(100*moins/total) : 0};
+  }
+};
+
+/* ── Persistance locale ─────────────────────────────────────────
+   Conserve la partie quotidienne en cours et mémorise si le résultat
+   a déjà été envoyé aux statistiques. Tout est enveloppé dans des
+   try/catch : en navigation privée ou dans une iframe restreinte,
+   localStorage lève une exception et le jeu doit continuer sans.   */
+/* ── Série quotidienne ──────────────────────────────────────────
+   La série compte les jours où l'énigme a été RÉSOLUE, pas les jours
+   d'ouverture de la page : une série qui monte sans jouer ne veut
+   rien dire et n'incite à rien.
+   Arithmétique via setDate() plutôt qu'un retrait de 86400000 ms :
+   les changements d'heure feraient sauter un jour deux fois par an. */
+const hierISO = () => { const d=new Date(); d.setDate(d.getDate()-1); return jourISO(d); };
+
+const Serie = {
+  CLE:"onze:serie",
+  _vide(){ return {dernier:null, actuelle:0, record:0, total:0}; },
+
+  lire(){
+    try{
+      const b = localStorage.getItem(this.CLE);
+      const d = b ? JSON.parse(b) : this._vide();
+      // Ni aujourd'hui ni hier : la série est rompue.
+      if(d.dernier && d.dernier!==jourISO(new Date()) && d.dernier!==hierISO()) d.actuelle=0;
+      return d;
+    }catch(e){ return this._vide(); }
+  },
+
+  valider(){
+    const auj = jourISO(new Date());
+    const d = this.lire();
+    if(d.dernier === auj) return d;                    // déjà comptée aujourd'hui
+    d.actuelle = (d.dernier === hierISO()) ? d.actuelle + 1 : 1;
+    d.record   = Math.max(d.record, d.actuelle);
+    d.total   += 1;
+    d.dernier  = auj;
+    try{ localStorage.setItem(this.CLE, JSON.stringify(d)); }catch(e){}
+    return d;
+  }
+};
+
+function afficherSerie(){
+  const d = Serie.lire();
+  $("serie").textContent = d.actuelle > 0
+    ? `Série ${d.actuelle} jour${d.actuelle>1?"s":""}`
+    : "";
+}
+
+const Sauvegarde = {
+  CLE:"onze:partie",
+
+  lire(jour, nomCible){
+    try{
+      const brut = localStorage.getItem(this.CLE);
+      if(!brut) return null;
+      const d = JSON.parse(brut);
+      // Sauvegarde d'un autre jour, ou dataset modifié depuis : on jette.
+      if(d.jour !== jour || d.cible !== nomCible) return null;
+      return d;
+    }catch(e){ return null; }
+  },
+
+  ecrire(d){
+    try{ localStorage.setItem(this.CLE, JSON.stringify(d)); }catch(e){}
+  },
+
+  effacer(){
+    try{ localStorage.removeItem(this.CLE); }catch(e){}
+  }
+};
+
+let mode="daily", cible=null, essais=[], fini=false, envoye=false, sel=-1, filtres=[];
+
+const $=id=>document.getElementById(id);
+const norm=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+
+/* Choix déterministe du joueur du jour */
+function joueurDuJour(){
+  const d=new Date();
+  const key=d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();
+  let h=key;
+  h=(h^61)^(h>>>16); h=h+(h<<3); h=h^(h>>>4); h=Math.imul(h,0x27d4eb2d); h=h^(h>>>15);
+  return PLAYERS[Math.abs(h)%PLAYERS.length];
+}
+
+function demarrer(){
+  cible = mode==="daily" ? joueurDuJour() : PLAYERS[Math.floor(Math.random()*PLAYERS.length)];
+  essais=[]; fini=false; envoye=false;
+  $("rows").innerHTML=""; $("out").innerHTML="";
+  $("guess").value=""; $("guess").disabled=false;
+  fermerAC();
+
+  if(mode==="daily") restaurer();
+
+  majEssais();
+  afficherSerie();
+  $("modeLabel").textContent = mode==="daily" ? "Édition du jour" : "Partie libre";
+  $("dateLabel").textContent = mode==="daily"
+    ? new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"})
+    : "Tirage aléatoire";
+}
+
+/* Rejoue les essais sauvegardés, sans animation ni réenvoi des stats. */
+function restaurer(){
+  const jour = jourISO(new Date());
+  const d = Sauvegarde.lire(jour, cible.nom);
+  if(!d) return;
+
+  const parNom = new Map(PLAYERS.map(p=>[p.nom,p]));
+  const repris = d.noms.map(n=>parNom.get(n)).filter(Boolean);
+  // Un joueur disparu du dataset rendrait la grille incohérente : on repart de zéro.
+  if(repris.length !== d.noms.length){ Sauvegarde.effacer(); return; }
+
+  essais = repris;
+  essais.forEach(p=>dessiner(p,false));
+  envoye = !!d.envoye;
+  if(d.fini) terminer(true);
+}
+
+function enregistrerPartie(){
+  if(mode!=="daily") return;
+  Sauvegarde.ecrire({
+    jour: jourISO(new Date()),
+    cible: cible.nom,
+    noms: essais.map(p=>p.nom),
+    fini, envoye
+  });
+}
+
+function majEssais(){
+  $("tries").textContent = fini
+    ? `Trouvé en ${essais.length} essai${essais.length>1?"s":""}`
+    : `Essai ${essais.length+1}`;
+}
+
+/* ── Autocomplétion ─────────────────────────── */
+$("guess").addEventListener("input",()=>{
+  const q=norm($("guess").value.trim());
+  if(!q){fermerAC();return}
+  const deja=new Set(essais.map(e=>e.nom));
+  filtres=PLAYERS.filter(p=>norm(p.nom).includes(q)&&!deja.has(p.nom)).slice(0,7);
+  if(!filtres.length){fermerAC();return}
+  sel=-1;
+  $("ac").innerHTML=filtres.map((p,i)=>
+    `<div data-i="${i}"><span>${p.nom}</span><small>${p.club}</small></div>`).join("");
+  $("ac").classList.add("open");
+  [...$("ac").children].forEach(el=>el.onclick=()=>jouer(filtres[+el.dataset.i]));
+});
+
+$("guess").addEventListener("keydown",e=>{
+  if(!$("ac").classList.contains("open")){
+    if(e.key==="Enter"&&filtres.length===1)jouer(filtres[0]);
+    return;
+  }
+  const n=$("ac").children.length;
+  if(e.key==="ArrowDown"){e.preventDefault();sel=(sel+1)%n;surligner()}
+  else if(e.key==="ArrowUp"){e.preventDefault();sel=(sel-1+n)%n;surligner()}
+  else if(e.key==="Enter"){e.preventDefault();jouer(filtres[sel>=0?sel:0])}
+  else if(e.key==="Escape")fermerAC();
+});
+
+function surligner(){
+  [...$("ac").children].forEach((el,i)=>el.classList.toggle("sel",i===sel));
+}
+function fermerAC(){$("ac").classList.remove("open");$("ac").innerHTML="";filtres=[];sel=-1}
+
+/* ── Tour de jeu ────────────────────────────── */
+function jouer(p){
+  if(!p||fini)return;
+  essais.push(p); $("guess").value=""; fermerAC(); dessiner(p); majEssais();
+  if(p.nom===cible.nom) terminer(); else enregistrerPartie();
+}
+
+function cmp(a,b){return a===b?"hit":""}
+
+function dessiner(p, anim=true){
+  const cells=[
+    {v:p.nom,cls:"name"},
+    {v:p.nat, cls: p.nat===cible.nat?"hit":(p.cont===cible.cont?"near":"")},
+    {v:p.champ, cls: cmp(p.champ,cible.champ)},
+    {v:p.club, cls: cmp(p.club,cible.club)},
+    {v:p.poste, cls: p.poste===cible.poste?"hit":(FAMILLE[p.poste]===FAMILLE[cible.poste]?"near":"")},
+    {v:p.age, cls: cmp(p.age,cible.age), fl:p.age<cible.age?"↑":p.age>cible.age?"↓":""},
+    {v:p.num, cls: cmp(p.num,cible.num), fl:p.num<cible.num?"↑":p.num>cible.num?"↓":""}
+  ];
+  const tr=document.createElement("tr");
+  tr.innerHTML=cells.map((c,i)=>
+    `<td><div class="cell ${c.cls}" style="${anim?`animation-delay:${i*90}ms`:"animation:none"}">${c.v}${
+      c.fl?`<span class="arrow">${c.fl}</span>`:""}</div></td>`).join("");
+  $("rows").appendChild(tr);
+}
+
+function terminer(restaure=false){
+  fini=true; $("guess").disabled=true; majEssais();
+  const err=essais.length-1;
+  $("out").innerHTML=`
+    <div class="result">
+      <h2>Trouvé</h2>
+      <p>C'était bien <strong>${cible.nom}</strong> — ${cible.club}, ${cible.poste}.
+         En <strong>${essais.length}</strong> essai${essais.length>1?"s":""},
+         soit <strong>${err}</strong> erreur${err>1?"s":""}.</p>
+      <div class="bilan" id="bilan"></div>
+      <div class="actions">
+        <button id="share">Partager</button>
+        <button id="again">${mode==="daily"?"Passer en mode infini":"Rejouer"}</button>
+      </div>
+      <textarea class="fallback" id="fb" readonly></textarea>
+      ${mode==="daily"?`<div class="stats" id="stats">
+         <div class="pending">Calcul des statistiques du jour…</div></div>`:""}
+    </div>`;
+  $("again").onclick=()=>{ if(mode==="daily") basculer("inf"); else demarrer(); };
+  $("share").onclick=partager;
+  if(mode!=="daily") return;
+
+  /* La série se valide au même moment que l'envoi des stats : une seule
+     fois par jour, jamais sur une partie restaurée depuis la sauvegarde. */
+  if(!restaure){
+    enregistrerPartie();
+    const s = Serie.valider();
+    afficherSerie();
+    const palier = [7,10,30,50,100,365].includes(s.actuelle);
+    $("bilan").innerHTML =
+      `<b>${s.actuelle}</b> jour${s.actuelle>1?"s":""} d'affilée`
+      + (s.record>s.actuelle ? ` · record ${s.record}` : "")
+      + (palier ? ` · palier atteint` : "");
+  }else{
+    const s = Serie.lire();
+    $("bilan").innerHTML = s.actuelle>0
+      ? `<b>${s.actuelle}</b> jour${s.actuelle>1?"s":""} d'affilée`
+        + (s.record>s.actuelle ? ` · record ${s.record}` : "") : "";
+  }
+
+  chargerStats(essais.length, !envoye);
+}
+
+/* Grille en carrés : révèle la difficulté, jamais la réponse. */
+function textePartage(){
+  const carre=(exact,proche)=> exact?"🟩":(proche?"🟨":"⬛");
+  const lignes=essais.map(p=>[
+    carre(p.nat===cible.nat,   p.cont===cible.cont),
+    carre(p.champ===cible.champ,false),
+    carre(p.club===cible.club, false),
+    carre(p.poste===cible.poste, FAMILLE[p.poste]===FAMILLE[cible.poste]),
+    carre(p.age===cible.age,   false),
+    carre(p.num===cible.num,   false)
+  ].join(""));
+  /* Au-delà de 12 essais, on tronque : illisible sur les réseaux sinon. */
+  const corps = lignes.length<=12
+    ? lignes.join("\n")
+    : [...lignes.slice(0,10), "⋯", lignes[lignes.length-1]].join("\n");
+
+  const err=essais.length-1;
+  const date=mode==="daily"
+    ? new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long"})
+    : "partie libre";
+  const s = mode==="daily" ? Serie.lire() : null;
+  const suffixe = (s && s.actuelle>1) ? `\nSérie : ${s.actuelle} jours` : "";
+  return `ONZE — ${date}\n${essais.length} essai${essais.length>1?"s":""} · `
+       + `${err} erreur${err>1?"s":""}${suffixe}\n\n${corps}`;
+}
+
+async function partager(){
+  const txt=textePartage(), b=$("share");
+  /* Partage natif sur mobile, presse-papiers ailleurs, zone de texte en dernier recours. */
+  if(navigator.share){
+    try{ await navigator.share({text:txt}); return; }catch(e){ if(e.name==="AbortError") return; }
+  }
+  try{
+    await navigator.clipboard.writeText(txt);
+    b.textContent="Copié"; b.classList.add("ok");
+    setTimeout(()=>{b.textContent="Partager";b.classList.remove("ok")},2000);
+  }catch(e){
+    $("fb").value=txt; $("fb").classList.add("show"); $("fb").select();
+    b.textContent="Copie manuelle";
+  }
+}
+
+async function chargerStats(n, incr){
+  const box=$("stats"); if(!box)return;
+  let d;
+  try{
+    d = await (incr ? Stats.enregistrer(jourISO(new Date()), n)
+                    : Stats.consulter(jourISO(new Date()), n));
+    if(incr){ envoye=true; enregistrerPartie(); }
+  }
+  catch(e){
+    box.innerHTML=`<div class="pending">Statistiques indisponibles pour le moment.</div>`;
+    return;
+  }
+  const cles=Object.keys(d.histo).map(Number).sort((a,b)=>a-b);
+  const pic=Math.max(...cles.map(k=>d.histo[k]),1);
+  const barres=cles.map(k=>`
+    <div class="hrow">
+      <em>${k}</em>
+      <div class="hbar ${k===n?"me":""}" style="width:${Math.round(100*d.histo[k]/pic)}%">${d.histo[k]}</div>
+    </div>`).join("");
+
+  box.innerHTML=`
+    <div class="stats-head">Statistiques du jour · source ${d.source}</div>
+    <div class="big">
+      <div><b>${d.mieuxQue}%</b><span>des joueurs battus</span></div>
+      <div><b>${d.total}</b><span>${d.total>1?"joueurs ont trouvé":"joueur a trouvé"}</span></div>
+    </div>
+    <div class="stats-head">Répartition par nombre d'essais</div>
+    <div class="hist">${barres}</div>`;
+}
+
+/* ── Modes ──────────────────────────────────── */
+function basculer(m){
+  mode=m;
+  $("mDaily").setAttribute("aria-pressed",m==="daily");
+  $("mInf").setAttribute("aria-pressed",m==="inf");
+  demarrer();
+}
+$("mDaily").onclick=()=>basculer("daily");
+$("mInf").onclick=()=>basculer("inf");
+
+chargerDataset().then(demarrer);
+</script>
