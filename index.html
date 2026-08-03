@@ -138,13 +138,21 @@
 
     tbody tr{
       display:grid;grid-template-columns:repeat(3,1fr);
-      grid-template-rows:auto 1fr 1fr;   /* les deux rangées d'attributs s'égalisent */
+      /* nom · club · puis deux rangées de trois, égalisées entre elles */
+      grid-template-rows:auto auto 1fr 1fr;
       gap:1px;
       background:var(--ink);border:2px solid var(--ink);
       margin-bottom:14px;
     }
     tbody td{padding:0;display:block}
-    tbody td:first-child{grid-column:1 / -1}
+    /* Le club prend toute la largeur : c'est la valeur la plus longue,
+       et sur trois colonnes elle passait systématiquement sur deux lignes. */
+    tbody td:first-child,
+    tbody td:nth-child(2){grid-column:1 / -1}
+
+    .cell.club{flex-direction:row;justify-content:center;align-items:baseline;gap:8px;
+      min-height:0;padding:9px 10px;font-size:14px}
+    .cell.club::before{font-size:8px}
 
     .cell{
       height:100%;min-height:56px;flex-direction:column;justify-content:center;gap:3px;
@@ -276,9 +284,9 @@
     <table>
       <thead>
         <tr>
-          <th style="min-width:150px">Joueur</th>
-          <th>Nation</th><th>Championnat</th><th>Club</th>
-          <th>Poste</th><th>Âge</th><th>Depuis</th>
+          <th style="min-width:150px">Joueur</th><th>Club</th>
+          <th>Nation</th><th>Championnat</th><th>Poste</th>
+          <th>Âge</th><th>N°</th><th>Depuis</th>
         </tr>
       </thead>
       <tbody id="rows"></tbody>
@@ -493,7 +501,7 @@ async function chargerDataset(){
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
     if(!Array.isArray(d) || d.length < 100) throw new Error("dataset trop court");
-    const requis = ["nom","nat","cont","champ","club","poste","age","depuis"];
+    const requis = ["nom","nat","cont","champ","club","poste","age","num","depuis"];
     if(!requis.every(k => k in d[0])) throw new Error("champs manquants");
     PLAYERS = d;
     $("source").textContent = `${d.length} joueurs · Wikidata`;
@@ -688,7 +696,7 @@ function restaurer(){
   if(repris.length !== d.noms.length){ Sauvegarde.effacer(); return; }
 
   essais = repris;
-  essais.forEach(p=>dessiner(p,false));
+  essais.forEach((p,i)=>dessiner(p,false,i+1));
   envoye = !!d.envoye;
   if(d.fini) terminer(true);
 }
@@ -749,23 +757,26 @@ function jouer(p){
 
 function cmp(a,b){return a===b?"hit":""}
 
-function dessiner(p, anim=true){
-  /* L'année d'arrivée au club remplace le numéro de maillot : Wikidata ne
-     renseigne P1618 que sur une minorité de fiches, alors que la date de
-     début d'appartenance est exigée par la requête, donc toujours là. */
+function dessiner(p, anim=true, rang=essais.length){
+  /* Numéro et année d'arrivée peuvent manquer : les comparer quand même
+     donnerait un faux vert entre deux fiches incomplètes. */
+  const numConnu = p.num > 0 && cible.num > 0;
   const depConnu = p.depuis > 0 && cible.depuis > 0;
   const cells=[
     {v:p.nom, cls:"name", l:""},
+    {v:p.club, l:"Club", cls: "club "+cmp(p.club,cible.club)},
     {v:p.nat, l:"Nation", cls: p.nat===cible.nat?"hit":(p.cont===cible.cont?"near":"")},
     {v:p.champ, l:"Championnat", cls: cmp(p.champ,cible.champ)},
-    {v:p.club, l:"Club", cls: cmp(p.club,cible.club)},
     {v:p.poste, l:"Poste", cls: p.poste===cible.poste?"hit":(FAMILLE[p.poste]===FAMILLE[cible.poste]?"near":"")},
     {v:p.age, l:"Âge", cls: cmp(p.age,cible.age), fl:p.age<cible.age?"↑":p.age>cible.age?"↓":""},
-    {v:p.depuis>0?p.depuis:"—", l:"Au club depuis",
+    {v:p.num>0?p.num:"—", l:"N°",
+     cls: numConnu?cmp(p.num,cible.num):"",
+     fl:  numConnu&&p.num!==cible.num ? (p.num<cible.num?"↑":"↓") : ""},
+    {v:p.depuis>0?p.depuis:"—", l:"Depuis",
      cls: depConnu?cmp(p.depuis,cible.depuis):"",
      fl:  depConnu&&p.depuis!==cible.depuis ? (p.depuis<cible.depuis?"↑":"↓") : ""}
   ];
-  const idx=String(essais.length).padStart(2,"0");
+  const idx=String(rang).padStart(2,"0");
   const tr=document.createElement("tr");
   tr.innerHTML=cells.map((c,i)=>{
     const style = anim ? `animation-delay:${i*90}ms` : "animation:none";
@@ -826,12 +837,13 @@ function terminer(restaure=false){
 function textePartage(){
   const carre=(exact,proche)=> exact?"🟩":(proche?"🟨":"⬛");
   const lignes=essais.map(p=>[
-    carre(p.nat===cible.nat,   p.cont===cible.cont),
-    carre(p.champ===cible.champ,false),
     carre(p.club===cible.club, false),
+    carre(p.nat===cible.nat,   p.cont===cible.cont),
+    carre(p.champ===cible.champ, false),
     carre(p.poste===cible.poste, FAMILLE[p.poste]===FAMILLE[cible.poste]),
     carre(p.age===cible.age,   false),
-    carre(p.depuis===cible.depuis, false)
+    carre(p.num>0 && p.num===cible.num, false),
+    carre(p.depuis>0 && p.depuis===cible.depuis, false)
   ].join(""));
   /* Au-delà de 12 essais, on tronque : illisible sur les réseaux sinon. */
   const corps = lignes.length<=12
