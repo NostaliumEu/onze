@@ -181,10 +181,66 @@ CONTINENTS = {
 
 
 
+
+# Codes de poste du modèle Wikipédia. Volontairement génériques : le modèle
+# ne distingue pas latéral et central, on ne l'invente donc pas.
+POS_WIKI = {"GK": "GB", "DF": "DEF", "MF": "MIL", "FW": "ATT"}
+
+# Codes FIFA à trois lettres du modèle Wikipédia. C'est une meilleure source
+# que la citoyenneté Wikidata pour le football : ENG, SCO, WAL et NIR sont
+# distingués, là où Wikidata ne connaît que "Royaume-Uni".
+FIFA = {
+    "ENG": "Angleterre", "SCO": "Écosse", "WAL": "Pays de Galles",
+    "NIR": "Irlande du Nord", "IRL": "Irlande",
+    "FRA": "France", "ESP": "Espagne", "GER": "Allemagne", "ITA": "Italie",
+    "POR": "Portugal", "NED": "Pays-Bas", "BEL": "Belgique", "SUI": "Suisse",
+    "AUT": "Autriche", "CRO": "Croatie", "SRB": "Serbie", "POL": "Pologne",
+    "NOR": "Norvège", "SWE": "Suède", "DEN": "Danemark", "FIN": "Finlande",
+    "ISL": "Islande", "TUR": "Turquie", "GRE": "Grèce", "ROU": "Roumanie",
+    "BUL": "Bulgarie", "CZE": "Tchéquie", "SVK": "Slovaquie", "SVN": "Slovénie",
+    "HUN": "Hongrie", "UKR": "Ukraine", "RUS": "Russie", "BLR": "Biélorussie",
+    "BIH": "Bosnie-Herzégovine", "MNE": "Monténégro", "ALB": "Albanie",
+    "KVX": "Kosovo", "KOS": "Kosovo", "MKD": "Macédoine du Nord",
+    "EST": "Estonie", "LVA": "Lettonie", "LTU": "Lituanie", "LUX": "Luxembourg",
+    "CYP": "Chypre", "MLT": "Malte", "MDA": "Moldavie", "ARM": "Arménie",
+    "AZE": "Azerbaïdjan", "GEO": "Géorgie", "ISR": "Israël",
+
+    "BRA": "Brésil", "ARG": "Argentine", "URU": "Uruguay", "COL": "Colombie",
+    "ECU": "Équateur", "CHI": "Chili", "PER": "Pérou", "PAR": "Paraguay",
+    "VEN": "Venezuela", "BOL": "Bolivie", "SUR": "Suriname",
+    "MEX": "Mexique", "USA": "États-Unis", "CAN": "Canada",
+    "CRC": "Costa Rica", "HON": "Honduras", "PAN": "Panama", "SLV": "Salvador",
+    "GUA": "Guatemala", "JAM": "Jamaïque", "HAI": "Haïti", "CUB": "Cuba",
+    "DOM": "République dominicaine", "TRI": "Trinité-et-Tobago", "CUW": "Curaçao",
+
+    "MAR": "Maroc", "SEN": "Sénégal", "NGA": "Nigeria", "ALG": "Algérie",
+    "EGY": "Égypte", "GHA": "Ghana", "CMR": "Cameroun", "CIV": "Côte d'Ivoire",
+    "MLI": "Mali", "TUN": "Tunisie", "GAB": "Gabon", "GUI": "Guinée",
+    "GNB": "Guinée-Bissau", "EQG": "Guinée équatoriale", "BFA": "Burkina Faso",
+    "GAM": "Gambie", "LBR": "Liberia", "COD": "RD Congo", "CGO": "Congo",
+    "ANG": "Angola", "CPV": "Cap-Vert", "COM": "Comores", "KEN": "Kenya",
+    "TAN": "Tanzanie", "ZAM": "Zambie", "ZIM": "Zimbabwe", "RSA": "Afrique du Sud",
+    "TOG": "Togo", "BEN": "Bénin", "NIG": "Niger", "CHA": "Tchad",
+    "MTN": "Mauritanie", "SLE": "Sierra Leone", "MAD": "Madagascar",
+    "MOZ": "Mozambique", "LBY": "Libye", "SDN": "Soudan", "UGA": "Ouganda",
+    "BDI": "Burundi", "SOM": "Somalie", "NAM": "Namibie",
+
+    "JPN": "Japon", "KOR": "Corée du Sud", "IRN": "Iran", "KSA": "Arabie saoudite",
+    "KUW": "Koweït", "QAT": "Qatar", "UAE": "Émirats arabes unis",
+    "IRQ": "Irak", "SYR": "Syrie", "LBN": "Liban", "JOR": "Jordanie",
+    "UZB": "Ouzbékistan", "CHN": "Chine", "IDN": "Indonésie", "THA": "Thaïlande",
+    "PHI": "Philippines", "IND": "Inde", "VIE": "Viêt Nam", "MAS": "Malaisie",
+
+    "AUS": "Australie", "NZL": "Nouvelle-Zélande",
+}
+
+
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 
 MODELE_JOUEUR = re.compile(r"\{\{\s*[Ff]s player(.*?)\}\}", re.S)
 CHAMP_NUM     = re.compile(r"\bno\s*=\s*(\d+)")
+CHAMP_POS     = re.compile(r"\bpos\s*=\s*([A-Za-z]{2,3})")
+CHAMP_NAT     = re.compile(r"\bnat\s*=\s*([A-Za-z]{3})")
 CHAMP_NOM     = re.compile(r"\bname\s*=\s*\[\[\s*([^\]|]+?)\s*[\]|]")
 # Libellé affiché quand le lien est de la forme [[Cible|Affiché]]
 ALIAS_LIEN    = re.compile(r"\bname\s*=\s*\[\[[^\]|]+\|\s*([^\]]+?)\s*\]\]")
@@ -208,7 +264,7 @@ def effectifs(titres):
                 timeout=90,
             )
             r.raise_for_status()
-            pages = r.json().get("query", {}).get("pages", [])
+            pages = json.loads(r.text, strict=False).get("query", {}).get("pages", [])
         except Exception as e:
             print(f"    ⚠ effectifs indisponibles pour ce lot : {e}", file=sys.stderr)
             continue
@@ -229,15 +285,21 @@ def effectifs(titres):
                     continue
                 num = CHAMP_NUM.search(bloc)
                 cible = nom.group(1).strip()
-                numero = int(num.group(1)) if num else 0
+                pos = CHAMP_POS.search(bloc)
+                nat = CHAMP_NAT.search(bloc)
+                fiche = {
+                    "num": int(num.group(1)) if num else 0,
+                    "pos": POS_WIKI.get(pos.group(1).upper(), "") if pos else "",
+                    "nat": FIFA.get(nat.group(1).upper(), "") if nat else "",
+                }
                 # Deux clés : le titre d'article et sa forme normalisée. Les
                 # modèles pointent souvent vers une redirection dont le nom
                 # diffère du titre canonique enregistré dans Wikidata.
-                squad[cible] = numero
-                squad[sans_accents(cible)] = numero
+                squad[cible] = fiche
+                squad[sans_accents(cible)] = fiche
                 alias = ALIAS_LIEN.search(bloc)
                 if alias:
-                    squad[sans_accents(alias.group(1).strip())] = numero
+                    squad[sans_accents(alias.group(1).strip())] = fiche
             if squad:
                 resultat[page["title"]] = squad
         time.sleep(0.5)
@@ -245,7 +307,7 @@ def effectifs(titres):
 
 
 REQUETE = """
-SELECT DISTINCT ?joueurLabel ?natLabel ?clubLabel ?ligue ?posteLabel
+SELECT DISTINCT ?joueur ?joueurLabel ?natLabel ?clubLabel ?ligue ?posteLabel
                 ?naissance ?numero ?debut ?artJoueur ?artClub
 WHERE {
   VALUES ?ligue { %s }
@@ -283,6 +345,41 @@ WHERE {
 """
 
 
+# Nombre de versions linguistiques de la fiche Wikipédia. C'est le meilleur
+# indicateur de notoriété disponible gratuitement : un international connu
+# dépasse la trentaine de langues, un joueur de rotation en a trois ou quatre.
+REQUETE_NOTORIETE = """
+SELECT ?joueur (COUNT(DISTINCT ?site) AS ?langues)
+WHERE {
+  ?club wdt:P118 %s .
+  ?joueur p:P54/ps:P54 ?club .
+  ?page schema:about ?joueur ; schema:isPartOf ?site .
+  FILTER(CONTAINS(STR(?site), "wikipedia.org"))
+}
+GROUP BY ?joueur
+"""
+
+
+def notoriete(qid):
+    """{uri_joueur: nb_langues}. Échec non bloquant : sans ces valeurs, le
+    mode facile est simplement indisponible, le reste du jeu fonctionne."""
+    try:
+        r = requests.get(
+            ENDPOINT,
+            params={"query": REQUETE_NOTORIETE % ("wd:" + qid), "format": "json"},
+            headers={"User-Agent": "ONZE-dataset/1.0 (jeu de devinette footballeurs)",
+                     "Accept": "application/sparql-results+json"},
+            timeout=180,
+        )
+        if r.status_code != 200:
+            raise RuntimeError(f"HTTP {r.status_code}")
+        return {b["joueur"]["value"]: int(b["langues"]["value"])
+                for b in json.loads(r.text, strict=False)["results"]["bindings"]}
+    except Exception as e:
+        print(f"    ⚠ notoriété indisponible : {e}", file=sys.stderr)
+        return {}
+
+
 def interroger(qid, essais=3):
     """Interroge le endpoint, avec relances. Remonte le corps de l'erreur :
     sans ça, un plantage SPARQL se traduit par un simple 'HTTP 500' illisible."""
@@ -299,7 +396,9 @@ def interroger(qid, essais=3):
             )
             if r.status_code != 200:
                 raise RuntimeError(f"HTTP {r.status_code} — {r.text[:300]}")
-            return r.json()["results"]["bindings"]
+            # strict=False : des libellés Wikidata contiennent des caractères
+            # de contrôle bruts qui font échouer le parseur par défaut.
+            return json.loads(r.text, strict=False)["results"]["bindings"]
         except Exception as e:
             print(f"    tentative {tentative}/{essais} échouée : {e}", file=sys.stderr)
             if tentative == essais:
@@ -333,6 +432,7 @@ def construire():
         clubs = sorted({l["artClub"]["value"] for l in lignes if "artClub" in l})
         print(f"  {len(clubs)} clubs — lecture des effectifs Wikipédia…", file=sys.stderr)
         squads = effectifs(clubs)
+        langues = notoriete(qid)
         dans_effectif = {}
         for squad in squads.values():
             dans_effectif.update(squad)
@@ -358,11 +458,6 @@ def construire():
 
             libelle_poste = l.get("posteLabel", {}).get("value", "")
             poste, rang = poste_depuis(libelle_poste)
-            if not poste:
-                rejets["poste"] += 1
-                if libelle_poste:
-                    postes_inconnus[libelle_poste] = postes_inconnus.get(libelle_poste, 0) + 1
-                continue
 
             # ── Filtres, du moins coûteux au plus discriminant ──
             if nom in EXCLUSIONS:
@@ -380,8 +475,23 @@ def construire():
                 continue
             if cle:
                 apparies.add(cle)
+            fiche = dans_effectif.get(cle, {}) if cle else {}
 
-            nat = NAT_ALIAS.get(l["natLabel"]["value"], l["natLabel"]["value"])
+            # Wikidata ne renseigne pas de poste pour beaucoup de joueurs :
+            # le modèle Wikipédia prend le relais, en version générique.
+            if not poste:
+                poste, rang = fiche.get("pos", ""), 1
+            if not poste:
+                rejets["poste"] += 1
+                if libelle_poste:
+                    postes_inconnus[libelle_poste] = postes_inconnus.get(libelle_poste, 0) + 1
+                continue
+
+            # Le code FIFA de l'effectif prime : il distingue Angleterre,
+            # Écosse, Pays de Galles et Irlande du Nord, là où la citoyenneté
+            # Wikidata ne connaît que "Royaume-Uni".
+            nat = fiche.get("nat", "") or NAT_ALIAS.get(
+                l["natLabel"]["value"], l["natLabel"]["value"])
             if nat in NAT_TROP_VAGUE:
                 rejets["nation"] += 1
                 continue
@@ -402,7 +512,7 @@ def construire():
                 numero = 0
             # Wikipédia tient les numéros à jour, Wikidata presque jamais :
             # le numéro de l'effectif publié prime quand il existe.
-            numero = dans_effectif.get(cle, 0) if cle else numero
+            numero = fiche.get("num", 0) or numero
 
             # Année d'arrivée : facultative, 0 si absente.
             try:
@@ -428,6 +538,7 @@ def construire():
 
             joueurs[nom] = {
                 "nom": nom,
+                "pop": langues.get(l["joueur"]["value"], 0),
                 "nat": nat,
                 "cont": CONTINENTS.get(nat, "Autre"),
                 "champ": nom_champ,
@@ -441,6 +552,12 @@ def construire():
             gardes += 1
 
         print(f"  {len(lignes)} lignes reçues · {gardes} joueurs retenus", file=sys.stderr)
+
+        connus = sum(1 for j in joueurs.values()
+                     if j["champ"] == nom_champ and j["pop"] >= 15)
+        if gardes:
+            print(f"  dont {connus} joueurs à 15+ versions linguistiques",
+                  file=sys.stderr)
 
         # Diagnostic clé : les joueurs présents dans l'effectif publié mais
         # jamais rapprochés d'une fiche Wikidata. Si ce nombre est élevé,
