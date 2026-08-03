@@ -150,7 +150,8 @@
     }
     .cell::before{
       content:attr(data-l);font-family:'Roboto Mono',monospace;font-size:8px;
-      letter-spacing:.12em;text-transform:uppercase;opacity:.62;font-weight:400;
+      letter-spacing:.1em;text-transform:uppercase;opacity:.62;font-weight:400;
+      line-height:1.25;
     }
 
     /* Bandeau du joueur tenté : encre pleine, index à gauche. */
@@ -273,7 +274,7 @@
         <tr>
           <th style="min-width:150px">Joueur</th>
           <th>Nation</th><th>Championnat</th><th>Club</th>
-          <th>Poste</th><th>Âge</th><th>N°</th>
+          <th>Poste</th><th>Âge</th><th>Depuis</th>
         </tr>
       </thead>
       <tbody id="rows"></tbody>
@@ -488,7 +489,7 @@ async function chargerDataset(){
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
     if(!Array.isArray(d) || d.length < 100) throw new Error("dataset trop court");
-    const requis = ["nom","nat","cont","champ","club","poste","age","num"];
+    const requis = ["nom","nat","cont","champ","club","poste","age","depuis"];
     if(!requis.every(k => k in d[0])) throw new Error("champs manquants");
     PLAYERS = d;
     $("source").textContent = `${d.length} joueurs · Wikidata`;
@@ -743,9 +744,10 @@ function jouer(p){
 function cmp(a,b){return a===b?"hit":""}
 
 function dessiner(p, anim=true){
-  /* Un numéro absent vaut 0 dans Wikidata. Le comparer donnerait un faux
-     vert entre deux joueurs sans numéro : on l'affiche neutre. */
-  const numConnu = p.num > 0 && cible.num > 0;
+  /* L'année d'arrivée au club remplace le numéro de maillot : Wikidata ne
+     renseigne P1618 que sur une minorité de fiches, alors que la date de
+     début d'appartenance est exigée par la requête, donc toujours là. */
+  const depConnu = p.depuis > 0 && cible.depuis > 0;
   const cells=[
     {v:p.nom, cls:"name", l:""},
     {v:p.nat, l:"Nation", cls: p.nat===cible.nat?"hit":(p.cont===cible.cont?"near":"")},
@@ -753,9 +755,9 @@ function dessiner(p, anim=true){
     {v:p.club, l:"Club", cls: cmp(p.club,cible.club)},
     {v:p.poste, l:"Poste", cls: p.poste===cible.poste?"hit":(FAMILLE[p.poste]===FAMILLE[cible.poste]?"near":"")},
     {v:p.age, l:"Âge", cls: cmp(p.age,cible.age), fl:p.age<cible.age?"↑":p.age>cible.age?"↓":""},
-    {v:p.num>0?p.num:"—", l:"N°",
-     cls: numConnu?cmp(p.num,cible.num):"",
-     fl:  numConnu&&p.num!==cible.num ? (p.num<cible.num?"↑":"↓") : ""}
+    {v:p.depuis>0?p.depuis:"—", l:"Au club depuis",
+     cls: depConnu?cmp(p.depuis,cible.depuis):"",
+     fl:  depConnu&&p.depuis!==cible.depuis ? (p.depuis<cible.depuis?"↑":"↓") : ""}
   ];
   const idx=String(essais.length).padStart(2,"0");
   const tr=document.createElement("tr");
@@ -821,7 +823,7 @@ function textePartage(){
     carre(p.club===cible.club, false),
     carre(p.poste===cible.poste, FAMILLE[p.poste]===FAMILLE[cible.poste]),
     carre(p.age===cible.age,   false),
-    carre(p.num===cible.num,   false)
+    carre(p.depuis===cible.depuis, false)
   ].join(""));
   /* Au-delà de 12 essais, on tronque : illisible sur les réseaux sinon. */
   const corps = lignes.length<=12
