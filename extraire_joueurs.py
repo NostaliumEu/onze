@@ -286,31 +286,7 @@ def construire():
                     postes_inconnus[libelle_poste] = postes_inconnus.get(libelle_poste, 0) + 1
                 continue
 
-            try:
-                age = age_au(l["naissance"]["value"], aujourdhui)
-            except ValueError:
-                rejets["naissance"] += 1
-                continue
-            if not 15 <= age <= 41:
-                rejets["age"] += 1
-                continue
-
-            try:
-                numero = int(float(l.get("numero", {}).get("value", 0)))
-            except ValueError:
-                numero = 0
-            # Wikipédia tient les numéros à jour, Wikidata presque jamais.
-            numero = numero_wiki or numero
-            # Le numéro reste facultatif : P1618 n'est renseigné que sur une
-            # minorité de fiches, y compris pour des titulaires. Le jeu affiche
-            # "—" et neutralise la comparaison quand il manque.
-
-            # Année d'arrivée : facultative désormais, 0 si absente.
-            try:
-                depuis = int(l["debut"]["value"][:4])
-            except (KeyError, ValueError):
-                depuis = 0
-
+            # ── Filtres, du moins coûteux au plus discriminant ──
             if nom in EXCLUSIONS:
                 rejets["exclu"] += 1
                 continue
@@ -322,12 +298,35 @@ def construire():
             if dans_effectif and art not in dans_effectif:
                 rejets["hors_effectif"] += 1
                 continue
-            numero_wiki = dans_effectif.get(art, 0)
 
             nat = l["natLabel"]["value"]
             if nat in NAT_TROP_VAGUE:
                 rejets["nation"] += 1
                 continue
+
+            try:
+                age = age_au(l["naissance"]["value"], aujourdhui)
+            except ValueError:
+                rejets["naissance"] += 1
+                continue
+            if not 15 <= age <= 41:
+                rejets["age"] += 1
+                continue
+
+            # ── Valeurs retenues ──
+            try:
+                numero = int(float(l.get("numero", {}).get("value", 0)))
+            except ValueError:
+                numero = 0
+            # Wikipédia tient les numéros à jour, Wikidata presque jamais :
+            # le numéro de l'effectif publié prime quand il existe.
+            numero = dans_effectif.get(art, 0) or numero
+
+            # Année d'arrivée : facultative, 0 si absente.
+            try:
+                depuis = int(l["debut"]["value"][:4])
+            except (KeyError, ValueError):
+                depuis = 0
             # Un joueur ressort plusieurs fois : plusieurs postes, ou des prêts
             # dont la date de fin n'a jamais été renseignée. On garde le poste
             # le plus précis, et le numéro s'il finit par apparaître.
