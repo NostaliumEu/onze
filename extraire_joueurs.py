@@ -22,6 +22,7 @@ prévoir une liste manuelle de corrections appliquée après extraction.
 import json
 import re
 import sys
+import unicodedata
 import time
 from datetime import date
 
@@ -92,7 +93,6 @@ POSTES = [
 
 
 def sans_accents(t):
-    import unicodedata
     return "".join(c for c in unicodedata.normalize("NFD", t.lower())
                    if unicodedata.category(c) != "Mn")
 
@@ -242,6 +242,45 @@ def effectifs(titres):
                 resultat[page["title"]] = squad
         time.sleep(0.5)
     return resultat
+
+
+REQUETE = """
+SELECT DISTINCT ?joueurLabel ?natLabel ?clubLabel ?ligue ?posteLabel
+                ?naissance ?numero ?debut ?artJoueur ?artClub
+WHERE {
+  VALUES ?ligue { %s }
+
+  ?club wdt:P118 ?ligue .
+
+  # Appartenance à un club sans date de fin = club actuel
+  ?joueur p:P54 ?appartenance .
+  ?appartenance ps:P54 ?club .
+  FILTER NOT EXISTS { ?appartenance pq:P582 ?fin . }
+
+  # Date d'arrivée : information, pas condition. Filtrer dessus écartait
+  # les joueurs fidèles à leur club, c'est-à-dire les plus connus.
+  OPTIONAL { ?appartenance pq:P580 ?debut . }
+
+  # Fin d'activité déclarée = carrière terminée. C'est ce qui écarte les
+  # retraités dont l'appartenance au club n'a jamais été clôturée.
+  FILTER NOT EXISTS { ?joueur wdt:P2032 ?finCarriere . }
+
+  ?joueur wdt:P27 ?nat .
+  ?joueur wdt:P569 ?naissance .
+
+  OPTIONAL { ?joueur wdt:P413 ?poste . }
+  OPTIONAL { ?appartenance pq:P1618 ?numero . }
+
+  # Titres des articles Wikipédia anglophones : clé de rapprochement avec
+  # les tableaux d'effectifs, bien plus fiable qu'un nom affiché.
+  ?pageJ schema:about ?joueur ; schema:isPartOf <https://en.wikipedia.org/> ;
+         schema:name ?artJoueur .
+  ?pageC schema:about ?club ; schema:isPartOf <https://en.wikipedia.org/> ;
+         schema:name ?artClub .
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "fr,en". }
+}
+"""
 
 
 def interroger(qid, essais=3):
