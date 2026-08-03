@@ -76,6 +76,15 @@
   .modes button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
 
   /* ── Saisie ──────────────────────────────── */
+  .facile{
+    display:flex;align-items:center;gap:9px;margin:14px 0 0;cursor:pointer;
+    font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink-soft);
+  }
+  .facile[hidden]{display:none}
+  .facile input{width:16px;height:16px;accent-color:var(--navy);cursor:pointer;margin:0}
+  .facile #facileNb{opacity:.6}
+
   .search{position:relative;margin-bottom:26px}
   #guess{
     width:100%;padding:15px 16px;font-family:'Archivo',sans-serif;font-size:17px;font-weight:600;
@@ -272,6 +281,11 @@
     <button id="mDaily" aria-pressed="true">Quotidien</button>
     <button id="mInf" aria-pressed="false">Infini</button>
   </div>
+
+  <label class="facile" id="facileBox" hidden>
+    <input type="checkbox" id="facile"> Mode facile — joueurs connus uniquement
+    <span id="facileNb"></span>
+  </label>
 
   <div class="search">
     <input id="guess" autocomplete="off" placeholder="Nom d'un joueur…">
@@ -504,10 +518,24 @@ async function chargerDataset(){
     const requis = ["nom","nat","cont","champ","club","poste","age","num","depuis"];
     if(!requis.every(k => k in d[0])) throw new Error("champs manquants");
     PLAYERS = d;
+    calculerVivier();
     $("source").textContent = `${d.length} joueurs · Wikidata`;
   }catch(e){
+    calculerVivier();
     $("source").textContent = `${PLAYERS.length} joueurs · données d'amorce`;
   }
+}
+
+/* Vivier "facile" : le tiers le plus connu, mesuré par le nombre de versions
+   linguistiques de la fiche Wikipédia. Un seuil fixe ne tiendrait pas — la
+   distribution change à chaque extraction — donc on prend un rang relatif. */
+let VIVIER_FACILE = [];
+
+function calculerVivier(){
+  const avecPop = PLAYERS.filter(p => typeof p.pop === "number" && p.pop > 0);
+  if(avecPop.length < 80){ VIVIER_FACILE = []; return; }   // donnée absente
+  const tries = [...avecPop].sort((a,b) => b.pop - a.pop);
+  VIVIER_FACILE = tries.slice(0, Math.max(60, Math.round(tries.length * 0.33)));
 }
 
 const FAMILLE={GB:"Gardien",
@@ -655,7 +683,7 @@ const Sauvegarde = {
   }
 };
 
-let mode="daily", cible=null, essais=[], fini=false, envoye=false, sel=-1, filtres=[];
+let mode="daily", facile=false, cible=null, essais=[], fini=false, envoye=false, sel=-1, filtres=[];
 
 const $=id=>document.getElementById(id);
 const norm=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
@@ -670,7 +698,10 @@ function joueurDuJour(){
 }
 
 function demarrer(){
-  cible = mode==="daily" ? joueurDuJour() : PLAYERS[Math.floor(Math.random()*PLAYERS.length)];
+  const vivier = (mode==="inf" && facile && VIVIER_FACILE.length)
+    ? VIVIER_FACILE : PLAYERS;
+  cible = mode==="daily" ? joueurDuJour()
+                         : vivier[Math.floor(Math.random()*vivier.length)];
   essais=[]; fini=false; envoye=false;
   $("rows").innerHTML=""; $("out").innerHTML="";
   $("guess").value=""; $("guess").disabled=false;
@@ -683,7 +714,9 @@ function demarrer(){
   $("modeLabel").textContent = mode==="daily" ? "Édition du jour" : "Partie libre";
   $("dateLabel").textContent = mode==="daily"
     ? new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"})
-    : "Tirage aléatoire";
+    : (facile && VIVIER_FACILE.length ? "Tirage parmi les joueurs connus" : "Tirage aléatoire");
+  $("facileBox").hidden = !(mode==="inf" && VIVIER_FACILE.length);
+  $("facileNb").textContent = VIVIER_FACILE.length ? `(${VIVIER_FACILE.length})` : "";
 }
 
 /* Rejoue les essais sauvegardés, sans animation ni réenvoi des stats. */
@@ -918,6 +951,7 @@ function basculer(m){
 }
 $("mDaily").onclick=()=>basculer("daily");
 $("mInf").onclick=()=>basculer("inf");
+$("facile").onchange=e=>{ facile=e.target.checked; if(mode==="inf") demarrer(); };
 
 chargerDataset().then(demarrer);
 </script>
