@@ -28,6 +28,14 @@ import requests
 
 ENDPOINT = "https://query.wikidata.org/sparql"
 
+# Une appartenance à un club commencée avant cette date est considérée périmée.
+# Quatre ans couvre les joueurs fidèles sans ramener les retraités.
+DEPUIS = f"{date.today().year - 4}-01-01T00:00:00Z"
+
+# Wikidata donne "Royaume-Uni" comme citoyenneté : inutilisable pour du foot,
+# où les quatre nations jouent séparément. Sans pays plus précis, on écarte.
+NAT_TROP_VAGUE = {"Royaume-Uni", "United Kingdom"}
+
 # ⚠ À VÉRIFIER avant la première exécution : ouvre chaque identifiant sur
 # wikidata.org pour confirmer qu'il pointe bien vers la bonne compétition.
 # Les identifiants ci-dessous sont donnés de mémoire et peuvent être erronés.
@@ -111,6 +119,12 @@ WHERE {
   ?appartenance ps:P54 ?club .
   FILTER NOT EXISTS { ?appartenance pq:P582 ?fin . }
 
+  # Un contrat sans date de fin ne suffit pas : des milliers d'appartenances
+  # anciennes n'ont jamais été clôturées sur Wikidata. On exige donc une date
+  # de début récente, ce qui écarte les joueurs partis depuis longtemps.
+  ?appartenance pq:P580 ?debut .
+  FILTER(?debut >= "%s"^^xsd:dateTime)
+
   ?joueur wdt:P27 ?nat .
   ?joueur wdt:P569 ?naissance .
 
@@ -129,7 +143,7 @@ def interroger(qid, essais=3):
         try:
             r = requests.get(
                 ENDPOINT,
-                params={"query": REQUETE % ("wd:" + qid), "format": "json"},
+                params={"query": REQUETE % ("wd:" + qid, DEPUIS), "format": "json"},
                 headers={
                     "User-Agent": "ONZE-dataset/1.0 (jeu de devinette footballeurs)",
                     "Accept": "application/sparql-results+json",
@@ -169,7 +183,8 @@ def construire():
             continue
 
         # Compteurs de rejet : sans eux, un dataset vide est indébuggable.
-        rejets = {"libelle": 0, "naissance": 0, "poste": 0, "age": 0}
+        rejets = {"libelle": 0, "naissance": 0, "poste": 0, "age": 0,
+                  "nation": 0, "sans_numero": 0}
         gardes = 0
 
         for l in lignes:
@@ -194,7 +209,7 @@ def construire():
             except ValueError:
                 rejets["naissance"] += 1
                 continue
-            if not 15 <= age <= 45:
+            if not 15 <= age <= 41:
                 rejets["age"] += 1
                 continue
 
@@ -202,8 +217,17 @@ def construire():
                 numero = int(float(l.get("numero", {}).get("value", 0)))
             except ValueError:
                 numero = 0
+            # Un joueur d'effectif actuel a presque toujours un numéro
+            # renseigné. Son absence est le meilleur signal d'une fiche
+            # périmée, et un indice à zéro n'apporte rien au joueur.
+            if numero <= 0:
+                rejets["sans_numero"] += 1
+                continue
 
             nat = l["natLabel"]["value"]
+            if nat in NAT_TROP_VAGUE:
+                rejets["nation"] += 1
+                continue
             # Un joueur ressort plusieurs fois : plusieurs postes, ou des prêts
             # dont la date de fin n'a jamais été renseignée. On garde le poste
             # le plus précis, et le numéro s'il finit par apparaître.
