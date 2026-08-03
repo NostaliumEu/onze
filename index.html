@@ -59,7 +59,7 @@
     font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.14em;
     text-transform:uppercase;color:var(--ink-soft);
     padding:7px 0;border-bottom:1px solid var(--rule);margin-bottom:22px;
-    display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    display:flex;justify-content:space-between;gap:6px 12px;flex-wrap:wrap;
   }
 
   /* ── Modes ───────────────────────────────── */
@@ -106,6 +106,7 @@
   .cell{
     height:56px;display:flex;align-items:center;justify-content:center;
     text-align:center;padding:5px 7px;font-size:12px;font-weight:600;line-height:1.2;
+    overflow-wrap:anywhere;hyphens:auto;
     background:var(--dead);color:#fff;
     transform-origin:center;animation:flip .42s ease-out both;
   }
@@ -122,6 +123,31 @@
     100%{transform:rotateX(0);opacity:1}
   }
   @media (prefers-reduced-motion:reduce){.cell{animation:none}}
+
+  /* ── Mobile : la ligne de tableau devient une carte ──────────
+     Sept colonnes ne tiennent pas sous 400px. Le nom occupe toute
+     la largeur en en-tête, les six attributs passent en grille 3×2. */
+  @media (max-width:640px){
+    .board{overflow-x:visible}
+    table{min-width:0;display:block}
+    thead{display:none}
+    tbody{display:block}
+    tbody tr{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:14px}
+    tbody td{padding:0;display:block}
+    tbody td:first-child{grid-column:1 / -1;margin-bottom:2px}
+
+    .cell{
+      height:auto;min-height:54px;flex-direction:column;justify-content:center;gap:3px;
+      font-size:11px;padding:7px 5px;
+    }
+    .cell::before{
+      content:attr(data-l);font-family:'Roboto Mono',monospace;font-size:8px;
+      letter-spacing:.11em;text-transform:uppercase;opacity:.72;font-weight:400;
+    }
+    .cell.name{min-height:0;padding:11px 12px;font-size:15px}
+    .cell.name::before{content:none}
+    .cell .arrow{margin-left:0;font-size:15px}
+  }
 
   /* ── Pied ────────────────────────────────── */
   .legend{
@@ -169,6 +195,12 @@
     text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;
   }
   .big{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:18px}
+  @media (max-width:420px){
+    .big{gap:18px}
+    .big b{font-size:32px}
+    .result{padding:16px;box-shadow:5px 5px 0 var(--navy)}
+    .actions button{flex:1 1 auto}
+  }
   .big div{min-width:110px}
   .big b{
     display:block;font-family:'Anton',sans-serif;font-size:40px;line-height:1;
@@ -452,8 +484,8 @@ const FAMILLE={GB:"Gardien",DC:"Défenseur",DD:"Défenseur",DG:"Défenseur",
 /* ── Backend de statistiques ────────────────────────────────────
    Renseigne ces deux valeurs pour brancher Supabase en production.
    Le SQL de la table et de la fonction est fourni à part.          */
-const SUPABASE_URL = "https://wqgzvzjscixwtmytwgav.supabase.co";          // ex. https://xxxx.supabase.co
-const SUPABASE_KEY = "sb_publishable_WuaD1LMBxb7QlXo2TzojCA_olrag4jA";          // clé publiable (anon)
+const SUPABASE_URL = "";          // ex. https://xxxx.supabase.co
+const SUPABASE_KEY = "";          // clé publiable (anon)
 
 const jourISO = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 
@@ -693,17 +725,17 @@ function cmp(a,b){return a===b?"hit":""}
 
 function dessiner(p, anim=true){
   const cells=[
-    {v:p.nom,cls:"name"},
-    {v:p.nat, cls: p.nat===cible.nat?"hit":(p.cont===cible.cont?"near":"")},
-    {v:p.champ, cls: cmp(p.champ,cible.champ)},
-    {v:p.club, cls: cmp(p.club,cible.club)},
-    {v:p.poste, cls: p.poste===cible.poste?"hit":(FAMILLE[p.poste]===FAMILLE[cible.poste]?"near":"")},
-    {v:p.age, cls: cmp(p.age,cible.age), fl:p.age<cible.age?"↑":p.age>cible.age?"↓":""},
-    {v:p.num, cls: cmp(p.num,cible.num), fl:p.num<cible.num?"↑":p.num>cible.num?"↓":""}
+    {v:p.nom,cls:"name",l:""},
+    {v:p.nat, l:"Nation", cls: p.nat===cible.nat?"hit":(p.cont===cible.cont?"near":"")},
+    {v:p.champ, l:"Championnat", cls: cmp(p.champ,cible.champ)},
+    {v:p.club, l:"Club", cls: cmp(p.club,cible.club)},
+    {v:p.poste, l:"Poste", cls: p.poste===cible.poste?"hit":(FAMILLE[p.poste]===FAMILLE[cible.poste]?"near":"")},
+    {v:p.age, l:"Âge", cls: cmp(p.age,cible.age), fl:p.age<cible.age?"↑":p.age>cible.age?"↓":""},
+    {v:p.num, l:"N°", cls: cmp(p.num,cible.num), fl:p.num<cible.num?"↑":p.num>cible.num?"↓":""}
   ];
   const tr=document.createElement("tr");
   tr.innerHTML=cells.map((c,i)=>
-    `<td><div class="cell ${c.cls}" style="${anim?`animation-delay:${i*90}ms`:"animation:none"}">${c.v}${
+    `<td><div class="cell ${c.cls}" data-l="${c.l}" style="${anim?`animation-delay:${i*90}ms`:"animation:none"}">${c.v}${
       c.fl?`<span class="arrow">${c.fl}</span>`:""}</div></td>`).join("");
   $("rows").appendChild(tr);
 }
