@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="en">
 <!--
   ONZE — jeu de devinette de footballeurs
   Prototype autonome. Aucune dépendance hors Google Fonts.
@@ -11,7 +13,8 @@
 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ONZE — devine le joueur</title>
+<title>ONZE — football player guessing game</title>
+<meta name="description" content="Guess the football player from Europe's top five leagues. A new puzzle every day, plus unlimited endless mode.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -64,6 +67,13 @@
 
   /* ── Modes ───────────────────────────────── */
   #serie{color:var(--navy);font-weight:700}
+  #lang{
+    font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.12em;
+    background:transparent;border:1px solid var(--rule);color:var(--ink-soft);
+    padding:2px 7px;cursor:pointer;text-transform:uppercase;
+  }
+  #lang:hover{border-color:var(--ink);color:var(--ink)}
+  #lang:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 
   .modes{display:flex;gap:0;margin-bottom:20px;border:2px solid var(--ink);width:fit-content}
   .modes button{
@@ -196,6 +206,7 @@
     border-top:1px solid var(--rule);
     font-family:'Roboto Mono',monospace;font-size:11px;color:var(--ink-soft);
   }
+  .legend b{font-weight:400}
   .legend i{display:inline-block;width:11px;height:11px;margin-right:6px;vertical-align:-1px}
   .result{
     margin-top:24px;border:3px solid var(--ink);padding:20px;background:#fff;
@@ -235,7 +246,7 @@
     font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;
   }
-  .big{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:18px}
+  .big{display:flex;gap:28px;flex-wrap:wrap}
   @media (max-width:420px){
     .big{gap:18px}
     .big b{font-size:32px}
@@ -251,15 +262,6 @@
     font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.11em;
     text-transform:uppercase;color:var(--ink-soft);
   }
-  .hist{display:flex;flex-direction:column;gap:4px}
-  .hrow{display:flex;align-items:center;gap:8px;font-family:'Roboto Mono',monospace;font-size:11px}
-  .hrow em{font-style:normal;width:26px;text-align:right;color:var(--ink-soft)}
-  .hbar{
-    height:19px;background:var(--dead);min-width:3px;
-    display:flex;align-items:center;justify-content:flex-end;
-    padding:0 6px;color:#fff;font-size:10px;transition:width .5s ease-out;
-  }
-  .hbar.me{background:var(--pitch)}
   .pending{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--ink-soft)}
 </style>
 
@@ -267,7 +269,7 @@
   <header>
     <div class="masthead">
       <h1>On<span>ze</span></h1>
-      <div class="kicker">Devine le joueur<br>essais illimités</div>
+      <div class="kicker" id="kicker"></div>
     </div>
   </header>
   <div class="strapline">
@@ -275,6 +277,7 @@
     <span id="dateLabel"></span>
     <span id="source"></span>
     <span id="serie"></span>
+    <button id="lang" type="button"></button>
   </div>
 
   <div class="modes">
@@ -283,7 +286,7 @@
   </div>
 
   <label class="facile" id="facileBox" hidden>
-    <input type="checkbox" id="facile"> Mode facile — joueurs connus uniquement
+    <input type="checkbox" id="facile"> <span id="facileTxt">Mode facile</span>
     <span id="facileNb"></span>
   </label>
 
@@ -292,7 +295,7 @@
     <div class="ac" id="ac"></div>
   </div>
 
-  <div class="tries" id="tries">Essai 1 / 8</div>
+  <div class="tries" id="tries"></div>
 
   <div class="board">
     <table>
@@ -308,10 +311,10 @@
   </div>
 
   <div class="legend">
-    <span><i style="background:var(--pitch)"></i>Exact</span>
-    <span><i style="background:var(--amber)"></i>Proche</span>
-    <span><i style="background:var(--dead)"></i>Faux</span>
-    <span>↑ plus grand &nbsp;·&nbsp; ↓ plus petit</span>
+    <span><i style="background:var(--pitch)"></i><b id="lgExact"></b></span>
+    <span><i style="background:var(--amber)"></i><b id="lgProche"></b></span>
+    <span><i style="background:var(--dead)"></i><b id="lgFaux"></b></span>
+    <span id="lgFleches"></span>
   </div>
 
   <div id="out"></div>
@@ -503,15 +506,177 @@ let PLAYERS = [
   {nom:"Ángel Di María",nat:"Argentine",cont:"Amérique du Sud",champ:"Primera División",club:"Rosario Central",poste:"AD",age:38,num:11}
 ];
 
+
+/* ── Bilingue ───────────────────────────────────────────────────
+   Détection sur la langue du navigateur, avec bascule manuelle
+   mémorisée. Sur un portail international l'anglais est le défaut ;
+   un visiteur francophone garde sa langue.                        */
+const T = {
+  fr:{
+    kicker:"Devine le joueur<br>essais illimités",
+    daily:"Quotidien", inf:"Infini",
+    edition:"Édition du jour", libre:"Partie libre",
+    tirageAlea:"Tirage aléatoire", tirage:s=>`Tirage — ${s}`,
+    facile:s=>`Mode facile — ${s}`,
+    placeholder:"Nom d'un joueur…",
+    essai:n=>`Essai ${n}`,
+    trouveEn:n=>`Trouvé en ${n} essai${n>1?"s":""}`,
+    thJoueur:"Joueur", thClub:"Club", thNation:"Nation", thChamp:"Championnat",
+    thPoste:"Poste", thAge:"Âge", thNum:"N°", thDepuis:"Depuis",
+    exact:"Exact", proche:"Proche", faux:"Faux",
+    plusGrand:"plus grand", plusPetit:"plus petit",
+    trouve:"Trouvé",
+    resultat:(nom,club,poste,n,e)=>
+      `C'était bien <strong>${nom}</strong> — ${club}, ${poste}. En <strong>${n}</strong> essai${n>1?"s":""}, soit <strong>${e}</strong> erreur${e>1?"s":""}.`,
+    partager:"Partager", copie:"Copié", copieManuelle:"Copie manuelle",
+    rejouer:"Rejouer", versInfini:"Passer en mode infini",
+    serie:n=>`Série ${n} jour${n>1?"s":""}`,
+    serieBilan:(n,r)=>`<b>${n}</b> jour${n>1?"s":""} d'affilée`+(r>n?` · record ${r}`:""),
+    palier:" · palier atteint",
+    statsCalcul:"Calcul des statistiques du jour…",
+    statsIndispo:"Statistiques indisponibles pour le moment.",
+    statsTitre:s=>`Statistiques du jour · source ${s}`,
+    battus:n=>n>1?"joueurs battus":"joueur battu",
+    duJour:"des joueurs du jour",
+    ontTrouve:n=>n>1?"ont trouvé aujourd'hui":"a trouvé aujourd'hui",
+    source:(n,s)=>`${n} joueurs · ${s}`,
+    amorce:"données d'amorce",
+    vivierC1:"Ligue des champions", vivierPop:"joueurs connus",
+    partageTitre:d=>`ONZE — ${d}`,
+    partageLigne:(n,e)=>`${n} essai${n>1?"s":""} · ${e} erreur${e>1?"s":""}`,
+    partageSerie:n=>`Série : ${n} jours`,
+    partieLibre:"partie libre",
+    locale:"fr-FR"
+  },
+  en:{
+    kicker:"Guess the player<br>unlimited tries",
+    daily:"Daily", inf:"Endless",
+    edition:"Today's edition", libre:"Free play",
+    tirageAlea:"Random pick", tirage:s=>`Pick — ${s}`,
+    facile:s=>`Easy mode — ${s}`,
+    placeholder:"Player name…",
+    essai:n=>`Try ${n}`,
+    trouveEn:n=>`Solved in ${n} tr${n>1?"ies":"y"}`,
+    thJoueur:"Player", thClub:"Club", thNation:"Nation", thChamp:"League",
+    thPoste:"Position", thAge:"Age", thNum:"No.", thDepuis:"Since",
+    exact:"Exact", proche:"Close", faux:"Wrong",
+    plusGrand:"higher", plusPetit:"lower",
+    trouve:"Solved",
+    resultat:(nom,club,poste,n,e)=>
+      `It was <strong>${nom}</strong> — ${club}, ${poste}. In <strong>${n}</strong> tr${n>1?"ies":"y"}, with <strong>${e}</strong> miss${e>1?"es":""}.`,
+    partager:"Share", copie:"Copied", copieManuelle:"Copy manually",
+    rejouer:"Play again", versInfini:"Switch to endless",
+    serie:n=>`Streak ${n} day${n>1?"s":""}`,
+    serieBilan:(n,r)=>`<b>${n}</b> day${n>1?"s":""} in a row`+(r>n?` · best ${r}`:""),
+    palier:" · milestone reached",
+    statsCalcul:"Loading today's stats…",
+    statsIndispo:"Stats unavailable right now.",
+    statsTitre:s=>`Today's stats · source ${s}`,
+    battus:n=>n>1?"players beaten":"player beaten",
+    duJour:"of today's players",
+    ontTrouve:n=>n>1?"solved it today":"solved it today",
+    source:(n,s)=>`${n} players · ${s}`,
+    amorce:"starter data",
+    vivierC1:"Champions League", vivierPop:"well-known players",
+    partageTitre:d=>`ONZE — ${d}`,
+    partageLigne:(n,e)=>`${n} tr${n>1?"ies":"y"} · ${e} miss${e>1?"es":""}`,
+    partageSerie:n=>`Streak: ${n} days`,
+    partieLibre:"free play",
+    locale:"en-GB"
+  }
+};
+
+let LANG = (()=>{
+  try{ const l = localStorage.getItem("onze:lang"); if(l && T[l]) return l; }catch(e){}
+  return (navigator.language||"en").toLowerCase().startsWith("fr") ? "fr" : "en";
+})();
+let t = T[LANG];
+
+/* Les données sont produites en français par l'extracteur ; on traduit à
+   l'affichage plutôt que de dupliquer le dataset. */
+const POSTE_EN = {GB:"GK",DC:"CB",DD:"RB",DG:"LB",DEF:"DEF",
+  MDF:"DM",MC:"CM",MO:"AM",MIL:"MID",AG:"LW",AD:"RW",BU:"ST",ATT:"FWD"};
+
+const PAYS_EN = {
+  "Allemagne":"Germany","Angleterre":"England","Autriche":"Austria",
+  "Belgique":"Belgium","Biélorussie":"Belarus","Bosnie-Herzégovine":"Bosnia",
+  "Bulgarie":"Bulgaria","Chypre":"Cyprus","Croatie":"Croatia","Danemark":"Denmark",
+  "Espagne":"Spain","Estonie":"Estonia","Finlande":"Finland","France":"France",
+  "Grèce":"Greece","Hongrie":"Hungary","Irlande":"Ireland",
+  "Irlande du Nord":"N. Ireland","Islande":"Iceland","Italie":"Italy",
+  "Lettonie":"Latvia","Lituanie":"Lithuania","Luxembourg":"Luxembourg",
+  "Macédoine du Nord":"N. Macedonia","Malte":"Malta","Moldavie":"Moldova",
+  "Monténégro":"Montenegro","Norvège":"Norway","Pays de Galles":"Wales",
+  "Pays-Bas":"Netherlands","Pologne":"Poland","Portugal":"Portugal",
+  "Roumanie":"Romania","Russie":"Russia","Serbie":"Serbia","Slovaquie":"Slovakia",
+  "Slovénie":"Slovenia","Suède":"Sweden","Suisse":"Switzerland",
+  "Tchéquie":"Czechia","Turquie":"Türkiye","Ukraine":"Ukraine","Écosse":"Scotland",
+  "Albanie":"Albania","Arménie":"Armenia","Azerbaïdjan":"Azerbaijan",
+  "Géorgie":"Georgia","Kosovo":"Kosovo","Israël":"Israel",
+  "Afrique du Sud":"South Africa","Algérie":"Algeria","Angola":"Angola",
+  "Bénin":"Benin","Burkina Faso":"Burkina Faso","Burundi":"Burundi",
+  "Cameroun":"Cameroon","Cap-Vert":"Cape Verde","Comores":"Comoros",
+  "Congo":"Congo","Côte d'Ivoire":"Ivory Coast","Égypte":"Egypt",
+  "Gabon":"Gabon","Gambie":"Gambia","Ghana":"Ghana","Guinée":"Guinea",
+  "Guinée équatoriale":"Eq. Guinea","Guinée-Bissau":"Guinea-Bissau",
+  "Kenya":"Kenya","Liberia":"Liberia","Libye":"Libya","Madagascar":"Madagascar",
+  "Mali":"Mali","Maroc":"Morocco","Mauritanie":"Mauritania","Mozambique":"Mozambique",
+  "Namibie":"Namibia","Niger":"Niger","Nigeria":"Nigeria","Ouganda":"Uganda",
+  "RD Congo":"DR Congo","Sénégal":"Senegal","Sierra Leone":"Sierra Leone",
+  "Somalie":"Somalia","Soudan":"Sudan","Tanzanie":"Tanzania","Tchad":"Chad",
+  "Togo":"Togo","Tunisie":"Tunisia","Zambie":"Zambia","Zimbabwe":"Zimbabwe",
+  "Argentine":"Argentina","Bolivie":"Bolivia","Brésil":"Brazil","Chili":"Chile",
+  "Colombie":"Colombia","Équateur":"Ecuador","Paraguay":"Paraguay","Pérou":"Peru",
+  "Suriname":"Suriname","Uruguay":"Uruguay","Venezuela":"Venezuela",
+  "Canada":"Canada","Costa Rica":"Costa Rica","Cuba":"Cuba","Curaçao":"Curaçao",
+  "États-Unis":"USA","Guatemala":"Guatemala","Haïti":"Haiti","Honduras":"Honduras",
+  "Jamaïque":"Jamaica","Mexique":"Mexico","Panama":"Panama",
+  "République dominicaine":"Dominican Rep.","Salvador":"El Salvador",
+  "Trinité-et-Tobago":"Trinidad","Arabie saoudite":"Saudi Arabia","Chine":"China",
+  "Corée du Sud":"South Korea","Émirats arabes unis":"UAE","Inde":"India",
+  "Indonésie":"Indonesia","Irak":"Iraq","Iran":"Iran","Japon":"Japan",
+  "Jordanie":"Jordan","Koweït":"Kuwait","Liban":"Lebanon","Malaisie":"Malaysia",
+  "Ouzbékistan":"Uzbekistan","Philippines":"Philippines","Qatar":"Qatar",
+  "Syrie":"Syria","Thaïlande":"Thailand","Viêt Nam":"Vietnam",
+  "Australie":"Australia","Nouvelle-Zélande":"New Zealand"
+};
+
+const CHAMP_EN = {"Liga":"La Liga"};
+
+const trNat   = v => LANG==="en" ? (PAYS_EN[v]  || v) : v;
+const trPoste = v => LANG==="en" ? (POSTE_EN[v] || v) : v;
+const trChamp = v => LANG==="en" ? (CHAMP_EN[v] || v) : v;
+
 /* ── Chargement du dataset ──────────────────────────────────────
    Le tableau ci-dessus n'est qu'un filet de sécurité. Au démarrage,
    le jeu essaie de charger joueurs.json — régénéré chaque semaine
    depuis Wikidata par GitHub Actions. Si le fichier est absent ou
    trop maigre, on reste sur les données d'amorce plutôt que de
    lancer une partie avec un dataset cassé.                        */
+/* Deux sources, dans cet ordre :
+   1. GitHub Pages — mis à jour chaque lundi par GitHub Actions. Indispensable
+      sur un portail, où la copie uploadée est figée au jour de la soumission.
+   2. la copie locale, embarquée dans l'archive, si le réseau ou le dépôt
+      est indisponible.
+   GitHub Pages renvoie access-control-allow-origin: *, le cross-origin passe. */
+const SOURCES = [
+  "https://nostaliumeu.github.io/onze/joueurs.json",
+  "joueurs.json"
+];
+
 async function chargerDataset(){
+  for(const url of SOURCES){
+    try{
+      if(await essayerSource(url)) return;
+    }catch(e){ /* source suivante */ }
+  }
+  calculerVivier();
+  $("source").textContent = t.source(PLAYERS.length, t.amorce);
+}
+
+async function essayerSource(url){
   try{
-    const r = await fetch("joueurs.json", {cache:"no-cache"});
+    const r = await fetch(url, {cache:"no-cache"});
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
     if(!Array.isArray(d) || d.length < 100) throw new Error("dataset trop court");
@@ -519,23 +684,33 @@ async function chargerDataset(){
     if(!requis.every(k => k in d[0])) throw new Error("champs manquants");
     PLAYERS = d;
     calculerVivier();
-    $("source").textContent = `${d.length} joueurs · Wikidata`;
+    $("source").textContent = t.source(d.length,"Wikidata");
+    return true;
   }catch(e){
-    calculerVivier();
-    $("source").textContent = `${PLAYERS.length} joueurs · données d'amorce`;
+    return false;
   }
 }
 
-/* Vivier "facile" : le tiers le plus connu, mesuré par le nombre de versions
-   linguistiques de la fiche Wikipédia. Un seuil fixe ne tiendrait pas — la
-   distribution change à chaque extraction — donc on prend un rang relatif. */
-let VIVIER_FACILE = [];
+/* Vivier "facile", par ordre de préférence :
+   1. joueurs des clubs engagés dans la dernière Ligue des champions ;
+   2. à défaut, le tiers le plus connu selon le nombre de versions
+      linguistiques de la fiche Wikipédia.
+   Le repli existe parce que la requête C1 dépend d'un libellé de saison qui
+   peut ne rien retourner ; mieux vaut un mode facile approximatif qu'absent. */
+let VIVIER_FACILE = [], VIVIER_SOURCE = "";
 
 function calculerVivier(){
+  const c1 = PLAYERS.filter(p => p.c1);
+  if(c1.length >= 100){
+    VIVIER_FACILE = c1;
+    VIVIER_SOURCE = t.vivierC1;
+    return;
+  }
   const avecPop = PLAYERS.filter(p => typeof p.pop === "number" && p.pop > 0);
-  if(avecPop.length < 80){ VIVIER_FACILE = []; return; }   // donnée absente
+  if(avecPop.length < 80){ VIVIER_FACILE = []; VIVIER_SOURCE = ""; return; }
   const tries = [...avecPop].sort((a,b) => b.pop - a.pop);
   VIVIER_FACILE = tries.slice(0, Math.max(60, Math.round(tries.length * 0.33)));
+  VIVIER_SOURCE = t.vivierPop;
 }
 
 const FAMILLE={GB:"Gardien",
@@ -546,8 +721,8 @@ const FAMILLE={GB:"Gardien",
 /* ── Backend de statistiques ────────────────────────────────────
    Renseigne ces deux valeurs pour brancher Supabase en production.
    Le SQL de la table et de la fonction est fourni à part.          */
-const SUPABASE_URL = "https://wqgzvzjscixwtmytwgav.supabase.co";          // ex. https://xxxx.supabase.co
-const SUPABASE_KEY = "sb_publishable_WuaD1LMBxb7QlXo2TzojCA_olrag4jA";          // clé publiable (anon)
+const SUPABASE_URL = "";          // ex. https://xxxx.supabase.co
+const SUPABASE_KEY = "";          // clé publiable (anon)
 
 const jourISO = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
 
@@ -653,11 +828,24 @@ const Serie = {
   }
 };
 
+function appliquerLangue(){
+  document.documentElement.lang = LANG;
+  $("kicker").innerHTML       = t.kicker;
+  $("mDaily").textContent     = t.daily;
+  $("mInf").textContent       = t.inf;
+  $("guess").placeholder      = t.placeholder;
+  $("lang").textContent       = LANG==="fr" ? "EN" : "FR";
+  $("lgExact").textContent    = t.exact;
+  $("lgProche").textContent   = t.proche;
+  $("lgFaux").textContent     = t.faux;
+  $("lgFleches").textContent  = `↑ ${t.plusGrand}  ·  ↓ ${t.plusPetit}`;
+  const th = [t.thJoueur,t.thClub,t.thNation,t.thChamp,t.thPoste,t.thAge,t.thNum,t.thDepuis];
+  document.querySelectorAll("thead th").forEach((el,i)=>el.textContent=th[i]);
+}
+
 function afficherSerie(){
   const d = Serie.lire();
-  $("serie").textContent = d.actuelle > 0
-    ? `Série ${d.actuelle} jour${d.actuelle>1?"s":""}`
-    : "";
+  $("serie").textContent = d.actuelle > 0 ? t.serie(d.actuelle) : "";
 }
 
 const Sauvegarde = {
@@ -711,11 +899,12 @@ function demarrer(){
 
   majEssais();
   afficherSerie();
-  $("modeLabel").textContent = mode==="daily" ? "Édition du jour" : "Partie libre";
+  $("modeLabel").textContent = mode==="daily" ? t.edition : t.libre;
   $("dateLabel").textContent = mode==="daily"
-    ? new Date().toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long"})
-    : (facile && VIVIER_FACILE.length ? "Tirage parmi les joueurs connus" : "Tirage aléatoire");
+    ? new Date().toLocaleDateString(t.locale,{weekday:"long",day:"numeric",month:"long"})
+    : (facile && VIVIER_FACILE.length ? t.tirage(VIVIER_SOURCE) : t.tirageAlea);
   $("facileBox").hidden = !(mode==="inf" && VIVIER_FACILE.length);
+  $("facileTxt").textContent = t.facile(VIVIER_SOURCE);
   $("facileNb").textContent = VIVIER_FACILE.length ? `(${VIVIER_FACILE.length})` : "";
 }
 
@@ -747,9 +936,7 @@ function enregistrerPartie(){
 }
 
 function majEssais(){
-  $("tries").textContent = fini
-    ? `Trouvé en ${essais.length} essai${essais.length>1?"s":""}`
-    : `Essai ${essais.length+1}`;
+  $("tries").textContent = fini ? t.trouveEn(essais.length) : t.essai(essais.length+1);
 }
 
 /* ── Autocomplétion ─────────────────────────── */
@@ -799,15 +986,15 @@ function dessiner(p, anim=true, rang=essais.length){
   const depConnu = p.depuis > 0 && cible.depuis > 0;
   const cells=[
     {v:p.nom, cls:"name", l:""},
-    {v:p.club, l:"Club", cls: "club "+cmp(p.club,cible.club)},
-    {v:p.nat, l:"Nation", cls: p.nat===cible.nat?"hit":(p.cont===cible.cont?"near":"")},
-    {v:p.champ, l:"Championnat", cls: cmp(p.champ,cible.champ)},
-    {v:p.poste, l:"Poste", cls: p.poste===cible.poste?"hit":(FAMILLE[p.poste]===FAMILLE[cible.poste]?"near":"")},
-    {v:p.age, l:"Âge", cls: cmp(p.age,cible.age), fl:p.age<cible.age?"↑":p.age>cible.age?"↓":""},
-    {v:p.num>0?p.num:"—", l:"N°",
+    {v:p.club, l:t.thClub, cls: "club "+cmp(p.club,cible.club)},
+    {v:trNat(p.nat), l:t.thNation, cls: p.nat===cible.nat?"hit":(p.cont===cible.cont?"near":"")},
+    {v:trChamp(p.champ), l:t.thChamp, cls: cmp(p.champ,cible.champ)},
+    {v:trPoste(p.poste), l:t.thPoste, cls: p.poste===cible.poste?"hit":(FAMILLE[p.poste]===FAMILLE[cible.poste]?"near":"")},
+    {v:p.age, l:t.thAge, cls: cmp(p.age,cible.age), fl:p.age<cible.age?"↑":p.age>cible.age?"↓":""},
+    {v:p.num>0?p.num:"—", l:t.thNum,
      cls: numConnu?cmp(p.num,cible.num):"",
      fl:  numConnu&&p.num!==cible.num ? (p.num<cible.num?"↑":"↓") : ""},
-    {v:p.depuis>0?p.depuis:"—", l:"Depuis",
+    {v:p.depuis>0?p.depuis:"—", l:t.thDepuis,
      cls: depConnu?cmp(p.depuis,cible.depuis):"",
      fl:  depConnu&&p.depuis!==cible.depuis ? (p.depuis<cible.depuis?"↑":"↓") : ""}
   ];
@@ -830,18 +1017,16 @@ function terminer(restaure=false){
   const err=essais.length-1;
   $("out").innerHTML=`
     <div class="result">
-      <h2>Trouvé</h2>
-      <p>C'était bien <strong>${cible.nom}</strong> — ${cible.club}, ${cible.poste}.
-         En <strong>${essais.length}</strong> essai${essais.length>1?"s":""},
-         soit <strong>${err}</strong> erreur${err>1?"s":""}.</p>
+      <h2>${t.trouve}</h2>
+      <p>${t.resultat(cible.nom, cible.club, trPoste(cible.poste), essais.length, err)}</p>
       <div class="bilan" id="bilan"></div>
       <div class="actions">
-        <button id="share">Partager</button>
-        <button id="again">${mode==="daily"?"Passer en mode infini":"Rejouer"}</button>
+        <button id="share">${t.partager}</button>
+        <button id="again">${mode==="daily"?t.versInfini:t.rejouer}</button>
       </div>
       <textarea class="fallback" id="fb" readonly></textarea>
       ${mode==="daily"?`<div class="stats" id="stats">
-         <div class="pending">Calcul des statistiques du jour…</div></div>`:""}
+         <div class="pending">${t.statsCalcul}</div></div>`:""}
     </div>`;
   $("again").onclick=()=>{ if(mode==="daily") basculer("inf"); else demarrer(); };
   $("share").onclick=partager;
@@ -854,15 +1039,10 @@ function terminer(restaure=false){
     const s = Serie.valider();
     afficherSerie();
     const palier = [7,10,30,50,100,365].includes(s.actuelle);
-    $("bilan").innerHTML =
-      `<b>${s.actuelle}</b> jour${s.actuelle>1?"s":""} d'affilée`
-      + (s.record>s.actuelle ? ` · record ${s.record}` : "")
-      + (palier ? ` · palier atteint` : "");
+    $("bilan").innerHTML = t.serieBilan(s.actuelle, s.record) + (palier ? t.palier : "");
   }else{
     const s = Serie.lire();
-    $("bilan").innerHTML = s.actuelle>0
-      ? `<b>${s.actuelle}</b> jour${s.actuelle>1?"s":""} d'affilée`
-        + (s.record>s.actuelle ? ` · record ${s.record}` : "") : "";
+    $("bilan").innerHTML = s.actuelle>0 ? t.serieBilan(s.actuelle, s.record) : "";
   }
 
   chargerStats(essais.length, !envoye);
@@ -887,12 +1067,11 @@ function textePartage(){
 
   const err=essais.length-1;
   const date=mode==="daily"
-    ? new Date().toLocaleDateString("fr-FR",{day:"numeric",month:"long"})
-    : "partie libre";
+    ? new Date().toLocaleDateString(t.locale,{day:"numeric",month:"long"})
+    : t.partieLibre;
   const s = mode==="daily" ? Serie.lire() : null;
-  const suffixe = (s && s.actuelle>1) ? `\nSérie : ${s.actuelle} jours` : "";
-  return `ONZE — ${date}\n${essais.length} essai${essais.length>1?"s":""} · `
-       + `${err} erreur${err>1?"s":""}${suffixe}\n\n${corps}`;
+  const suffixe = (s && s.actuelle>1) ? `\n${t.partageSerie(s.actuelle)}` : "";
+  return `${t.partageTitre(date)}\n${t.partageLigne(essais.length, err)}${suffixe}\n\n${corps}`;
 }
 
 async function partager(){
@@ -903,11 +1082,11 @@ async function partager(){
   }
   try{
     await navigator.clipboard.writeText(txt);
-    b.textContent="Copié"; b.classList.add("ok");
-    setTimeout(()=>{b.textContent="Partager";b.classList.remove("ok")},2000);
+    b.textContent=t.copie; b.classList.add("ok");
+    setTimeout(()=>{b.textContent=t.partager;b.classList.remove("ok")},2000);
   }catch(e){
     $("fb").value=txt; $("fb").classList.add("show"); $("fb").select();
-    b.textContent="Copie manuelle";
+    b.textContent=t.copieManuelle;
   }
 }
 
@@ -920,26 +1099,16 @@ async function chargerStats(n, incr){
     if(incr){ envoye=true; enregistrerPartie(); }
   }
   catch(e){
-    box.innerHTML=`<div class="pending">Statistiques indisponibles pour le moment.</div>`;
+    box.innerHTML=`<div class="pending">${t.statsIndispo}</div>`;
     return;
   }
-  const cles=Object.keys(d.histo).map(Number).sort((a,b)=>a-b);
-  const pic=Math.max(...cles.map(k=>d.histo[k]),1);
-  const barres=cles.map(k=>`
-    <div class="hrow">
-      <em>${k}</em>
-      <div class="hbar ${k===n?"me":""}" style="width:${Math.round(100*d.histo[k]/pic)}%">${d.histo[k]}</div>
-    </div>`).join("");
-
   box.innerHTML=`
-    <div class="stats-head">Statistiques du jour · source ${d.source}</div>
+    <div class="stats-head">${t.statsTitre(d.source)}</div>
     <div class="big">
-      <div><b>${d.battus}</b><span>${d.battus>1?"joueurs battus":"joueur battu"}</span></div>
-      <div><b>${d.mieuxQue}%</b><span>des joueurs du jour</span></div>
-      <div><b>${d.total}</b><span>${d.total>1?"ont trouvé aujourd'hui":"a trouvé aujourd'hui"}</span></div>
-    </div>
-    <div class="stats-head">Répartition par nombre d'essais</div>
-    <div class="hist">${barres}</div>`;
+      <div><b>${d.battus}</b><span>${t.battus(d.battus)}</span></div>
+      <div><b>${d.mieuxQue}%</b><span>${t.duJour}</span></div>
+      <div><b>${d.total}</b><span>${t.ontTrouve(d.total)}</span></div>
+    </div>`;
 }
 
 /* ── Modes ──────────────────────────────────── */
@@ -951,7 +1120,16 @@ function basculer(m){
 }
 $("mDaily").onclick=()=>basculer("daily");
 $("mInf").onclick=()=>basculer("inf");
+$("lang").onclick=()=>{
+  LANG = LANG==="fr" ? "en" : "fr"; t = T[LANG];
+  try{ localStorage.setItem("onze:lang", LANG); }catch(e){}
+  calculerVivier();          // les libellés de vivier sont traduits
+  appliquerLangue();
+  demarrer();                // la grille se redessine dans la nouvelle langue
+};
 $("facile").onchange=e=>{ facile=e.target.checked; if(mode==="inf") demarrer(); };
 
+appliquerLangue();
 chargerDataset().then(demarrer);
 </script>
+</html>
