@@ -1,29 +1,5 @@
 [
  {
-  "nom": "Aaron Wan-Bissaka",
-  "pop": 42,
-  "nat": "RD Congo",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "DEF",
-  "age": 28,
-  "num": 29,
-  "depuis": 2026
- },
- {
-  "nom": "Aarón Anselmino",
-  "pop": 21,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DEF",
-  "age": 21,
-  "num": 30,
-  "depuis": 2024
- },
- {
   "nom": "Aarón Martín",
   "pop": 21,
   "nat": "Espagne",
@@ -70,30 +46,6 @@
   "age": 24,
   "num": 10,
   "depuis": 2023
- },
- {
-  "nom": "Abdukodir Khusanov",
-  "pop": 42,
-  "nat": "Ouzbékistan",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "DEF",
-  "age": 22,
-  "num": 45,
-  "depuis": 2025
- },
- {
-  "nom": "Abdülkadir Ömür",
-  "pop": 21,
-  "nat": "Turquie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "MIL",
-  "age": 27,
-  "num": 33,
-  "depuis": 2024
  },
  {
   "nom": "Achraf Hakimi",
@@ -144,30 +96,6 @@
   "depuis": 2021
  },
  {
-  "nom": "Adam Smith",
-  "pop": 31,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "DEF",
-  "age": 35,
-  "num": 15,
-  "depuis": 2014
- },
- {
-  "nom": "Adam Wharton",
-  "pop": 31,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "MIL",
-  "age": 22,
-  "num": 20,
-  "depuis": 2024
- },
- {
   "nom": "Adama Traoré",
   "pop": 48,
   "nat": "Espagne",
@@ -201,18 +129,6 @@
   "poste": "MIL",
   "age": 31,
   "num": 12,
-  "depuis": 2025
- },
- {
-  "nom": "Adrien Truffert",
-  "pop": 26,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "DEF",
-  "age": 24,
-  "num": 3,
   "depuis": 2025
  },
  {
@@ -264,18 +180,6 @@
   "depuis": 2019
  },
  {
-  "nom": "Ainsley Maitland-Niles",
-  "pop": 39,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Everton FC",
-  "poste": "DEF",
-  "age": 29,
-  "num": 2,
-  "depuis": 2026
- },
- {
   "nom": "Aitor Fernández Abarisketa",
   "pop": 17,
   "nat": "Espagne",
@@ -321,18 +225,6 @@
   "poste": "ATT",
   "age": 26,
   "num": 45,
-  "depuis": 2026
- },
- {
-  "nom": "Aladji Bamba",
-  "pop": 11,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "MIL",
-  "age": 20,
-  "num": 8,
   "depuis": 2026
  },
  {
@@ -468,18 +360,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Alejandro Garnacho",
-  "pop": 44,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MIL",
-  "age": 22,
-  "num": 17,
-  "depuis": 2026
- },
- {
   "nom": "Alejandro Gomes",
   "pop": 8,
   "nat": "Angleterre",
@@ -553,7 +433,7 @@
  },
  {
   "nom": "Alessandro Buongiorno",
-  "pop": 29,
+  "pop": 30,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -660,18 +540,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Alex Iwobi",
-  "pop": 48,
-  "nat": "Nigeria",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "MO",
-  "age": 30,
-  "num": 17,
-  "depuis": 2023
- },
- {
   "nom": "Alex Meret",
   "pop": 42,
   "nat": "Italie",
@@ -682,18 +550,6 @@
   "age": 29,
   "num": 1,
   "depuis": 2018
- },
- {
-  "nom": "Alexander Isak",
-  "pop": 57,
-  "nat": "Suède",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "ATT",
-  "age": 26,
-  "num": 9,
-  "depuis": 2025
  },
  {
   "nom": "Alexander Meyer",
@@ -732,18 +588,6 @@
   "depuis": 2020
  },
  {
-  "nom": "Alexis Mac Allister",
-  "pop": 55,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "MIL",
-  "age": 27,
-  "num": 10,
-  "depuis": 2023
- },
- {
   "nom": "Alexis Saelemaekers",
   "pop": 41,
   "nat": "Belgique",
@@ -780,30 +624,6 @@
   "depuis": 2024
  },
  {
-  "nom": "Alisson Becker",
-  "pop": 70,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "GB",
-  "age": 33,
-  "num": 1,
-  "depuis": 2018
- },
- {
-  "nom": "Allan",
-  "pop": 39,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MO",
-  "age": 35,
-  "num": 37,
-  "depuis": 2026
- },
- {
   "nom": "Alphonso Davies",
   "pop": 54,
   "nat": "Canada",
@@ -814,30 +634,6 @@
   "age": 25,
   "num": 19,
   "depuis": 2019
- },
- {
-  "nom": "Amadou Onana",
-  "pop": 34,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MIL",
-  "age": 25,
-  "num": 24,
-  "depuis": 2024
- },
- {
-  "nom": "Amar Dedić",
-  "pop": 33,
-  "nat": "Bosnie-Herzégovine",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "DEF",
-  "age": 24,
-  "num": 37,
-  "depuis": 2026
  },
  {
   "nom": "Ameen Al-Dakhil",
@@ -910,18 +706,6 @@
   "age": 32,
   "num": 13,
   "depuis": 2020
- },
- {
-  "nom": "Anan Khalaili",
-  "pop": 16,
-  "nat": "Israël",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "ATT",
-  "age": 22,
-  "num": 25,
-  "depuis": 2026
  },
  {
   "nom": "Anass Salah-Eddine",
@@ -1044,18 +828,6 @@
   "depuis": 2016
  },
  {
-  "nom": "Andrew Robertson",
-  "pop": 53,
-  "nat": "Écosse",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DEF",
-  "age": 32,
-  "num": 3,
-  "depuis": 2026
- },
- {
   "nom": "Andriy Lounine",
   "pop": 44,
   "nat": "Ukraine",
@@ -1140,18 +912,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Anis Mehmeti",
-  "pop": 11,
-  "nat": "Albanie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "AD",
-  "age": 25,
-  "num": 33,
-  "depuis": 2026
- },
- {
   "nom": "Ansgar Knauff",
   "pop": 22,
   "nat": "Allemagne",
@@ -1200,20 +960,8 @@
   "depuis": 0
  },
  {
-  "nom": "Anthony Elanga",
-  "pop": 37,
-  "nat": "Suède",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "AD",
-  "age": 24,
-  "num": 19,
-  "depuis": 2025
- },
- {
   "nom": "Anthony Gordon",
-  "pop": 50,
+  "pop": 51,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Liga",
@@ -1272,42 +1020,6 @@
   "depuis": 2015
  },
  {
-  "nom": "Antoine Semenyo",
-  "pop": 42,
-  "nat": "Ghana",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "ATT",
-  "age": 26,
-  "num": 42,
-  "depuis": 2026
- },
- {
-  "nom": "Anton Stach",
-  "pop": 19,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "MIL",
-  "age": 27,
-  "num": 18,
-  "depuis": 2025
- },
- {
-  "nom": "Antonee Robinson",
-  "pop": 32,
-  "nat": "États-Unis",
-  "cont": "Amérique du Nord",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "DEF",
-  "age": 29,
-  "num": 33,
-  "depuis": 2020
- },
- {
   "nom": "Antonino Gallo",
   "pop": 11,
   "nat": "Italie",
@@ -1354,42 +1066,6 @@
   "age": 26,
   "num": 7,
   "depuis": 2025
- },
- {
-  "nom": "Antonín Kinský",
-  "pop": 21,
-  "nat": "Tchéquie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "GB",
-  "age": 23,
-  "num": 31,
-  "depuis": 2025
- },
- {
-  "nom": "Ao Tanaka",
-  "pop": 52,
-  "nat": "Japon",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "MIL",
-  "age": 27,
-  "num": 22,
-  "depuis": 2024
- },
- {
-  "nom": "Archie Gray",
-  "pop": 26,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DC",
-  "age": 20,
-  "num": 14,
-  "depuis": 2024
  },
  {
   "nom": "Arda Güler",
@@ -1589,23 +1265,11 @@
   "nat": "Turquie",
   "cont": "Europe",
   "champ": "Bundesliga",
-  "club": "BV 09 Borussia Dortmund",
+  "club": "VfB Stuttgart",
   "poste": "MIL",
   "age": 29,
   "num": 16,
   "depuis": 0
- },
- {
-  "nom": "Axel Disasi",
-  "pop": 39,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "DEF",
-  "age": 28,
-  "num": 5,
-  "depuis": 2026
  },
  {
   "nom": "Axel Witsel",
@@ -1668,18 +1332,6 @@
   "depuis": 0
  },
  {
-  "nom": "Ayyoub Bouaddi",
-  "pop": 36,
-  "nat": "Maroc",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MIL",
-  "age": 18,
-  "num": 32,
-  "depuis": 2026
- },
- {
   "nom": "Aïssa Mandi",
   "pop": 38,
   "nat": "Algérie",
@@ -1728,18 +1380,6 @@
   "depuis": 2013
  },
  {
-  "nom": "Bart Verbruggen",
-  "pop": 39,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "GB",
-  "age": 24,
-  "num": 1,
-  "depuis": 2023
- },
- {
   "nom": "Bartosz Mrozek",
   "pop": 6,
   "nat": "Pologne",
@@ -1750,54 +1390,6 @@
   "age": 26,
   "num": 41,
   "depuis": 2026
- },
- {
-  "nom": "Bazoumana Touré",
-  "pop": 22,
-  "nat": "Côte d'Ivoire",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "MIL",
-  "age": 20,
-  "num": 17,
-  "depuis": 2026
- },
- {
-  "nom": "Ben Chilwell",
-  "pop": 51,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "DEF",
-  "age": 29,
-  "num": 33,
-  "depuis": 2026
- },
- {
-  "nom": "Ben Davies",
-  "pop": 44,
-  "nat": "Pays de Galles",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DC",
-  "age": 33,
-  "num": 33,
-  "depuis": 2014
- },
- {
-  "nom": "Ben White",
-  "pop": 34,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DC",
-  "age": 28,
-  "num": 4,
-  "depuis": 2021
  },
  {
   "nom": "Benedict Hollerbach",
@@ -1848,18 +1440,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Benjamin Šeško",
-  "pop": 46,
-  "nat": "Slovénie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "ATT",
-  "age": 23,
-  "num": 30,
-  "depuis": 2025
- },
- {
   "nom": "Benoît Badiashile",
   "pop": 34,
   "nat": "France",
@@ -1894,18 +1474,6 @@
   "age": 32,
   "num": 20,
   "depuis": 2026
- },
- {
-  "nom": "Bernd Leno",
-  "pop": 53,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "GB",
-  "age": 34,
-  "num": 1,
-  "depuis": 2022
  },
  {
   "nom": "Beto (football, 1998)",
@@ -2052,18 +1620,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Bradley Barcola",
-  "pop": 50,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "ATT",
-  "age": 24,
-  "num": 29,
-  "depuis": 2026
- },
- {
   "nom": "Brahim Abdelkader Díaz",
   "pop": 54,
   "nat": "Maroc",
@@ -2112,30 +1668,6 @@
   "depuis": 2012
  },
  {
-  "nom": "Brennan Johnson",
-  "pop": 33,
-  "nat": "Pays de Galles",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "AD",
-  "age": 25,
-  "num": 22,
-  "depuis": 2026
- },
- {
-  "nom": "Brian Brobbey",
-  "pop": 37,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Sunderland AFC",
-  "poste": "BU",
-  "age": 24,
-  "num": 9,
-  "depuis": 2025
- },
- {
   "nom": "Brice Samba",
   "pop": 35,
   "nat": "France",
@@ -2160,64 +1692,16 @@
   "depuis": 2026
  },
  {
-  "nom": "Brooke Norton-Cuffy",
-  "pop": 12,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "DEF",
-  "age": 22,
-  "num": 18,
-  "depuis": 2026
- },
- {
-  "nom": "Bruno Fernandes",
-  "pop": 63,
-  "nat": "Portugal",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "MO",
-  "age": 31,
-  "num": 8,
-  "depuis": 2020
- },
- {
-  "nom": "Bruno Guimarães",
-  "pop": 48,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "MIL",
-  "age": 28,
-  "num": 39,
-  "depuis": 2026
- },
- {
   "nom": "Bryan Cristante",
   "pop": 43,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
-  "club": "AS Rome",
+  "club": "Atalanta Bergame",
   "poste": "MIL",
   "age": 31,
   "num": 4,
   "depuis": 0
- },
- {
-  "nom": "Bryan Mbeumo",
-  "pop": 39,
-  "nat": "Cameroun",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "AD",
-  "age": 27,
-  "num": 19,
-  "depuis": 2025
  },
  {
   "nom": "Bryan Zaragoza",
@@ -2232,42 +1716,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Bukayo Saka",
-  "pop": 69,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "AD",
-  "age": 25,
-  "num": 7,
-  "depuis": 2018
- },
- {
-  "nom": "Calvin Bassey",
-  "pop": 23,
-  "nat": "Nigeria",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "DEF",
-  "age": 26,
-  "num": 3,
-  "depuis": 0
- },
- {
-  "nom": "Calvin Ramsay",
-  "pop": 28,
-  "nat": "Écosse",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DEF",
-  "age": 23,
-  "num": 47,
-  "depuis": 0
- },
- {
   "nom": "Can Uzun",
   "pop": 24,
   "nat": "Turquie",
@@ -2278,18 +1726,6 @@
   "age": 20,
   "num": 42,
   "depuis": 2024
- },
- {
-  "nom": "Caoimhín Kelleher",
-  "pop": 35,
-  "nat": "Irlande",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "GB",
-  "age": 27,
-  "num": 1,
-  "depuis": 2025
  },
  {
   "nom": "Carlens Arcus",
@@ -2338,18 +1774,6 @@
   "age": 27,
   "num": 30,
   "depuis": 2024
- },
- {
-  "nom": "Carlos Baleba",
-  "pop": 29,
-  "nat": "Cameroun",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "MIL",
-  "age": 22,
-  "num": 20,
-  "depuis": 2026
  },
  {
   "nom": "Carlos Romero Serrano",
@@ -2424,18 +1848,6 @@
   "depuis": 2024
  },
  {
-  "nom": "Chema Andrés",
-  "pop": 17,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "MDF",
-  "age": 21,
-  "num": 14,
-  "depuis": 2026
- },
- {
   "nom": "Chris Führich",
   "pop": 30,
   "nat": "Allemagne",
@@ -2446,18 +1858,6 @@
   "age": 28,
   "num": 10,
   "depuis": 2021
- },
- {
-  "nom": "Chris Richards",
-  "pop": 33,
-  "nat": "États-Unis",
-  "cont": "Amérique du Nord",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "DEF",
-  "age": 26,
-  "num": 26,
-  "depuis": 2022
  },
  {
   "nom": "Christian Günter",
@@ -2496,18 +1896,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Christian Walton",
-  "pop": 12,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "GB",
-  "age": 30,
-  "num": 28,
-  "depuis": 2014
- },
- {
   "nom": "Christoph Baumgartner",
   "pop": 40,
   "nat": "Autriche",
@@ -2544,18 +1932,6 @@
   "depuis": 2014
  },
  {
-  "nom": "Claudio Echeverri",
-  "pop": 28,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MO",
-  "age": 20,
-  "num": 30,
-  "depuis": 2024
- },
- {
   "nom": "Cody Drameh",
   "pop": 12,
   "nat": "Angleterre",
@@ -2568,18 +1944,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Cody Gakpo",
-  "pop": 60,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "MO",
-  "age": 27,
-  "num": 18,
-  "depuis": 2023
- },
- {
   "nom": "Cole Campbell",
   "pop": 12,
   "nat": "États-Unis",
@@ -2590,42 +1954,6 @@
   "age": 20,
   "num": 39,
   "depuis": 2022
- },
- {
-  "nom": "Cole Palmer",
-  "pop": 61,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "MO",
-  "age": 24,
-  "num": 10,
-  "depuis": 2023
- },
- {
-  "nom": "Conor Bradley",
-  "pop": 32,
-  "nat": "Irlande du Nord",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DEF",
-  "age": 23,
-  "num": 12,
-  "depuis": 2021
- },
- {
-  "nom": "Conor Gallagher",
-  "pop": 43,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MIL",
-  "age": 26,
-  "num": 8,
-  "depuis": 2026
  },
  {
   "nom": "Conrad Harder",
@@ -2650,18 +1978,6 @@
   "age": 32,
   "num": 8,
   "depuis": 2022
- },
- {
-  "nom": "Cristhian Mosquera",
-  "pop": 30,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DC",
-  "age": 22,
-  "num": 3,
-  "depuis": 2025
  },
  {
   "nom": "Cristian Romero",
@@ -2700,42 +2016,6 @@
   "depuis": 2026
  },
  {
-  "nom": "César Palacios",
-  "pop": 15,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "ATT",
-  "age": 21,
-  "num": 8,
-  "depuis": 2026
- },
- {
-  "nom": "Daichi Kamada",
-  "pop": 52,
-  "nat": "Japon",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "MIL",
-  "age": 30,
-  "num": 18,
-  "depuis": 2024
- },
- {
-  "nom": "Daizen Maeda",
-  "pop": 50,
-  "nat": "Japon",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "ATT",
-  "age": 28,
-  "num": 38,
-  "depuis": 2026
- },
- {
   "nom": "Dakonam Djene",
   "pop": 20,
   "nat": "Togo",
@@ -2748,18 +2028,6 @@
   "depuis": 2017
  },
  {
-  "nom": "Dan Burn",
-  "pop": 40,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "DEF",
-  "age": 34,
-  "num": 33,
-  "depuis": 2022
- },
- {
   "nom": "Dan-Axel Zagadou",
   "pop": 33,
   "nat": "France",
@@ -2769,18 +2037,6 @@
   "poste": "DC",
   "age": 27,
   "num": 23,
-  "depuis": 0
- },
- {
-  "nom": "Dango Ouattara",
-  "pop": 29,
-  "nat": "Burkina Faso",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "ATT",
-  "age": 24,
-  "num": 11,
   "depuis": 0
  },
  {
@@ -2952,18 +2208,6 @@
   "depuis": 2013
  },
  {
-  "nom": "Danny Welbeck",
-  "pop": 63,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "ATT",
-  "age": 35,
-  "num": 18,
-  "depuis": 2026
- },
- {
   "nom": "Danny da Costa",
   "pop": 20,
   "nat": "Allemagne",
@@ -2986,54 +2230,6 @@
   "age": 28,
   "num": 47,
   "depuis": 0
- },
- {
-  "nom": "Darko Gyabi",
-  "pop": 8,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "MIL",
-  "age": 22,
-  "num": 24,
-  "depuis": 0
- },
- {
-  "nom": "David Affengruber",
-  "pop": 27,
-  "nat": "Autriche",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "DEF",
-  "age": 25,
-  "num": 22,
-  "depuis": 2026
- },
- {
-  "nom": "David Brooks",
-  "pop": 30,
-  "nat": "Pays de Galles",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "MIL",
-  "age": 29,
-  "num": 7,
-  "depuis": 0
- },
- {
-  "nom": "David Button",
-  "pop": 15,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "GB",
-  "age": 37,
-  "num": 27,
-  "depuis": 2013
  },
  {
   "nom": "David Mella",
@@ -3082,18 +2278,6 @@
   "age": 28,
   "num": 22,
   "depuis": 2022
- },
- {
-  "nom": "David Raya",
-  "pop": 52,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "GB",
-  "age": 30,
-  "num": 1,
-  "depuis": 2024
  },
  {
   "nom": "David Soria",
@@ -3156,18 +2340,6 @@
   "depuis": 2021
  },
  {
-  "nom": "Dean Henderson",
-  "pop": 43,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "GB",
-  "age": 29,
-  "num": 1,
-  "depuis": 2023
- },
- {
   "nom": "Dean Huijsen",
   "pop": 41,
   "nat": "Espagne",
@@ -3178,30 +2350,6 @@
   "age": 21,
   "num": 4,
   "depuis": 2026
- },
- {
-  "nom": "Declan Rice",
-  "pop": 62,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "MDF",
-  "age": 27,
-  "num": 41,
-  "depuis": 2023
- },
- {
-  "nom": "Dejan Kulusevski",
-  "pop": 39,
-  "nat": "Suède",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MIL",
-  "age": 26,
-  "num": 21,
-  "depuis": 2023
  },
  {
   "nom": "Dembo Sylla",
@@ -3288,18 +2436,6 @@
   "depuis": 0
  },
  {
-  "nom": "Destiny Udogie",
-  "pop": 26,
-  "nat": "Italie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DEF",
-  "age": 23,
-  "num": 13,
-  "depuis": 2022
- },
- {
   "nom": "Devis Vásquez",
   "pop": 12,
   "nat": "Colombie",
@@ -3346,18 +2482,6 @@
   "age": 27,
   "num": 13,
   "depuis": 2024
- },
- {
-  "nom": "Diego Gómez",
-  "pop": 32,
-  "nat": "Paraguay",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "MIL",
-  "age": 23,
-  "num": 25,
-  "depuis": 2025
  },
  {
   "nom": "Diego Llorente",
@@ -3420,30 +2544,6 @@
   "depuis": 2021
  },
  {
-  "nom": "Diogo Dalot",
-  "pop": 48,
-  "nat": "Portugal",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "DEF",
-  "age": 27,
-  "num": 2,
-  "depuis": 2018
- },
- {
-  "nom": "Divin Mubama",
-  "pop": 14,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "ATT",
-  "age": 21,
-  "num": 67,
-  "depuis": 0
- },
- {
   "nom": "Djed Spence",
   "pop": 34,
   "nat": "Angleterre",
@@ -3492,30 +2592,6 @@
   "depuis": 2022
  },
  {
-  "nom": "Dominic Calvert-Lewin",
-  "pop": 47,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "ATT",
-  "age": 29,
-  "num": 9,
-  "depuis": 2025
- },
- {
-  "nom": "Dominic Solanke",
-  "pop": 40,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "ATT",
-  "age": 28,
-  "num": 19,
-  "depuis": 2024
- },
- {
   "nom": "Dominik Kohr",
   "pop": 22,
   "nat": "Allemagne",
@@ -3538,18 +2614,6 @@
   "age": 31,
   "num": 25,
   "depuis": 2026
- },
- {
-  "nom": "Dominik Szoboszlai",
-  "pop": 52,
-  "nat": "Hongrie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "MIL",
-  "age": 25,
-  "num": 8,
-  "depuis": 2023
  },
  {
   "nom": "Donyell Malen",
@@ -3648,30 +2712,6 @@
   "depuis": 2024
  },
  {
-  "nom": "Eberechi Eze",
-  "pop": 47,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "MO",
-  "age": 28,
-  "num": 10,
-  "depuis": 2025
- },
- {
-  "nom": "Eddie Nketiah",
-  "pop": 36,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "ATT",
-  "age": 27,
-  "num": 9,
-  "depuis": 2024
- },
- {
   "nom": "Eddy Kouadio",
   "pop": 4,
   "nat": "Italie",
@@ -3744,18 +2784,6 @@
   "depuis": 2023
  },
  {
-  "nom": "El Hadji Malick Diouf",
-  "pop": 28,
-  "nat": "Sénégal",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "DEF",
-  "age": 21,
-  "num": 25,
-  "depuis": 2026
- },
- {
   "nom": "Elia Caprile",
   "pop": 11,
   "nat": "Italie",
@@ -3792,18 +2820,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Elliot Anderson",
-  "pop": 42,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MIL",
-  "age": 23,
-  "num": 5,
-  "depuis": 2026
- },
- {
   "nom": "Ellyes Skhiri",
   "pop": 35,
   "nat": "Tunisie",
@@ -3826,18 +2842,6 @@
   "age": 32,
   "num": 33,
   "depuis": 2025
- },
- {
-  "nom": "Emiliano Martínez",
-  "pop": 62,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "GB",
-  "age": 34,
-  "num": 1,
-  "depuis": 2026
  },
  {
   "nom": "Emirhan İlkhan",
@@ -3912,18 +2916,6 @@
   "depuis": 2019
  },
  {
-  "nom": "Enzo Jeremías Fernández",
-  "pop": 58,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MIL",
-  "age": 25,
-  "num": 17,
-  "depuis": 2026
- },
- {
   "nom": "Eric Dier",
   "pop": 56,
   "nat": "Angleterre",
@@ -3948,18 +2940,6 @@
   "depuis": 2021
  },
  {
-  "nom": "Erling Braut Haaland",
-  "pop": 92,
-  "nat": "Norvège",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "ATT",
-  "age": 26,
-  "num": 9,
-  "depuis": 2022
- },
- {
   "nom": "Ermedin Demirović",
   "pop": 33,
   "nat": "Bosnie-Herzégovine",
@@ -3970,30 +2950,6 @@
   "age": 28,
   "num": 9,
   "depuis": 2024
- },
- {
-  "nom": "Estevão Willian",
-  "pop": 32,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "ATT",
-  "age": 19,
-  "num": 41,
-  "depuis": 0
- },
- {
-  "nom": "Ethan Ampadu",
-  "pop": 39,
-  "nat": "Pays de Galles",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "MIL",
-  "age": 25,
-  "num": 4,
-  "depuis": 2023
  },
  {
   "nom": "Ethan Mbappé",
@@ -4028,55 +2984,7 @@
   "club": "BV 09 Borussia Dortmund",
   "poste": "MO",
   "age": 19,
-  "num": 22,
-  "depuis": 2026
- },
- {
-  "nom": "Evan Ferguson",
-  "pop": 30,
-  "nat": "Irlande",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "ATT",
-  "age": 21,
-  "num": 28,
-  "depuis": 0
- },
- {
-  "nom": "Evann Guessand",
-  "pop": 24,
-  "nat": "Côte d'Ivoire",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "ATT",
-  "age": 25,
-  "num": 29,
-  "depuis": 2025
- },
- {
-  "nom": "Exequiel Palacios",
-  "pop": 47,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "MIL",
-  "age": 27,
-  "num": 25,
-  "depuis": 2026
- },
- {
-  "nom": "Ezri Konsa",
-  "pop": 40,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DC",
-  "age": 28,
-  "num": 15,
+  "num": 18,
   "depuis": 2026
  },
  {
@@ -4090,18 +2998,6 @@
   "age": 31,
   "num": 1,
   "depuis": 2019
- },
- {
-  "nom": "Fabian Schär",
-  "pop": 51,
-  "nat": "Suisse",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "DC",
-  "age": 34,
-  "num": 5,
-  "depuis": 2018
  },
  {
   "nom": "Fabián Ruiz",
@@ -4236,18 +3132,6 @@
   "depuis": 0
  },
  {
-  "nom": "Ferdi Kadioglu",
-  "pop": 33,
-  "nat": "Turquie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "MIL",
-  "age": 26,
-  "num": 24,
-  "depuis": 2024
- },
- {
   "nom": "Ferland Mendy",
   "pop": 49,
   "nat": "France",
@@ -4377,18 +3261,6 @@
   "poste": "MIL",
   "age": 33,
   "num": 10,
-  "depuis": 2025
- },
- {
-  "nom": "Florian Wirtz",
-  "pop": 54,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "MIL",
-  "age": 23,
-  "num": 7,
   "depuis": 2025
  },
  {
@@ -4524,18 +3396,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Frank Onyeka",
-  "pop": 26,
-  "nat": "Nigeria",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "MIL",
-  "age": 28,
-  "num": 16,
-  "depuis": 0
- },
- {
   "nom": "Franz Stolz",
   "pop": 3,
   "nat": "Autriche",
@@ -4546,30 +3406,6 @@
   "age": 25,
   "num": 99,
   "depuis": 2024
- },
- {
-  "nom": "Fraser Forster",
-  "pop": 41,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "GB",
-  "age": 38,
-  "num": 17,
-  "depuis": 2026
- },
- {
-  "nom": "Frederick Woodman",
-  "pop": 20,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "GB",
-  "age": 29,
-  "num": 28,
-  "depuis": 2014
  },
  {
   "nom": "Frenkie de Jong",
@@ -4594,18 +3430,6 @@
   "age": 26,
   "num": 8,
   "depuis": 2026
- },
- {
-  "nom": "Gabriel",
-  "pop": 44,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DEF",
-  "age": 28,
-  "num": 6,
-  "depuis": 2020
  },
  {
   "nom": "Gabriel Jesus",
@@ -4704,30 +3528,6 @@
   "depuis": 2015
  },
  {
-  "nom": "George Abbott",
-  "pop": 4,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MIL",
-  "age": 21,
-  "num": 50,
-  "depuis": 0
- },
- {
-  "nom": "George Hemmings",
-  "pop": 6,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MIL",
-  "age": 19,
-  "num": 53,
-  "depuis": 0
- },
- {
   "nom": "Georges Mikautadze",
   "pop": 43,
   "nat": "Géorgie",
@@ -4738,30 +3538,6 @@
   "age": 25,
   "num": 9,
   "depuis": 2025
- },
- {
-  "nom": "Georginio Rutter",
-  "pop": 19,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "BU",
-  "age": 24,
-  "num": 10,
-  "depuis": 2024
- },
- {
-  "nom": "Geovany Quenda",
-  "pop": 22,
-  "nat": "Portugal",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "ATT",
-  "age": 19,
-  "num": 23,
-  "depuis": 2026
  },
  {
   "nom": "Gerard Martín",
@@ -4810,18 +3586,6 @@
   "age": 24,
   "num": 11,
   "depuis": 0
- },
- {
-  "nom": "Gerónimo Rulli",
-  "pop": 46,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "GB",
-  "age": 34,
-  "num": 28,
-  "depuis": 2026
  },
  {
   "nom": "Gessime Yassine",
@@ -4896,18 +3660,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Gianluigi Donnarumma",
-  "pop": 60,
-  "nat": "Italie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "GB",
-  "age": 27,
-  "num": 1,
-  "depuis": 2025
- },
- {
   "nom": "Giorgi Kochorashvili",
   "pop": 25,
   "nat": "Géorgie",
@@ -4918,18 +3670,6 @@
   "age": 27,
   "num": 8,
   "depuis": 2026
- },
- {
-  "nom": "Giorgi Mamardashvili",
-  "pop": 41,
-  "nat": "Géorgie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "GB",
-  "age": 25,
-  "num": 25,
-  "depuis": 2024
  },
  {
   "nom": "Giorgio Scalvini",
@@ -5064,18 +3804,6 @@
   "depuis": 2022
  },
  {
-  "nom": "Granit Xhaka",
-  "pop": 59,
-  "nat": "Suisse",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Sunderland AFC",
-  "poste": "MIL",
-  "age": 33,
-  "num": 34,
-  "depuis": 2025
- },
- {
   "nom": "Gregor Kobel",
   "pop": 41,
   "nat": "Suisse",
@@ -5108,7 +3836,7 @@
   "club": "Juventus FC",
   "poste": "GB",
   "age": 29,
-  "num": 1,
+  "num": 25,
   "depuis": 2026
  },
  {
@@ -5160,18 +3888,6 @@
   "depuis": 0
  },
  {
-  "nom": "Haji Wright",
-  "pop": 34,
-  "nat": "États-Unis",
-  "cont": "Amérique du Nord",
-  "champ": "Premier League",
-  "club": "Coventry City FC",
-  "poste": "ATT",
-  "age": 28,
-  "num": 11,
-  "depuis": 2023
- },
- {
   "nom": "Hakan Çalhanoğlu",
   "pop": 58,
   "nat": "Turquie",
@@ -5220,18 +3936,6 @@
   "depuis": 0
  },
  {
-  "nom": "Harrison Reed",
-  "pop": 26,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "MIL",
-  "age": 31,
-  "num": 6,
-  "depuis": 2019
- },
- {
   "nom": "Harry Kane",
   "pop": 91,
   "nat": "Angleterre",
@@ -5242,18 +3946,6 @@
   "age": 33,
   "num": 9,
   "depuis": 2023
- },
- {
-  "nom": "Harry Wilson",
-  "pop": 36,
-  "nat": "Pays de Galles",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "MIL",
-  "age": 29,
-  "num": 10,
-  "depuis": 2015
  },
  {
   "nom": "Harry Winks",
@@ -5268,18 +3960,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Harvey Barnes",
-  "pop": 32,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "AD",
-  "age": 28,
-  "num": 11,
-  "depuis": 2023
- },
- {
   "nom": "Harvey Elliott",
   "pop": 42,
   "nat": "Angleterre",
@@ -5288,7 +3968,7 @@
   "club": "Valence CF",
   "poste": "MO",
   "age": 23,
-  "num": 19,
+  "num": 10,
   "depuis": 2026
  },
  {
@@ -5302,18 +3982,6 @@
   "age": 37,
   "num": 22,
   "depuis": 2022
- },
- {
-  "nom": "Hidemasa Morita",
-  "pop": 49,
-  "nat": "Japon",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "MIL",
-  "age": 31,
-  "num": 5,
-  "depuis": 2026
  },
  {
   "nom": "Himad Abdelli",
@@ -5340,18 +4008,6 @@
   "depuis": 0
  },
  {
-  "nom": "Honest Ahanor",
-  "pop": 15,
-  "nat": "Italie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "DEF",
-  "age": 18,
-  "num": 21,
-  "depuis": 2026
- },
- {
   "nom": "Hugo Bolin",
   "pop": 10,
   "nat": "Suède",
@@ -5376,18 +4032,6 @@
   "depuis": 0
  },
  {
-  "nom": "Hugo Ekitike",
-  "pop": 41,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "ATT",
-  "age": 24,
-  "num": 22,
-  "depuis": 2025
- },
- {
   "nom": "Hugo Pérez",
   "pop": 3,
   "nat": "Espagne",
@@ -5410,18 +4054,6 @@
   "age": 30,
   "num": 7,
   "depuis": 2026
- },
- {
-  "nom": "Hákon Rafn Valdimarsson",
-  "pop": 14,
-  "nat": "Islande",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "GB",
-  "age": 24,
-  "num": 12,
-  "depuis": 2024
  },
  {
   "nom": "Héctor Bellerín",
@@ -5458,30 +4090,6 @@
   "age": 39,
   "num": 10,
   "depuis": 2015
- },
- {
-  "nom": "Ian Maatsen",
-  "pop": 35,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "DEF",
-  "age": 24,
-  "num": 22,
-  "depuis": 2024
- },
- {
-  "nom": "Ibrahim Mbaye",
-  "pop": 35,
-  "nat": "Sénégal",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "ATT",
-  "age": 18,
-  "num": 19,
-  "depuis": 2026
  },
  {
   "nom": "Ibrahima Konaté",
@@ -5544,18 +4152,6 @@
   "depuis": 2016
  },
  {
-  "nom": "Iguinho",
-  "pop": 36,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "ATT",
-  "age": 25,
-  "num": 9,
-  "depuis": 2024
- },
- {
   "nom": "Iker Losada",
   "pop": 14,
   "nat": "Espagne",
@@ -5590,18 +4186,6 @@
   "age": 22,
   "num": 11,
   "depuis": 2023
- },
- {
-  "nom": "Iliman Ndiaye",
-  "pop": 34,
-  "nat": "Sénégal",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "AD",
-  "age": 26,
-  "num": 7,
-  "depuis": 2026
  },
  {
   "nom": "Illya Zabarnyi",
@@ -5662,18 +4246,6 @@
   "age": 25,
   "num": 34,
   "depuis": 2026
- },
- {
-  "nom": "Issa Diop",
-  "pop": 38,
-  "nat": "Maroc",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "DC",
-  "age": 29,
-  "num": 6,
-  "depuis": 2022
  },
  {
   "nom": "Ivan Provedel",
@@ -5784,90 +4356,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Jack Clarke",
-  "pop": 21,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "ATT",
-  "age": 25,
-  "num": 47,
-  "depuis": 2019
- },
- {
-  "nom": "Jack Grealish",
-  "pop": 57,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Everton FC",
-  "poste": "MO",
-  "age": 30,
-  "num": 18,
-  "depuis": 2026
- },
- {
-  "nom": "Jack Porter",
-  "pop": 7,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "GB",
-  "age": 18,
-  "num": 55,
-  "depuis": 2024
- },
- {
-  "nom": "Jack Rudoni",
-  "pop": 6,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Coventry City FC",
-  "poste": "MIL",
-  "age": 25,
-  "num": 5,
-  "depuis": 2024
- },
- {
-  "nom": "Jacob Greaves",
-  "pop": 12,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "DEF",
-  "age": 25,
-  "num": 24,
-  "depuis": 0
- },
- {
-  "nom": "Jacob Murphy",
-  "pop": 22,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "AD",
-  "age": 31,
-  "num": 23,
-  "depuis": 2017
- },
- {
-  "nom": "Jacob Ramsey",
-  "pop": 27,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "MIL",
-  "age": 25,
-  "num": 41,
-  "depuis": 2025
- },
- {
   "nom": "Jacopo Fazzini",
   "pop": 12,
   "nat": "Italie",
@@ -5878,54 +4366,6 @@
   "age": 23,
   "num": 10,
   "depuis": 2025
- },
- {
-  "nom": "Jaden Heskey",
-  "pop": 4,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "ATT",
-  "age": 20,
-  "num": 81,
-  "depuis": 2023
- },
- {
-  "nom": "Jaden Philogene",
-  "pop": 20,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "AD",
-  "age": 24,
-  "num": 11,
-  "depuis": 2023
- },
- {
-  "nom": "Jaka Bijol",
-  "pop": 31,
-  "nat": "Slovénie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "MIL",
-  "age": 27,
-  "num": 15,
-  "depuis": 2025
- },
- {
-  "nom": "Jake Bidwell",
-  "pop": 13,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "DEF",
-  "age": 33,
-  "num": 21,
-  "depuis": 2013
  },
  {
   "nom": "Jakub Piotrowski",
@@ -5950,66 +4390,6 @@
   "age": 23,
   "num": 10,
   "depuis": 2020
- },
- {
-  "nom": "Jamaldeen Jimoh-Aloba",
-  "pop": 4,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MIL",
-  "age": 19,
-  "num": 20,
-  "depuis": 0
- },
- {
-  "nom": "James Garner (football)",
-  "pop": 28,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "MIL",
-  "age": 25,
-  "num": 37,
-  "depuis": 2018
- },
- {
-  "nom": "James Maddison",
-  "pop": 41,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MO",
-  "age": 29,
-  "num": 10,
-  "depuis": 2023
- },
- {
-  "nom": "James Trafford",
-  "pop": 36,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "GB",
-  "age": 23,
-  "num": 1,
-  "depuis": 2025
- },
- {
-  "nom": "Jamie Gittens",
-  "pop": 32,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "ATT",
-  "age": 22,
-  "num": 11,
-  "depuis": 2025
  },
  {
   "nom": "Jan Olschowsky",
@@ -6084,30 +4464,6 @@
   "depuis": 2015
  },
  {
-  "nom": "Jarrad Branthwaite",
-  "pop": 25,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Everton FC",
-  "poste": "DC",
-  "age": 24,
-  "num": 4,
-  "depuis": 2020
- },
- {
-  "nom": "Jason Steele",
-  "pop": 25,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "GB",
-  "age": 36,
-  "num": 23,
-  "depuis": 2018
- },
- {
   "nom": "Javi Hernández",
   "pop": 10,
   "nat": "Espagne",
@@ -6144,18 +4500,6 @@
   "depuis": 0
  },
  {
-  "nom": "Jay Dasilva",
-  "pop": 18,
-  "nat": "Pays de Galles",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DEF",
-  "age": 28,
-  "num": 3,
-  "depuis": 0
- },
- {
   "nom": "Jay Idzes",
   "pop": 21,
   "nat": "Indonésie",
@@ -6168,18 +4512,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Jayden Danns",
-  "pop": 16,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "ATT",
-  "age": 20,
-  "num": 76,
-  "depuis": 2024
- },
- {
   "nom": "Jean-Clair Todibo",
   "pop": 39,
   "nat": "France",
@@ -6189,18 +4521,6 @@
   "poste": "DC",
   "age": 26,
   "num": 20,
-  "depuis": 2026
- },
- {
-  "nom": "Jean-Mattéo Bahoya",
-  "pop": 12,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "MO",
-  "age": 21,
-  "num": 23,
   "depuis": 2026
  },
  {
@@ -6240,18 +4560,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Jefferson Lerma",
-  "pop": 36,
-  "nat": "Colombie",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "MIL",
-  "age": 31,
-  "num": 8,
-  "depuis": 2023
- },
- {
   "nom": "Jens Grahl",
   "pop": 18,
   "nat": "Allemagne",
@@ -6286,18 +4594,6 @@
   "age": 26,
   "num": 11,
   "depuis": 2019
- },
- {
-  "nom": "Jeremie Frimpong",
-  "pop": 42,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DEF",
-  "age": 25,
-  "num": 30,
-  "depuis": 2025
  },
  {
   "nom": "Jeremy Toljan",
@@ -6372,66 +4668,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Joe Gomez",
-  "pop": 49,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DC",
-  "age": 29,
-  "num": 2,
-  "depuis": 2015
- },
- {
-  "nom": "Joe Rodon",
-  "pop": 33,
-  "nat": "Pays de Galles",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "DC",
-  "age": 28,
-  "num": 6,
-  "depuis": 2024
- },
- {
-  "nom": "Joe Willock",
-  "pop": 35,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "MIL",
-  "age": 27,
-  "num": 28,
-  "depuis": 2021
- },
- {
-  "nom": "Joel Latibeaudiere",
-  "pop": 15,
-  "nat": "Jamaïque",
-  "cont": "Amérique du Nord",
-  "champ": "Premier League",
-  "club": "Coventry City FC",
-  "poste": "DEF",
-  "age": 26,
-  "num": 22,
-  "depuis": 2023
- },
- {
-  "nom": "Joelinton",
-  "pop": 36,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "ATT",
-  "age": 30,
-  "num": 7,
-  "depuis": 2019
- },
- {
   "nom": "Joey Veerman",
   "pop": 31,
   "nat": "Pays-Bas",
@@ -6454,18 +4690,6 @@
   "age": 25,
   "num": 17,
   "depuis": 2020
- },
- {
-  "nom": "Johan Manzambi",
-  "pop": 33,
-  "nat": "Suisse",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "ATT",
-  "age": 20,
-  "num": 44,
-  "depuis": 2026
  },
  {
   "nom": "Johan Mojica",
@@ -6514,18 +4738,6 @@
   "age": 28,
   "num": 26,
   "depuis": 2026
- },
- {
-  "nom": "John McGinn",
-  "pop": 42,
-  "nat": "Écosse",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MIL",
-  "age": 31,
-  "num": 7,
-  "depuis": 2018
  },
  {
   "nom": "John Stones",
@@ -6732,30 +4944,6 @@
   "depuis": 0
  },
  {
-  "nom": "Jordan Henderson",
-  "pop": 75,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "MIL",
-  "age": 36,
-  "num": 14,
-  "depuis": 2026
- },
- {
-  "nom": "Jordan Pickford",
-  "pop": 64,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Everton FC",
-  "poste": "GB",
-  "age": 32,
-  "num": 1,
-  "depuis": 2017
- },
- {
   "nom": "Jordan Teze",
   "pop": 20,
   "nat": "Pays-Bas",
@@ -6804,18 +4992,6 @@
   "depuis": 2024
  },
  {
-  "nom": "Jorrel Hato",
-  "pop": 35,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DC",
-  "age": 20,
-  "num": 21,
-  "depuis": 2025
- },
- {
   "nom": "Joseph Scally",
   "pop": 29,
   "nat": "États-Unis",
@@ -6826,30 +5002,6 @@
   "age": 23,
   "num": 29,
   "depuis": 2021
- },
- {
-  "nom": "Josh Acheampong",
-  "pop": 25,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DEF",
-  "age": 20,
-  "num": 34,
-  "depuis": 2023
- },
- {
-  "nom": "Josh Eccles",
-  "pop": 9,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Coventry City FC",
-  "poste": "MIL",
-  "age": 26,
-  "num": 28,
-  "depuis": 0
  },
  {
   "nom": "Josha Vagnoman",
@@ -6874,18 +5026,6 @@
   "age": 31,
   "num": 6,
   "depuis": 2015
- },
- {
-  "nom": "Joshua Zirkzee",
-  "pop": 40,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "ATT",
-  "age": 25,
-  "num": 11,
-  "depuis": 2024
  },
  {
   "nom": "Josip Stanišić",
@@ -6961,7 +5101,7 @@
  },
  {
   "nom": "João Cancelo",
-  "pop": 55,
+  "pop": 56,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Liga",
@@ -6982,30 +5122,6 @@
   "age": 21,
   "num": 87,
   "depuis": 2024
- },
- {
-  "nom": "João Pedro Junqueira de Jesus",
-  "pop": 38,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "ATT",
-  "age": 24,
-  "num": 9,
-  "depuis": 2025
- },
- {
-  "nom": "Joško Gvardiol",
-  "pop": 49,
-  "nat": "Croatie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "DEF",
-  "age": 24,
-  "num": 24,
-  "depuis": 2023
  },
  {
   "nom": "Juan Foyth",
@@ -7042,18 +5158,6 @@
   "age": 32,
   "num": 1,
   "depuis": 2025
- },
- {
-  "nom": "Juanlu Sánchez",
-  "pop": 22,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "DEF",
-  "age": 23,
-  "num": 24,
-  "depuis": 2026
  },
  {
   "nom": "Juanmi Jiménez",
@@ -7128,30 +5232,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Julio Enciso",
-  "pop": 38,
-  "nat": "Paraguay",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "MIL",
-  "age": 22,
-  "num": 10,
-  "depuis": 2026
- },
- {
-  "nom": "Julio Soler",
-  "pop": 19,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "DEF",
-  "age": 21,
-  "num": 6,
-  "depuis": 2025
- },
- {
   "nom": "Julián Álvarez",
   "pop": 59,
   "nat": "Argentine",
@@ -7186,18 +5266,6 @@
   "age": 26,
   "num": 32,
   "depuis": 2024
- },
- {
-  "nom": "Jurrien Timber",
-  "pop": 43,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DEF",
-  "age": 25,
-  "num": 12,
-  "depuis": 2023
  },
  {
   "nom": "Justin Bengui Joao",
@@ -7236,30 +5304,6 @@
   "depuis": 2018
  },
  {
-  "nom": "Jérémy Doku",
-  "pop": 48,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "ATT",
-  "age": 24,
-  "num": 11,
-  "depuis": 2023
- },
- {
-  "nom": "Jérémy Jacquet",
-  "pop": 24,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DC",
-  "age": 21,
-  "num": 5,
-  "depuis": 2026
- },
- {
   "nom": "Jérémy Le Douaron",
   "pop": 7,
   "nat": "France",
@@ -7284,42 +5328,6 @@
   "depuis": 0
  },
  {
-  "nom": "Kaden Braithwaite",
-  "pop": 7,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "DEF",
-  "age": 18,
-  "num": 61,
-  "depuis": 0
- },
- {
-  "nom": "Kai Havertz",
-  "pop": 64,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "MO",
-  "age": 27,
-  "num": 29,
-  "depuis": 2023
- },
- {
-  "nom": "Kaine Kesler",
-  "pop": 6,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MIL",
-  "age": 23,
-  "num": 20,
-  "depuis": 0
- },
- {
   "nom": "Kaishū Sano",
   "pop": 35,
   "nat": "Japon",
@@ -7332,18 +5340,6 @@
   "depuis": 2024
  },
  {
-  "nom": "Kalvin Phillips",
-  "pop": 45,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MIL",
-  "age": 30,
-  "num": 44,
-  "depuis": 2022
- },
- {
   "nom": "Kamil Grabara",
   "pop": 32,
   "nat": "Pologne",
@@ -7354,18 +5350,6 @@
   "age": 27,
   "num": 1,
   "depuis": 2026
- },
- {
-  "nom": "Kaoru Mitoma",
-  "pop": 43,
-  "nat": "Japon",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "MIL",
-  "age": 29,
-  "num": 7,
-  "depuis": 2021
  },
  {
   "nom": "Karim Adeyemi",
@@ -7390,30 +5374,6 @@
   "age": 19,
   "num": 31,
   "depuis": 2026
- },
- {
-  "nom": "Karl Darlow",
-  "pop": 23,
-  "nat": "Pays de Galles",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "GB",
-  "age": 35,
-  "num": 12,
-  "depuis": 2023
- },
- {
-  "nom": "Keane Lewis-Potter",
-  "pop": 21,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "ATT",
-  "age": 25,
-  "num": 23,
-  "depuis": 0
  },
  {
   "nom": "Keita Baldé",
@@ -7488,18 +5448,6 @@
   "depuis": 2015
  },
  {
-  "nom": "Kepa Arrizabalaga",
-  "pop": 59,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "GB",
-  "age": 31,
-  "num": 13,
-  "depuis": 2025
- },
- {
   "nom": "Kerim Alajbegović",
   "pop": 36,
   "nat": "Bosnie-Herzégovine",
@@ -7509,18 +5457,6 @@
   "poste": "ATT",
   "age": 18,
   "num": 17,
-  "depuis": 2026
- },
- {
-  "nom": "Kevin Danso",
-  "pop": 36,
-  "nat": "Autriche",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Sunderland AFC",
-  "poste": "DC",
-  "age": 27,
-  "num": 4,
   "depuis": 2026
  },
  {
@@ -7608,30 +5544,6 @@
   "depuis": 2024
  },
  {
-  "nom": "Kieran Dowell",
-  "pop": 20,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Everton FC",
-  "poste": "ATT",
-  "age": 28,
-  "num": 26,
-  "depuis": 2014
- },
- {
-  "nom": "Kiernan Dewsbury-Hall",
-  "pop": 27,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Everton FC",
-  "poste": "MIL",
-  "age": 28,
-  "num": 8,
-  "depuis": 2025
- },
- {
   "nom": "Kike",
   "pop": 25,
   "nat": "Espagne",
@@ -7704,18 +5616,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Kobbie Mainoo",
-  "pop": 49,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "MIL",
-  "age": 21,
-  "num": 37,
-  "depuis": 2022
- },
- {
   "nom": "Koke",
   "pop": 61,
   "nat": "Espagne",
@@ -7776,28 +5676,16 @@
   "depuis": 0
  },
  {
-  "nom": "Konstantínos Tsimíkas",
-  "pop": 39,
-  "nat": "Grèce",
+  "nom": "Lamine Yamal",
+  "pop": 93,
+  "nat": "Espagne",
   "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DEF",
-  "age": 30,
-  "num": 21,
-  "depuis": 2020
- },
- {
-  "nom": "Lamare Bogarde",
-  "pop": 14,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MIL",
-  "age": 22,
-  "num": 26,
-  "depuis": 0
+  "champ": "Liga",
+  "club": "FC Barcelone",
+  "poste": "AD",
+  "age": 19,
+  "num": 10,
+  "depuis": 2023
  },
  {
   "nom": "Laurent Abergel",
@@ -7872,18 +5760,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Leif Davis",
-  "pop": 16,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "DEF",
-  "age": 26,
-  "num": 3,
-  "depuis": 2022
- },
- {
   "nom": "Lennart Karl",
   "pop": 30,
   "nat": "Allemagne",
@@ -7932,18 +5808,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Leon Goretzka",
-  "pop": 56,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MIL",
-  "age": 31,
-  "num": 27,
-  "depuis": 2026
- },
- {
   "nom": "Leonardo Balerdi",
   "pop": 26,
   "nat": "Argentine",
@@ -7980,66 +5844,6 @@
   "depuis": 0
  },
  {
-  "nom": "Levi Colwill",
-  "pop": 35,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DC",
-  "age": 23,
-  "num": 6,
-  "depuis": 2020
- },
- {
-  "nom": "Lewie Coyle",
-  "pop": 10,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "DEF",
-  "age": 30,
-  "num": 2,
-  "depuis": 2014
- },
- {
-  "nom": "Lewis Cook",
-  "pop": 31,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "MDF",
-  "age": 29,
-  "num": 4,
-  "depuis": 2016
- },
- {
-  "nom": "Lewis Hall",
-  "pop": 24,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "DEF",
-  "age": 21,
-  "num": 3,
-  "depuis": 2024
- },
- {
-  "nom": "Lewis Miley",
-  "pop": 18,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "MIL",
-  "age": 20,
-  "num": 67,
-  "depuis": 2023
- },
- {
   "nom": "Lilian Brassier",
   "pop": 11,
   "nat": "France",
@@ -8050,18 +5854,6 @@
   "age": 26,
   "num": 3,
   "depuis": 2026
- },
- {
-  "nom": "Lisandro Martínez",
-  "pop": 50,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "DC",
-  "age": 28,
-  "num": 6,
-  "depuis": 2022
  },
  {
   "nom": "Lloyd Kelly",
@@ -8160,18 +5952,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Luc de Fougerolles",
-  "pop": 24,
-  "nat": "Canada",
-  "cont": "Amérique du Nord",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "DC",
-  "age": 20,
-  "num": 44,
-  "depuis": 2023
- },
- {
   "nom": "Luca Pellegrini",
   "pop": 28,
   "nat": "Italie",
@@ -8229,18 +6009,6 @@
   "poste": "DC",
   "age": 22,
   "num": 4,
-  "depuis": 2024
- },
- {
-  "nom": "Lucas Bergvall",
-  "pop": 38,
-  "nat": "Suède",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MIL",
-  "age": 20,
-  "num": 15,
   "depuis": 2024
  },
  {
@@ -8436,18 +6204,6 @@
   "depuis": 0
  },
  {
-  "nom": "Luka Vušković",
-  "pop": 34,
-  "nat": "Croatie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "DEF",
-  "age": 19,
-  "num": 44,
-  "depuis": 2026
- },
- {
   "nom": "Lukas Klostermann",
   "pop": 38,
   "nat": "Allemagne",
@@ -8472,18 +6228,6 @@
   "depuis": 2015
  },
  {
-  "nom": "Lukas Nmecha",
-  "pop": 28,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "ATT",
-  "age": 27,
-  "num": 14,
-  "depuis": 0
- },
- {
   "nom": "Lukas Ullrich",
   "pop": 11,
   "nat": "Allemagne",
@@ -8496,42 +6240,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Luke Chambers",
-  "pop": 20,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "DEF",
-  "age": 40,
-  "num": 44,
-  "depuis": 2012
- },
- {
-  "nom": "Luke Shaw",
-  "pop": 64,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "DEF",
-  "age": 31,
-  "num": 23,
-  "depuis": 2014
- },
- {
-  "nom": "Luke Woolfenden",
-  "pop": 8,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "DEF",
-  "age": 27,
-  "num": 26,
-  "depuis": 0
- },
- {
   "nom": "Luken Beitia Aguirregomezcorta",
   "pop": 4,
   "nat": "Espagne",
@@ -8542,18 +6250,6 @@
   "age": 22,
   "num": 34,
   "depuis": 2024
- },
- {
-  "nom": "Lukáš Horníček",
-  "pop": 21,
-  "nat": "Tchéquie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "GB",
-  "age": 24,
-  "num": 21,
-  "depuis": 2026
  },
  {
   "nom": "Lukáš Hrádecký",
@@ -8592,18 +6288,6 @@
   "depuis": 0
  },
  {
-  "nom": "Malick Thiaw",
-  "pop": 35,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "DEF",
-  "age": 25,
-  "num": 12,
-  "depuis": 2025
- },
- {
   "nom": "Malik Tillman",
   "pop": 33,
   "nat": "États-Unis",
@@ -8614,18 +6298,6 @@
   "age": 24,
   "num": 10,
   "depuis": 2025
- },
- {
-  "nom": "Malo Gusto",
-  "pop": 46,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "MIL",
-  "age": 23,
-  "num": 27,
-  "depuis": 2023
  },
  {
   "nom": "Mamadou Sarr",
@@ -8724,18 +6396,6 @@
   "depuis": 2011
  },
  {
-  "nom": "Manuel Ugarte Ribeiro",
-  "pop": 38,
-  "nat": "Uruguay",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "MIL",
-  "age": 25,
-  "num": 25,
-  "depuis": 2024
- },
- {
   "nom": "Marc Bartra",
   "pop": 51,
   "nat": "Espagne",
@@ -8796,18 +6456,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Marc Guéhi",
-  "pop": 46,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "DC",
-  "age": 26,
-  "num": 6,
-  "depuis": 2026
- },
- {
   "nom": "Marc Pubill",
   "pop": 35,
   "nat": "Espagne",
@@ -8830,18 +6478,6 @@
   "age": 32,
   "num": 20,
   "depuis": 2023
- },
- {
-  "nom": "Marcelino Núñez",
-  "pop": 14,
-  "nat": "Chili",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "MIL",
-  "age": 26,
-  "num": 32,
-  "depuis": 0
  },
  {
   "nom": "Marco Bleve",
@@ -8878,18 +6514,6 @@
   "age": 28,
   "num": 32,
   "depuis": 2019
- },
- {
-  "nom": "Marco Palestra",
-  "pop": 22,
-  "nat": "Italie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DEF",
-  "age": 21,
-  "num": 2,
-  "depuis": 2026
  },
  {
   "nom": "Marco Sportiello",
@@ -8940,18 +6564,6 @@
   "depuis": 2019
  },
  {
-  "nom": "Marcos Senesi",
-  "pop": 36,
-  "nat": "Argentine",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DEF",
-  "age": 29,
-  "num": 5,
-  "depuis": 2026
- },
- {
   "nom": "Marcos do Nascimento Teixeira",
   "pop": 21,
   "nat": "Brésil",
@@ -8962,18 +6574,6 @@
   "age": 30,
   "num": 23,
   "depuis": 2022
- },
- {
-  "nom": "Marcus Rashford",
-  "pop": 80,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "ATT",
-  "age": 28,
-  "num": 9,
-  "depuis": 2015
  },
  {
   "nom": "Marcus Thuram",
@@ -9084,18 +6684,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Mark Gillespie",
-  "pop": 15,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "GB",
-  "age": 34,
-  "num": 29,
-  "depuis": 2020
- },
- {
   "nom": "Mark McKenzie",
   "pop": 29,
   "nat": "États-Unis",
@@ -9168,18 +6756,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Martin Dúbravka",
-  "pop": 43,
-  "nat": "Slovaquie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "GB",
-  "age": 37,
-  "num": 39,
-  "depuis": 2026
- },
- {
   "nom": "Martin Vitík",
   "pop": 19,
   "nat": "Tchéquie",
@@ -9189,30 +6765,6 @@
   "poste": "DEF",
   "age": 23,
   "num": 41,
-  "depuis": 2025
- },
- {
-  "nom": "Martin Ødegaard",
-  "pop": 63,
-  "nat": "Norvège",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "MIL",
-  "age": 27,
-  "num": 8,
-  "depuis": 2021
- },
- {
-  "nom": "Martín Zubimendi",
-  "pop": 46,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "MIL",
-  "age": 27,
-  "num": 36,
   "depuis": 2025
  },
  {
@@ -9228,78 +6780,6 @@
   "depuis": 2021
  },
  {
-  "nom": "Mason Mount",
-  "pop": 55,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "MO",
-  "age": 27,
-  "num": 7,
-  "depuis": 2023
- },
- {
-  "nom": "Mateo Joseph",
-  "pop": 10,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "ATT",
-  "age": 22,
-  "num": 0,
-  "depuis": 0
- },
- {
-  "nom": "Mateo Kovačić",
-  "pop": 62,
-  "nat": "Croatie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MIL",
-  "age": 32,
-  "num": 8,
-  "depuis": 2023
- },
- {
-  "nom": "Mateus Fernandes",
-  "pop": 24,
-  "nat": "Portugal",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MIL",
-  "age": 22,
-  "num": 18,
-  "depuis": 2026
- },
- {
-  "nom": "Matheus Cunha",
-  "pop": 49,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "ATT",
-  "age": 27,
-  "num": 10,
-  "depuis": 2025
- },
- {
-  "nom": "Matheus Nunes",
-  "pop": 37,
-  "nat": "Portugal",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MIL",
-  "age": 28,
-  "num": 27,
-  "depuis": 2023
- },
- {
   "nom": "Mathew Ryan",
   "pop": 44,
   "nat": "Australie",
@@ -9312,18 +6792,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Mathias Jensen",
-  "pop": 34,
-  "nat": "Danemark",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "MIL",
-  "age": 30,
-  "num": 8,
-  "depuis": 2019
- },
- {
   "nom": "Mathieu Gorgelin",
   "pop": 17,
   "nat": "France",
@@ -9334,66 +6802,6 @@
   "age": 36,
   "num": 16,
   "depuis": 2019
- },
- {
-  "nom": "Mathys Tel",
-  "pop": 31,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "ATT",
-  "age": 21,
-  "num": 11,
-  "depuis": 2025
- },
- {
-  "nom": "Matias Fernandez Pardo",
-  "pop": 31,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "ATT",
-  "age": 21,
-  "num": 20,
-  "depuis": 2026
- },
- {
-  "nom": "Mats Wieffer",
-  "pop": 32,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "MDF",
-  "age": 26,
-  "num": 27,
-  "depuis": 2024
- },
- {
-  "nom": "Matt O'Riley",
-  "pop": 21,
-  "nat": "Danemark",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "MIL",
-  "age": 25,
-  "num": 33,
-  "depuis": 2024
- },
- {
-  "nom": "Matt Targett",
-  "pop": 31,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "DEF",
-  "age": 30,
-  "num": 23,
-  "depuis": 2026
  },
  {
   "nom": "Matteo Pessina",
@@ -9432,18 +6840,6 @@
   "depuis": 2021
  },
  {
-  "nom": "Matteo Ruggeri",
-  "pop": 23,
-  "nat": "Italie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "DEF",
-  "age": 24,
-  "num": 13,
-  "depuis": 2026
- },
- {
   "nom": "Matthias Ginter",
   "pop": 53,
   "nat": "Allemagne",
@@ -9454,18 +6850,6 @@
   "age": 32,
   "num": 28,
   "depuis": 2022
- },
- {
-  "nom": "Matthijs de Ligt",
-  "pop": 56,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "DC",
-  "age": 27,
-  "num": 4,
-  "depuis": 2024
  },
  {
   "nom": "Matthis Abline",
@@ -9504,18 +6888,6 @@
   "depuis": 2022
  },
  {
-  "nom": "Matty Cash",
-  "pop": 35,
-  "nat": "Pologne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "DEF",
-  "age": 29,
-  "num": 2,
-  "depuis": 2020
- },
- {
   "nom": "Matvey Safonov",
   "pop": 37,
   "nat": "Russie",
@@ -9550,54 +6922,6 @@
   "age": 36,
   "num": 22,
   "depuis": 0
- },
- {
-  "nom": "Max Alleyne",
-  "pop": 14,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "DC",
-  "age": 21,
-  "num": 68,
-  "depuis": 2023
- },
- {
-  "nom": "Max Dowman",
-  "pop": 31,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "MIL",
-  "age": 16,
-  "num": 56,
-  "depuis": 2025
- },
- {
-  "nom": "Maxence Lacroix",
-  "pop": 36,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DC",
-  "age": 26,
-  "num": 5,
-  "depuis": 2026
- },
- {
-  "nom": "Maxim De Cuyper",
-  "pop": 32,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "DEF",
-  "age": 25,
-  "num": 29,
-  "depuis": 2025
  },
  {
   "nom": "Maxime Lopez",
@@ -9756,30 +7080,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Michele Di Gregorio",
-  "pop": 22,
-  "nat": "Italie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "GB",
-  "age": 29,
-  "num": 20,
-  "depuis": 2026
- },
- {
-  "nom": "Micky van de Ven",
-  "pop": 38,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DEF",
-  "age": 25,
-  "num": 37,
-  "depuis": 2023
- },
- {
   "nom": "Miguel Gutiérrez",
   "pop": 28,
   "nat": "Espagne",
@@ -9852,18 +7152,6 @@
   "depuis": 2021
  },
  {
-  "nom": "Mike Penders",
-  "pop": 31,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "GB",
-  "age": 21,
-  "num": 39,
-  "depuis": 2024
- },
- {
   "nom": "Mikel Jauregizar",
   "pop": 17,
   "nat": "Espagne",
@@ -9874,18 +7162,6 @@
   "age": 22,
   "num": 18,
   "depuis": 2023
- },
- {
-  "nom": "Mikel Merino",
-  "pop": 55,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "MDF",
-  "age": 30,
-  "num": 23,
-  "depuis": 2024
  },
  {
   "nom": "Mikel Oyarzabal",
@@ -9910,30 +7186,6 @@
   "age": 24,
   "num": 18,
   "depuis": 2026
- },
- {
-  "nom": "Mikkel Damsgaard",
-  "pop": 37,
-  "nat": "Danemark",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "MIL",
-  "age": 26,
-  "num": 24,
-  "depuis": 0
- },
- {
-  "nom": "Milos Kerkez",
-  "pop": 37,
-  "nat": "Hongrie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DEF",
-  "age": 22,
-  "num": 6,
-  "depuis": 2025
  },
  {
   "nom": "Milutin Osmajić",
@@ -9984,18 +7236,6 @@
   "depuis": 2020
  },
  {
-  "nom": "Mohamed-Ali Cho",
-  "pop": 21,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "ATT",
-  "age": 22,
-  "num": 50,
-  "depuis": 2026
- },
- {
   "nom": "Mohammed Amoura",
   "pop": 27,
   "nat": "Algérie",
@@ -10006,18 +7246,6 @@
   "age": 26,
   "num": 9,
   "depuis": 2026
- },
- {
-  "nom": "Mohammed Kudus",
-  "pop": 41,
-  "nat": "Ghana",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "ATT",
-  "age": 26,
-  "num": 20,
-  "depuis": 2025
  },
  {
   "nom": "Mohammed Salisu",
@@ -10056,18 +7284,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Moisés Caicedo",
-  "pop": 47,
-  "nat": "Équateur",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "MIL",
-  "age": 24,
-  "num": 25,
-  "depuis": 2023
- },
- {
   "nom": "Montassar Talbi",
   "pop": 26,
   "nat": "Tunisie",
@@ -10078,18 +7294,6 @@
   "age": 28,
   "num": 3,
   "depuis": 2022
- },
- {
-  "nom": "Morgan Rogers",
-  "pop": 41,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "MO",
-  "age": 24,
-  "num": 17,
-  "depuis": 2026
  },
  {
   "nom": "Morgan Sanson",
@@ -10186,30 +7390,6 @@
   "age": 29,
   "num": 11,
   "depuis": 2025
- },
- {
-  "nom": "Mykhaylo Mudryk",
-  "pop": 45,
-  "nat": "Ukraine",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "AD",
-  "age": 25,
-  "num": 27,
-  "depuis": 2026
- },
- {
-  "nom": "Myles Lewis-Skelly",
-  "pop": 31,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DEF",
-  "age": 19,
-  "num": 49,
-  "depuis": 0
  },
  {
   "nom": "Nadiem Amiri",
@@ -10356,18 +7536,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Nick Pope",
-  "pop": 44,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "GB",
-  "age": 34,
-  "num": 1,
-  "depuis": 2022
- },
- {
   "nom": "Nick Woltemade",
   "pop": 36,
   "nat": "Allemagne",
@@ -10390,42 +7558,6 @@
   "age": 33,
   "num": 10,
   "depuis": 2026
- },
- {
-  "nom": "Nico Elvedi",
-  "pop": 43,
-  "nat": "Suisse",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "DC",
-  "age": 29,
-  "num": 30,
-  "depuis": 2026
- },
- {
-  "nom": "Nico González",
-  "pop": 38,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "MIL",
-  "age": 24,
-  "num": 6,
-  "depuis": 2026
- },
- {
-  "nom": "Nico O'Reilly",
-  "pop": 40,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MIL",
-  "age": 21,
-  "num": 33,
-  "depuis": 2022
  },
  {
   "nom": "Nico Paz",
@@ -10486,18 +7618,6 @@
   "age": 24,
   "num": 59,
   "depuis": 0
- },
- {
-  "nom": "Nicolas Jackson",
-  "pop": 42,
-  "nat": "Sénégal",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "ATT",
-  "age": 25,
-  "num": 11,
-  "depuis": 2026
  },
  {
   "nom": "Nicolas Seiwald",
@@ -10566,7 +7686,7 @@
   "cont": "Europe",
   "champ": "Serie A",
   "club": "ACF Fiorentina",
-  "poste": "MIL",
+  "poste": "ATT",
   "age": 27,
   "num": 10,
   "depuis": 2025
@@ -10656,18 +7776,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Nobel Mendy",
-  "pop": 12,
-  "nat": "Sénégal",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "DEF",
-  "age": 22,
-  "num": 32,
-  "depuis": 2026
- },
- {
   "nom": "Noel Törnqvist",
   "pop": 6,
   "nat": "Suède",
@@ -10690,42 +7798,6 @@
   "age": 19,
   "num": 85,
   "depuis": 2026
- },
- {
-  "nom": "Noni Madueke",
-  "pop": 46,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "AD",
-  "age": 24,
-  "num": 20,
-  "depuis": 2025
- },
- {
-  "nom": "Nordi Mukiele",
-  "pop": 34,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Sunderland AFC",
-  "poste": "DEF",
-  "age": 28,
-  "num": 20,
-  "depuis": 2025
- },
- {
-  "nom": "Noussair Mazraoui",
-  "pop": 48,
-  "nat": "Maroc",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "DEF",
-  "age": 28,
-  "num": 3,
-  "depuis": 2024
  },
  {
   "nom": "Nuno Mendes",
@@ -10858,18 +7930,6 @@
   "age": 23,
   "num": 23,
   "depuis": 2021
- },
- {
-  "nom": "Omar Marmoush",
-  "pop": 44,
-  "nat": "Égypte",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "ATT",
-  "age": 27,
-  "num": 0,
-  "depuis": 2026
  },
  {
   "nom": "Omari Hutchinson",
@@ -11016,18 +8076,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Paddy McNair",
-  "pop": 36,
-  "nat": "Irlande du Nord",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "DEF",
-  "age": 31,
-  "num": 17,
-  "depuis": 2014
- },
- {
   "nom": "Pape Gueye",
   "pop": 40,
   "nat": "Sénégal",
@@ -11049,30 +8097,6 @@
   "poste": "MIL",
   "age": 23,
   "num": 29,
-  "depuis": 2026
- },
- {
-  "nom": "Pascal Groß",
-  "pop": 40,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "MIL",
-  "age": 35,
-  "num": 13,
-  "depuis": 2026
- },
- {
-  "nom": "Pascal Struijk",
-  "pop": 19,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "DEF",
-  "age": 27,
-  "num": 4,
   "depuis": 2026
  },
  {
@@ -11160,18 +8184,6 @@
   "depuis": 2024
  },
  {
-  "nom": "Pau Torres",
-  "pop": 41,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "DEF",
-  "age": 29,
-  "num": 14,
-  "depuis": 2023
- },
- {
   "nom": "Paulo Dybala",
   "pop": 75,
   "nat": "Argentine",
@@ -11185,7 +8197,7 @@
  },
  {
   "nom": "Pavel Šulc",
-  "pop": 28,
+  "pop": 29,
   "nat": "Tchéquie",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11220,30 +8232,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Pedro Neto",
-  "pop": 43,
-  "nat": "Portugal",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "AD",
-  "age": 26,
-  "num": 7,
-  "depuis": 2024
- },
- {
-  "nom": "Pedro Porro",
-  "pop": 44,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DEF",
-  "age": 26,
-  "num": 23,
-  "depuis": 2023
- },
- {
   "nom": "Peio Canales",
   "pop": 10,
   "nat": "Espagne",
@@ -11254,18 +8242,6 @@
   "age": 21,
   "num": 28,
   "depuis": 2024
- },
- {
-  "nom": "Pep Chavarría",
-  "pop": 17,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DEF",
-  "age": 28,
-  "num": 29,
-  "depuis": 2026
  },
  {
   "nom": "Pere Milla Peña",
@@ -11304,18 +8280,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Phil Foden",
-  "pop": 62,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MIL",
-  "age": 26,
-  "num": 47,
-  "depuis": 2016
- },
- {
   "nom": "Philipp Lienhart",
   "pop": 33,
   "nat": "Autriche",
@@ -11350,18 +8314,6 @@
   "age": 31,
   "num": 95,
   "depuis": 2025
- },
- {
-  "nom": "Piero Hincapié",
-  "pop": 43,
-  "nat": "Équateur",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DC",
-  "age": 24,
-  "num": 5,
-  "depuis": 2026
  },
  {
   "nom": "Pierre Højbjerg",
@@ -11470,18 +8422,6 @@
   "age": 19,
   "num": 47,
   "depuis": 2025
- },
- {
-  "nom": "Quinten Timber",
-  "pop": 34,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "MIL",
-  "age": 25,
-  "num": 23,
-  "depuis": 2026
  },
  {
   "nom": "Radu Drăgușin",
@@ -11616,18 +8556,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Rayan Cherki",
-  "pop": 47,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "ATT",
-  "age": 23,
-  "num": 10,
-  "depuis": 2025
- },
- {
   "nom": "Rayane Belaid",
   "pop": 9,
   "nat": "Espagne",
@@ -11676,18 +8604,6 @@
   "depuis": 2022
  },
  {
-  "nom": "Reece James",
-  "pop": 54,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "DEF",
-  "age": 26,
-  "num": 24,
-  "depuis": 2018
- },
- {
   "nom": "Renaud Ripart",
   "pop": 9,
   "nat": "France",
@@ -11724,18 +8640,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Riccardo Calafiori",
-  "pop": 44,
-  "nat": "Italie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DEF",
-  "age": 24,
-  "num": 33,
-  "depuis": 2024
- },
- {
   "nom": "Riccardo Orsolini",
   "pop": 30,
   "nat": "Italie",
@@ -11760,42 +8664,6 @@
   "depuis": 2018
  },
  {
-  "nom": "Richarlison",
-  "pop": 58,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "ATT",
-  "age": 29,
-  "num": 9,
-  "depuis": 2022
- },
- {
-  "nom": "Rico Henry",
-  "pop": 23,
-  "nat": "Jamaïque",
-  "cont": "Amérique du Nord",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "DEF",
-  "age": 29,
-  "num": 3,
-  "depuis": 2016
- },
- {
-  "nom": "Rico Lewis",
-  "pop": 33,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "MDF",
-  "age": 21,
-  "num": 82,
-  "depuis": 2022
- },
- {
   "nom": "Ridle Baku",
   "pop": 27,
   "nat": "Allemagne",
@@ -11806,18 +8674,6 @@
   "age": 28,
   "num": 17,
   "depuis": 0
- },
- {
-  "nom": "Rio Ngumoha",
-  "pop": 29,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "ATT",
-  "age": 18,
-  "num": 73,
-  "depuis": 2025
  },
  {
   "nom": "Ritsu Doan",
@@ -11952,18 +8808,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Robin Roefs",
-  "pop": 29,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Sunderland AFC",
-  "poste": "GB",
-  "age": 23,
-  "num": 22,
-  "depuis": 2025
- },
- {
   "nom": "Robin Zentner",
   "pop": 17,
   "nat": "Allemagne",
@@ -11998,18 +8842,6 @@
   "age": 36,
   "num": 16,
   "depuis": 0
- },
- {
-  "nom": "Rodrigo Bentancur",
-  "pop": 51,
-  "nat": "Uruguay",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DC",
-  "age": 29,
-  "num": 30,
-  "depuis": 2022
  },
  {
   "nom": "Rodrigo Mora",
@@ -12096,18 +8928,6 @@
   "depuis": 0
  },
  {
-  "nom": "Romaine Lee Mundle",
-  "pop": 9,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Sunderland AFC",
-  "poste": "MIL",
-  "age": 23,
-  "num": 14,
-  "depuis": 0
- },
- {
   "nom": "Romano Schmid",
   "pop": 36,
   "nat": "Autriche",
@@ -12117,30 +8937,6 @@
   "poste": "MIL",
   "age": 26,
   "num": 10,
-  "depuis": 2026
- },
- {
-  "nom": "Roméo Lavia",
-  "pop": 35,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Chelsea FC",
-  "poste": "MDF",
-  "age": 22,
-  "num": 45,
-  "depuis": 2023
- },
- {
-  "nom": "Ronald Araújo",
-  "pop": 50,
-  "nat": "Uruguay",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DC",
-  "age": 27,
-  "num": 33,
   "depuis": 2026
  },
  {
@@ -12154,18 +8950,6 @@
   "age": 20,
   "num": 19,
   "depuis": 2025
- },
- {
-  "nom": "Ross Barkley",
-  "pop": 54,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "MO",
-  "age": 32,
-  "num": 6,
-  "depuis": 2024
  },
  {
   "nom": "Roy Revivo",
@@ -12240,28 +9024,16 @@
   "depuis": 2023
  },
  {
-  "nom": "Ryan Gravenberch",
-  "pop": 49,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
+  "nom": "Ryunosuke Sato",
+  "pop": 15,
+  "nat": "Japon",
+  "cont": "Asie",
+  "champ": "Liga",
+  "club": "Valence CF",
   "poste": "MIL",
-  "age": 24,
-  "num": 38,
-  "depuis": 2023
- },
- {
-  "nom": "Ryan Sessegnon",
-  "pop": 38,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DEF",
-  "age": 26,
-  "num": 30,
-  "depuis": 2019
+  "age": 19,
+  "num": 39,
+  "depuis": 0
  },
  {
   "nom": "Rémy Labeau-Lascary",
@@ -12286,18 +9058,6 @@
   "age": 24,
   "num": 40,
   "depuis": 2025
- },
- {
-  "nom": "Rúben Dias",
-  "pop": 52,
-  "nat": "Portugal",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "DC",
-  "age": 29,
-  "num": 3,
-  "depuis": 2020
  },
  {
   "nom": "Sacha Boey",
@@ -12384,18 +9144,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Sander Berge",
-  "pop": 34,
-  "nat": "Norvège",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "MIL",
-  "age": 28,
-  "num": 16,
-  "depuis": 2024
- },
- {
   "nom": "Sander Tangvik",
   "pop": 22,
   "nat": "Norvège",
@@ -12405,18 +9153,6 @@
   "poste": "GB",
   "age": 23,
   "num": 12,
-  "depuis": 2026
- },
- {
-  "nom": "Sandro Tonali",
-  "pop": 41,
-  "nat": "Italie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MIL",
-  "age": 26,
-  "num": 16,
   "depuis": 2026
  },
  {
@@ -12480,18 +9216,6 @@
   "depuis": 0
  },
  {
-  "nom": "Saša Lukić",
-  "pop": 30,
-  "nat": "Serbie",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "MIL",
-  "age": 30,
-  "num": 23,
-  "depuis": 2026
- },
- {
   "nom": "Scott McTominay",
   "pop": 52,
   "nat": "Écosse",
@@ -12525,30 +9249,6 @@
   "poste": "DC",
   "age": 21,
   "num": 4,
-  "depuis": 2026
- },
- {
-  "nom": "Sean Longstaff Jugador",
-  "pop": 28,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Leeds United",
-  "poste": "MIL",
-  "age": 28,
-  "num": 8,
-  "depuis": 2025
- },
- {
-  "nom": "Sean Steur",
-  "pop": 14,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "MIL",
-  "age": 18,
-  "num": 14,
   "depuis": 2026
  },
  {
@@ -12600,18 +9300,6 @@
   "depuis": 0
  },
  {
-  "nom": "Senne Lammens",
-  "pop": 40,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "GB",
-  "age": 24,
-  "num": 1,
-  "depuis": 2025
- },
- {
   "nom": "Senne Lynen",
   "pop": 12,
   "nat": "Belgique",
@@ -12634,18 +9322,6 @@
   "age": 20,
   "num": 24,
   "depuis": 2024
- },
- {
-  "nom": "Sepp van den Berg",
-  "pop": 28,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DEF",
-  "age": 24,
-  "num": 4,
-  "depuis": 0
  },
  {
   "nom": "Sergi Canós",
@@ -12768,18 +9444,6 @@
   "depuis": 2019
  },
  {
-  "nom": "Sidiki Chérif",
-  "pop": 11,
-  "nat": "Guinée",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Coventry City FC",
-  "poste": "ATT",
-  "age": 19,
-  "num": 49,
-  "depuis": 2026
- },
- {
   "nom": "Silas Katompa Mvumpa",
   "pop": 25,
   "nat": "RD Congo",
@@ -12850,18 +9514,6 @@
   "age": 25,
   "num": 20,
   "depuis": 2019
- },
- {
-  "nom": "Sindre Walle Egeli",
-  "pop": 11,
-  "nat": "Norvège",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Ipswich Town FC",
-  "poste": "ATT",
-  "age": 20,
-  "num": 8,
-  "depuis": 2025
  },
  {
   "nom": "Sofiane Diop",
@@ -12948,30 +9600,6 @@
   "depuis": 2024
  },
  {
-  "nom": "Sven Norman Botman",
-  "pop": 33,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "DC",
-  "age": 26,
-  "num": 4,
-  "depuis": 2022
- },
- {
-  "nom": "Sávio Moreira de Oliveira",
-  "pop": 30,
-  "nat": "Brésil",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "ATT",
-  "age": 22,
-  "num": 17,
-  "depuis": 2026
- },
- {
   "nom": "Tajon Buchanan",
   "pop": 34,
   "nat": "Canada",
@@ -12994,18 +9622,6 @@
   "age": 25,
   "num": 14,
   "depuis": 2022
- },
- {
-  "nom": "Takehiro Tomiyasu",
-  "pop": 52,
-  "nat": "Japon",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "DEF",
-  "age": 27,
-  "num": 17,
-  "depuis": 2026
  },
  {
   "nom": "Takumi Minamino",
@@ -13054,18 +9670,6 @@
   "age": 24,
   "num": 6,
   "depuis": 2024
- },
- {
-  "nom": "Taylor Harwood-Bellis",
-  "pop": 21,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester City FC",
-  "poste": "DEF",
-  "age": 24,
-  "num": 4,
-  "depuis": 0
  },
  {
   "nom": "Teddy Boulhendi",
@@ -13128,30 +9732,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Thierno Barry",
-  "pop": 18,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Everton FC",
-  "poste": "ATT",
-  "age": 23,
-  "num": 11,
-  "depuis": 2025
- },
- {
-  "nom": "Thomas Heaton",
-  "pop": 44,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "GB",
-  "age": 40,
-  "num": 22,
-  "depuis": 2021
- },
- {
   "nom": "Thomas Jørgensen",
   "pop": 9,
   "nat": "Danemark",
@@ -13173,18 +9753,6 @@
   "poste": "MIL",
   "age": 30,
   "num": 0,
-  "depuis": 2026
- },
- {
-  "nom": "Thomas Meunier",
-  "pop": 53,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Sunderland AFC",
-  "poste": "DEF",
-  "age": 34,
-  "num": 12,
   "depuis": 2026
  },
  {
@@ -13212,18 +9780,6 @@
   "depuis": 0
  },
  {
-  "nom": "Tim Iroegbunam",
-  "pop": 11,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Hull City AFC",
-  "poste": "MIL",
-  "age": 23,
-  "num": 42,
-  "depuis": 2026
- },
- {
   "nom": "Tim Kleindienst",
   "pop": 25,
   "nat": "Allemagne",
@@ -13246,18 +9802,6 @@
   "age": 24,
   "num": 19,
   "depuis": 0
- },
- {
-  "nom": "Timothy Castagne",
-  "pop": 41,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "DEF",
-  "age": 30,
-  "num": 21,
-  "depuis": 2023
  },
  {
   "nom": "Timothy Chandler",
@@ -13284,18 +9828,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Tino Livramento",
-  "pop": 30,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "DEF",
-  "age": 23,
-  "num": 2,
-  "depuis": 2023
- },
- {
   "nom": "Tobias Sippel",
   "pop": 20,
   "nat": "Allemagne",
@@ -13320,18 +9852,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Tom Cairney",
-  "pop": 27,
-  "nat": "Écosse",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Fulham FC",
-  "poste": "MIL",
-  "age": 35,
-  "num": 10,
-  "depuis": 2015
- },
- {
   "nom": "Tom Krauß",
   "pop": 18,
   "nat": "Allemagne",
@@ -13342,18 +9862,6 @@
   "age": 25,
   "num": 5,
   "depuis": 2016
- },
- {
-  "nom": "Tom McGill",
-  "pop": 15,
-  "nat": "Canada",
-  "cont": "Amérique du Nord",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "GB",
-  "age": 26,
-  "num": 38,
-  "depuis": 2018
  },
  {
   "nom": "Tommaso Baldanzi",
@@ -13380,18 +9888,6 @@
   "depuis": 0
  },
  {
-  "nom": "Tosin Adarabioyo",
-  "pop": 34,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "DC",
-  "age": 28,
-  "num": 4,
-  "depuis": 2026
- },
- {
   "nom": "Trent Alexander-Arnold",
   "pop": 62,
   "nat": "Angleterre",
@@ -13402,18 +9898,6 @@
   "age": 27,
   "num": 12,
   "depuis": 2025
- },
- {
-  "nom": "Trey Nyoni",
-  "pop": 16,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "MIL",
-  "age": 19,
-  "num": 42,
-  "depuis": 2024
  },
  {
   "nom": "Troy Parrott",
@@ -13428,18 +9912,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Tyler Adams",
-  "pop": 39,
-  "nat": "États-Unis",
-  "cont": "Amérique du Nord",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "MIL",
-  "age": 27,
-  "num": 12,
-  "depuis": 2023
- },
- {
   "nom": "Tyrhys Dolan",
   "pop": 13,
   "nat": "Angleterre",
@@ -13450,18 +9922,6 @@
   "age": 24,
   "num": 24,
   "depuis": 2025
- },
- {
-  "nom": "Tyrick Mitchell",
-  "pop": 23,
-  "nat": "Angleterre",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "DEF",
-  "age": 27,
-  "num": 3,
-  "depuis": 0
  },
  {
   "nom": "Unai Egiluz",
@@ -13584,30 +10044,6 @@
   "depuis": 2025
  },
  {
-  "nom": "Victor Lindelöf",
-  "pop": 50,
-  "nat": "Suède",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "DEF",
-  "age": 32,
-  "num": 3,
-  "depuis": 2025
- },
- {
-  "nom": "Viktor Gyökeres",
-  "pop": 56,
-  "nat": "Suède",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "ATT",
-  "age": 28,
-  "num": 14,
-  "depuis": 2025
- },
- {
   "nom": "Vincenzo Grifo",
   "pop": 27,
   "nat": "Italie",
@@ -13632,42 +10068,6 @@
   "depuis": 2018
  },
  {
-  "nom": "Virgil van Dijk",
-  "pop": 72,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "DEF",
-  "age": 35,
-  "num": 4,
-  "depuis": 2018
- },
- {
-  "nom": "Vitaliy Mykolenko",
-  "pop": 34,
-  "nat": "Ukraine",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Everton FC",
-  "poste": "DEF",
-  "age": 27,
-  "num": 16,
-  "depuis": 2022
- },
- {
-  "nom": "Vitaly Janelt",
-  "pop": 24,
-  "nat": "Allemagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "MIL",
-  "age": 28,
-  "num": 27,
-  "depuis": 2020
- },
- {
   "nom": "Víctor Chust",
   "pop": 15,
   "nat": "Espagne",
@@ -13690,18 +10090,6 @@
   "age": 28,
   "num": 17,
   "depuis": 0
- },
- {
-  "nom": "Víctor Muñoz",
-  "pop": 36,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Liverpool FC",
-  "poste": "MIL",
-  "age": 23,
-  "num": 23,
-  "depuis": 2026
  },
  {
   "nom": "Vítor Ferreira",
@@ -13776,30 +10164,6 @@
   "depuis": 2015
  },
  {
-  "nom": "William Osula",
-  "pop": 24,
-  "nat": "Danemark",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "ATT",
-  "age": 23,
-  "num": 10,
-  "depuis": 2024
- },
- {
-  "nom": "William Saliba",
-  "pop": 49,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Arsenal FC",
-  "poste": "DEF",
-  "age": 25,
-  "num": 2,
-  "depuis": 2019
- },
- {
   "nom": "Willian Pacho",
   "pop": 37,
   "nat": "Équateur",
@@ -13809,18 +10173,6 @@
   "poste": "DC",
   "age": 24,
   "num": 51,
-  "depuis": 2024
- },
- {
-  "nom": "Wilson Odobert",
-  "pop": 18,
-  "nat": "France",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "ATT",
-  "age": 21,
-  "num": 28,
   "depuis": 2024
  },
  {
@@ -13848,18 +10200,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Xavi Simons",
-  "pop": 48,
-  "nat": "Pays-Bas",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MIL",
-  "age": 23,
-  "num": 7,
-  "depuis": 2025
- },
- {
   "nom": "Yael Trepy",
   "pop": 3,
   "nat": "France",
@@ -13884,18 +10224,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Yang Min-hyuk",
-  "pop": 16,
-  "nat": "Corée du Sud",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Tottenham Hotspur",
-  "poste": "MO",
-  "age": 20,
-  "num": 0,
-  "depuis": 2024
- },
- {
   "nom": "Yangel Herrera",
   "pop": 28,
   "nat": "Venezuela",
@@ -13906,42 +10234,6 @@
   "age": 28,
   "num": 21,
   "depuis": 2025
- },
- {
-  "nom": "Yankuba Minteh",
-  "pop": 25,
-  "nat": "Gambie",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "ATT",
-  "age": 22,
-  "num": 11,
-  "depuis": 2024
- },
- {
-  "nom": "Yasin Ayari",
-  "pop": 34,
-  "nat": "Suède",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brighton & Hove",
-  "poste": "MIL",
-  "age": 22,
-  "num": 26,
-  "depuis": 2023
- },
- {
-  "nom": "Yehor Yarmolyuk",
-  "pop": 16,
-  "nat": "Ukraine",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Brentford FC",
-  "poste": "MIL",
-  "age": 22,
-  "num": 6,
-  "depuis": 0
  },
  {
   "nom": "Yeray Álvarez",
@@ -13968,18 +10260,6 @@
   "depuis": 2021
  },
  {
-  "nom": "Yeremi Pino",
-  "pop": 40,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "MIL",
-  "age": 23,
-  "num": 10,
-  "depuis": 2025
- },
- {
   "nom": "Yerry Mina",
   "pop": 51,
   "nat": "Colombie",
@@ -14004,18 +10284,6 @@
   "depuis": 2026
  },
  {
-  "nom": "Yoane Wissa",
-  "pop": 38,
-  "nat": "RD Congo",
-  "cont": "Afrique",
-  "champ": "Premier League",
-  "club": "Newcastle United FC",
-  "poste": "ATT",
-  "age": 30,
-  "num": 9,
-  "depuis": 2025
- },
- {
   "nom": "Younes Ebnoutalib",
   "pop": 11,
   "nat": "Maroc",
@@ -14026,18 +10294,6 @@
   "age": 22,
   "num": 11,
   "depuis": 0
- },
- {
-  "nom": "Youri Tielemans",
-  "pop": 54,
-  "nat": "Belgique",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Manchester United FC",
-  "poste": "MIL",
-  "age": 29,
-  "num": 18,
-  "depuis": 2026
  },
  {
   "nom": "Youssouf Fofana",
@@ -14158,18 +10414,6 @@
   "age": 26,
   "num": 9,
   "depuis": 2025
- },
- {
-  "nom": "Zion Suzuki",
-  "pop": 34,
-  "nat": "Japon",
-  "cont": "Asie",
-  "champ": "Premier League",
-  "club": "Aston Villa FC",
-  "poste": "GB",
-  "age": 24,
-  "num": 1,
-  "depuis": 2026
  },
  {
   "nom": "Álex Baena",
@@ -14316,18 +10560,6 @@
   "depuis": 2023
  },
  {
-  "nom": "Álvaro Rodríguez",
-  "pop": 21,
-  "nat": "Uruguay",
-  "cont": "Amérique du Sud",
-  "champ": "Premier League",
-  "club": "AFC Bournemouth",
-  "poste": "ATT",
-  "age": 22,
-  "num": 30,
-  "depuis": 2026
- },
- {
   "nom": "Éder Gabriel Militão",
   "pop": 54,
   "nat": "Brésil",
@@ -14338,18 +10570,6 @@
   "age": 28,
   "num": 3,
   "depuis": 2019
- },
- {
-  "nom": "Óscar Mingueza",
-  "pop": 38,
-  "nat": "Espagne",
-  "cont": "Europe",
-  "champ": "Premier League",
-  "club": "Crystal Palace FC",
-  "poste": "DEF",
-  "age": 27,
-  "num": 30,
-  "depuis": 2026
  },
  {
   "nom": "Ørjan Nyland",
