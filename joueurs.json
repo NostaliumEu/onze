@@ -97,7 +97,7 @@
  },
  {
   "nom": "Achraf Hakimi",
-  "pop": 71,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -121,19 +121,19 @@
  },
  {
   "nom": "Adam Marušić",
-  "pop": 26,
+  "pop": 0,
   "nat": "Monténégro",
   "cont": "Europe",
   "champ": "Serie A",
   "club": "Società Sportiva Lazio",
   "poste": "ATT",
-  "age": 33,
+  "age": 34,
   "num": 77,
   "depuis": 0
  },
  {
   "nom": "Adam Obert",
-  "pop": 21,
+  "pop": 0,
   "nat": "Slovaquie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -193,7 +193,7 @@
  },
  {
   "nom": "Adrien Rabiot",
-  "pop": 57,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -313,7 +313,7 @@
  },
  {
   "nom": "Akor Adams",
-  "pop": 22,
+  "pop": 0,
   "nat": "Nigeria",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -325,7 +325,7 @@
  },
  {
   "nom": "Aladji Bamba",
-  "pop": 11,
+  "pop": 12,
   "nat": "France",
   "cont": "Europe",
   "champ": "Premier League",
@@ -349,7 +349,7 @@
  },
  {
   "nom": "Albert Guðmundsson",
-  "pop": 34,
+  "pop": 0,
   "nat": "Islande",
   "cont": "Europe",
   "champ": "Serie A",
@@ -385,7 +385,7 @@
  },
  {
   "nom": "Alec Georgen",
-  "pop": 13,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -427,7 +427,7 @@
   "champ": "Liga",
   "club": "FC Barcelone",
   "poste": "DEF",
-  "age": 22,
+  "age": 23,
   "num": 3,
   "depuis": 2021
  },
@@ -469,7 +469,7 @@
  },
  {
   "nom": "Alejandro Gomes",
-  "pop": 8,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -517,7 +517,7 @@
  },
  {
   "nom": "Aleksandr Golovine",
-  "pop": 48,
+  "pop": 0,
   "nat": "Russie",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -529,7 +529,7 @@
  },
  {
   "nom": "Alessandro Bastoni",
-  "pop": 44,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -541,7 +541,7 @@
  },
  {
   "nom": "Alessandro Buongiorno",
-  "pop": 30,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -553,7 +553,7 @@
  },
  {
   "nom": "Alessandro Deiola",
-  "pop": 10,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -565,7 +565,7 @@
  },
  {
   "nom": "Alessandro Longoni",
-  "pop": 9,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -577,7 +577,7 @@
  },
  {
   "nom": "Alessandro Marcandalli",
-  "pop": 3,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -589,7 +589,7 @@
  },
  {
   "nom": "Alessandro Russo",
-  "pop": 5,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -601,7 +601,7 @@
  },
  {
   "nom": "Alessandro Zanoli",
-  "pop": 10,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -613,7 +613,7 @@
  },
  {
   "nom": "Alessio Zerbin",
-  "pop": 13,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -625,7 +625,7 @@
  },
  {
   "nom": "Alex Amorim",
-  "pop": 3,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -661,7 +661,7 @@
  },
  {
   "nom": "Alex Meret",
-  "pop": 42,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -709,7 +709,7 @@
  },
  {
   "nom": "Alexandru Borbei",
-  "pop": 1,
+  "pop": 0,
   "nat": "Roumanie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -733,7 +733,7 @@
  },
  {
   "nom": "Alexis Saelemaekers",
-  "pop": 41,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -745,7 +745,7 @@
  },
  {
   "nom": "Alfred Duncan",
-  "pop": 30,
+  "pop": 0,
   "nat": "Ghana",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -757,7 +757,7 @@
  },
  {
   "nom": "Ali Abdi",
-  "pop": 24,
+  "pop": 0,
   "nat": "Tunisie",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -853,7 +853,7 @@
  },
  {
   "nom": "Amine El Ouazzani",
-  "pop": 10,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -865,7 +865,7 @@
  },
  {
   "nom": "Amine Gouiri",
-  "pop": 37,
+  "pop": 0,
   "nat": "Algérie",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -877,7 +877,7 @@
  },
  {
   "nom": "Amine Harit",
-  "pop": 34,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -889,7 +889,7 @@
  },
  {
   "nom": "Amine Sbaï",
-  "pop": 20,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -901,7 +901,7 @@
  },
  {
   "nom": "Amir Richardson",
-  "pop": 23,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -913,7 +913,7 @@
  },
  {
   "nom": "Amir Rrahmani",
-  "pop": 30,
+  "pop": 0,
   "nat": "Kosovo",
   "cont": "Europe",
   "champ": "Serie A",
@@ -973,7 +973,7 @@
  },
  {
   "nom": "Andrea Carboni",
-  "pop": 9,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -985,7 +985,7 @@
  },
  {
   "nom": "Andrea Colpani",
-  "pop": 15,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -997,7 +997,7 @@
  },
  {
   "nom": "Andrea Pinamonti",
-  "pop": 20,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1081,7 +1081,7 @@
  },
  {
   "nom": "André-Frank Zambo Anguissa",
-  "pop": 43,
+  "pop": 0,
   "nat": "Cameroun",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -1105,7 +1105,7 @@
  },
  {
   "nom": "Andy Elysée Logbo",
-  "pop": 4,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1117,7 +1117,7 @@
  },
  {
   "nom": "Angel Gomes",
-  "pop": 30,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1177,7 +1177,7 @@
  },
  {
   "nom": "Ansu Fati",
-  "pop": 59,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1249,7 +1249,7 @@
  },
  {
   "nom": "Anthony Lopes",
-  "pop": 40,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1261,7 +1261,7 @@
  },
  {
   "nom": "Anthony Rouault",
-  "pop": 14,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1273,7 +1273,7 @@
  },
  {
   "nom": "Antoine Rabillard",
-  "pop": 9,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1321,7 +1321,7 @@
  },
  {
   "nom": "Antonino Gallo",
-  "pop": 11,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1333,7 +1333,7 @@
  },
  {
   "nom": "Antonio Arena",
-  "pop": 7,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1417,7 +1417,7 @@
  },
  {
   "nom": "Ardian Ismajli",
-  "pop": 22,
+  "pop": 0,
   "nat": "Albanie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1429,7 +1429,7 @@
  },
  {
   "nom": "Ardon Jashari",
-  "pop": 33,
+  "pop": 0,
   "nat": "Suisse",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1441,7 +1441,7 @@
  },
  {
   "nom": "Arijanet Muric",
-  "pop": 33,
+  "pop": 0,
   "nat": "Kosovo",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1453,7 +1453,7 @@
  },
  {
   "nom": "Arkadiusz Milik",
-  "pop": 51,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1489,7 +1489,7 @@
  },
  {
   "nom": "Aron Dønnum",
-  "pop": 14,
+  "pop": 0,
   "nat": "Norvège",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1501,7 +1501,7 @@
  },
  {
   "nom": "Arsen Zakharyan",
-  "pop": 28,
+  "pop": 29,
   "nat": "Russie",
   "cont": "Europe",
   "champ": "Liga",
@@ -1513,7 +1513,7 @@
  },
  {
   "nom": "Artem Dovbyk",
-  "pop": 39,
+  "pop": 0,
   "nat": "Ukraine",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1525,7 +1525,7 @@
  },
  {
   "nom": "Arthur Theate",
-  "pop": 34,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1585,7 +1585,7 @@
  },
  {
   "nom": "Assane Diao",
-  "pop": 26,
+  "pop": 0,
   "nat": "Sénégal",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -1601,15 +1601,15 @@
   "nat": "Turquie",
   "cont": "Europe",
   "champ": "Bundesliga",
-  "club": "VfB Stuttgart",
+  "club": "BV 09 Borussia Dortmund",
   "poste": "MIL",
-  "age": 29,
+  "age": 30,
   "num": 16,
   "depuis": 0
  },
  {
   "nom": "Augusto Seedorf Owusu",
-  "pop": 2,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1633,7 +1633,7 @@
  },
  {
   "nom": "Axel Witsel",
-  "pop": 59,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1645,7 +1645,7 @@
  },
  {
   "nom": "Ayase Ueda",
-  "pop": 51,
+  "pop": 0,
   "nat": "Japon",
   "cont": "Asie",
   "champ": "Ligue 1",
@@ -1681,7 +1681,7 @@
  },
  {
   "nom": "Ayumu Seko",
-  "pop": 36,
+  "pop": 0,
   "nat": "Japon",
   "cont": "Asie",
   "champ": "Ligue 1",
@@ -1729,7 +1729,7 @@
  },
  {
   "nom": "Bamo Meïté",
-  "pop": 9,
+  "pop": 0,
   "nat": "Côte d'Ivoire",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -1741,7 +1741,7 @@
  },
  {
   "nom": "Bandiougou Fadiga",
-  "pop": 11,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1765,7 +1765,7 @@
  },
  {
   "nom": "Bartosz Mrozek",
-  "pop": 6,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1837,7 +1837,7 @@
  },
  {
   "nom": "Benjamin André",
-  "pop": 18,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -1861,7 +1861,7 @@
  },
  {
   "nom": "Benjamin Pavard",
-  "pop": 60,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1885,7 +1885,7 @@
  },
  {
   "nom": "Benoît Badiashile",
-  "pop": 34,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -1933,7 +1933,7 @@
  },
  {
   "nom": "Beto (football, 1998)",
-  "pop": 20,
+  "pop": 0,
   "nat": "Guinée-Bissau",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -2005,7 +2005,7 @@
  },
  {
   "nom": "Billy Gilmour",
-  "pop": 34,
+  "pop": 0,
   "nat": "Écosse",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2017,7 +2017,7 @@
  },
  {
   "nom": "Boris Radunović",
-  "pop": 9,
+  "pop": 0,
   "nat": "Serbie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2029,7 +2029,7 @@
  },
  {
   "nom": "Borja Iglesias",
-  "pop": 40,
+  "pop": 41,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
@@ -2065,7 +2065,7 @@
  },
  {
   "nom": "Boulaye Dia",
-  "pop": 32,
+  "pop": 0,
   "nat": "Sénégal",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -2113,7 +2113,7 @@
  },
  {
   "nom": "Branco van den Boomen",
-  "pop": 15,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -2125,7 +2125,7 @@
  },
  {
   "nom": "Brendan Chardonnet",
-  "pop": 15,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -2161,7 +2161,7 @@
  },
  {
   "nom": "Brice Samba",
-  "pop": 35,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -2221,7 +2221,7 @@
  },
  {
   "nom": "Bryan Cristante",
-  "pop": 43,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2293,7 +2293,7 @@
  },
  {
   "nom": "Cameron Archer",
-  "pop": 19,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -2329,7 +2329,7 @@
  },
  {
   "nom": "Carlens Arcus",
-  "pop": 23,
+  "pop": 0,
   "nat": "Haïti",
   "cont": "Amérique du Nord",
   "champ": "Ligue 1",
@@ -2353,7 +2353,7 @@
  },
  {
   "nom": "Carlo Pinsoglio",
-  "pop": 23,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2365,7 +2365,7 @@
  },
  {
   "nom": "Carlos Augusto Zopolato Neves",
-  "pop": 25,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -2377,7 +2377,7 @@
  },
  {
   "nom": "Carlos Baleba",
-  "pop": 29,
+  "pop": 30,
   "nat": "Cameroun",
   "cont": "Afrique",
   "champ": "Premier League",
@@ -2437,7 +2437,7 @@
  },
  {
   "nom": "Cesare Casadei",
-  "pop": 25,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2449,7 +2449,7 @@
  },
  {
   "nom": "Charles De Ketelaere",
-  "pop": 48,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2473,7 +2473,7 @@
  },
  {
   "nom": "Cher Ndour",
-  "pop": 17,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2509,7 +2509,7 @@
  },
  {
   "nom": "Christ Tapé",
-  "pop": 4,
+  "pop": 0,
   "nat": "Côte d'Ivoire",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -2533,7 +2533,7 @@
  },
  {
   "nom": "Christian Kabasele",
-  "pop": 36,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2545,7 +2545,7 @@
  },
  {
   "nom": "Christian Pulisic",
-  "pop": 56,
+  "pop": 0,
   "nat": "États-Unis",
   "cont": "Amérique du Nord",
   "champ": "Serie A",
@@ -2617,7 +2617,7 @@
  },
  {
   "nom": "Cody Drameh",
-  "pop": 12,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2689,7 +2689,7 @@
  },
  {
   "nom": "Conrad Harder",
-  "pop": 14,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -2701,7 +2701,7 @@
  },
  {
   "nom": "Corentin Tolisso",
-  "pop": 49,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -2713,7 +2713,7 @@
  },
  {
   "nom": "Cristhian Mosquera",
-  "pop": 30,
+  "pop": 31,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Premier League",
@@ -2737,7 +2737,7 @@
  },
  {
   "nom": "Cristian Volpato",
-  "pop": 22,
+  "pop": 0,
   "nat": "Australie",
   "cont": "Océanie",
   "champ": "Serie A",
@@ -2749,7 +2749,7 @@
  },
  {
   "nom": "Curtis Jones",
-  "pop": 40,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2893,7 +2893,7 @@
  },
  {
   "nom": "Daniel Birligea",
-  "pop": 16,
+  "pop": 0,
   "nat": "Roumanie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2917,7 +2917,7 @@
  },
  {
   "nom": "Daniel Maldini",
-  "pop": 33,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2965,7 +2965,7 @@
  },
  {
   "nom": "Daniele Padelli",
-  "pop": 28,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2977,7 +2977,7 @@
  },
  {
   "nom": "Daniele Rugani",
-  "pop": 37,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -2989,7 +2989,7 @@
  },
  {
   "nom": "Daniele Sommariva",
-  "pop": 4,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3001,7 +3001,7 @@
  },
  {
   "nom": "Danilo Cataldi",
-  "pop": 22,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3037,7 +3037,7 @@
  },
  {
   "nom": "Dany Mota",
-  "pop": 11,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3073,7 +3073,7 @@
  },
  {
   "nom": "David Alaba",
-  "pop": 66,
+  "pop": 0,
   "nat": "Autriche",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3121,7 +3121,7 @@
  },
  {
   "nom": "David Neres",
-  "pop": 39,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -3133,7 +3133,7 @@
  },
  {
   "nom": "David Puczka",
-  "pop": 4,
+  "pop": 0,
   "nat": "Autriche",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3181,7 +3181,7 @@
  },
  {
   "nom": "David de Gea",
-  "pop": 76,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3193,7 +3193,7 @@
  },
  {
   "nom": "Davide Frattesi",
-  "pop": 34,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3205,7 +3205,7 @@
  },
  {
   "nom": "Davide Zappacosta",
-  "pop": 40,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3277,7 +3277,7 @@
  },
  {
   "nom": "Dembo Sylla",
-  "pop": 8,
+  "pop": 0,
   "nat": "Guinée",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -3301,7 +3301,7 @@
  },
  {
   "nom": "Denis Zakaria",
-  "pop": 52,
+  "pop": 0,
   "nat": "Suisse",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -3337,7 +3337,7 @@
  },
  {
   "nom": "Derek Cornelius",
-  "pop": 28,
+  "pop": 0,
   "nat": "Canada",
   "cont": "Amérique du Nord",
   "champ": "Ligue 1",
@@ -3373,7 +3373,7 @@
  },
  {
   "nom": "Devis Vásquez",
-  "pop": 12,
+  "pop": 0,
   "nat": "Colombie",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -3385,7 +3385,7 @@
  },
  {
   "nom": "Devyne Rensch",
-  "pop": 25,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3397,7 +3397,7 @@
  },
  {
   "nom": "Diego Carlos Santos Silva",
-  "pop": 32,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -3457,7 +3457,7 @@
  },
  {
   "nom": "Diego Moreira",
-  "pop": 30,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3517,7 +3517,7 @@
  },
  {
   "nom": "Djed Spence",
-  "pop": 34,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3529,7 +3529,7 @@
  },
  {
   "nom": "Djibril Sidibé",
-  "pop": 46,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -3541,7 +3541,7 @@
  },
  {
   "nom": "Djibril Sow",
-  "pop": 33,
+  "pop": 0,
   "nat": "Suisse",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3553,7 +3553,7 @@
  },
  {
   "nom": "Domilson Cordeiro dos Santos",
-  "pop": 22,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -3625,7 +3625,7 @@
  },
  {
   "nom": "Donyell Malen",
-  "pop": 44,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3637,7 +3637,7 @@
  },
  {
   "nom": "Douglas Luiz",
-  "pop": 41,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -3649,7 +3649,7 @@
  },
  {
   "nom": "Dro Fernández",
-  "pop": 22,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -3661,7 +3661,7 @@
  },
  {
   "nom": "Duje Ćaleta-Car",
-  "pop": 40,
+  "pop": 0,
   "nat": "Croatie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3673,7 +3673,7 @@
  },
  {
   "nom": "Duván Zapata",
-  "pop": 39,
+  "pop": 0,
   "nat": "Colombie",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -3685,7 +3685,7 @@
  },
  {
   "nom": "Dário Essugo",
-  "pop": 20,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -3709,7 +3709,7 @@
  },
  {
   "nom": "Désiré Doué",
-  "pop": 54,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -3745,7 +3745,7 @@
  },
  {
   "nom": "Eddy Kouadio",
-  "pop": 6,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3793,7 +3793,7 @@
  },
  {
   "nom": "Eduardo Camavinga",
-  "pop": 56,
+  "pop": 57,
   "nat": "France",
   "cont": "Europe",
   "champ": "Liga",
@@ -3829,7 +3829,7 @@
  },
  {
   "nom": "Elia Caprile",
-  "pop": 12,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3841,7 +3841,7 @@
  },
  {
   "nom": "Elias Havel",
-  "pop": 12,
+  "pop": 0,
   "nat": "Autriche",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3853,7 +3853,7 @@
  },
  {
   "nom": "Elif Elmas",
-  "pop": 41,
+  "pop": 0,
   "nat": "Macédoine du Nord",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3889,7 +3889,7 @@
  },
  {
   "nom": "Emerson Palmieri dos Santos",
-  "pop": 44,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -3913,7 +3913,7 @@
  },
  {
   "nom": "Emirhan İlkhan",
-  "pop": 14,
+  "pop": 0,
   "nat": "Turquie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3973,7 +3973,7 @@
  },
  {
   "nom": "Enrico Delprato",
-  "pop": 13,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -3997,7 +3997,7 @@
  },
  {
   "nom": "Eric Dier",
-  "pop": 56,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4069,7 +4069,7 @@
  },
  {
   "nom": "Ethan Mbappé",
-  "pop": 29,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4081,7 +4081,7 @@
  },
  {
   "nom": "Ethan Meichtry",
-  "pop": 4,
+  "pop": 0,
   "nat": "Suisse",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4111,7 +4111,7 @@
   "champ": "Premier League",
   "club": "Brighton & Hove",
   "poste": "ATT",
-  "age": 21,
+  "age": 22,
   "num": 28,
   "depuis": 0
  },
@@ -4153,7 +4153,7 @@
  },
  {
   "nom": "Ezri Konsa",
-  "pop": 41,
+  "pop": 42,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Premier League",
@@ -4189,7 +4189,7 @@
  },
  {
   "nom": "Fabián Ruiz",
-  "pop": 54,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4201,7 +4201,7 @@
  },
  {
   "nom": "Faris Pemi Moumbagna",
-  "pop": 14,
+  "pop": 0,
   "nat": "Cameroun",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -4213,7 +4213,7 @@
  },
  {
   "nom": "Federico Bernardeschi",
-  "pop": 49,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4225,7 +4225,7 @@
  },
  {
   "nom": "Federico Dimarco",
-  "pop": 41,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4237,7 +4237,7 @@
  },
  {
   "nom": "Federico Gatti",
-  "pop": 32,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4261,7 +4261,7 @@
  },
  {
   "nom": "Federico Serra",
-  "pop": 4,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4369,7 +4369,7 @@
  },
  {
   "nom": "Ferran Torres",
-  "pop": 65,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4381,7 +4381,7 @@
  },
  {
   "nom": "Fikayo Tomori",
-  "pop": 43,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4393,7 +4393,7 @@
  },
  {
   "nom": "Filip Stanković",
-  "pop": 9,
+  "pop": 0,
   "nat": "Serbie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4405,7 +4405,7 @@
  },
  {
   "nom": "Fisayo Dele-Bashiru",
-  "pop": 14,
+  "pop": 0,
   "nat": "Nigeria",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -4417,7 +4417,7 @@
  },
  {
   "nom": "Florian Grillitsch",
-  "pop": 33,
+  "pop": 0,
   "nat": "Autriche",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4441,7 +4441,7 @@
  },
  {
   "nom": "Florian Sotoca",
-  "pop": 18,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4453,7 +4453,7 @@
  },
  {
   "nom": "Florian Thauvin",
-  "pop": 46,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4477,7 +4477,7 @@
  },
  {
   "nom": "Folarin Balogun",
-  "pop": 45,
+  "pop": 0,
   "nat": "États-Unis",
   "cont": "Amérique du Nord",
   "champ": "Ligue 1",
@@ -4489,7 +4489,7 @@
  },
  {
   "nom": "Formose Mendy",
-  "pop": 8,
+  "pop": 0,
   "nat": "Sénégal",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -4513,19 +4513,19 @@
  },
  {
   "nom": "Francesco Gelli",
-  "pop": 5,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
   "club": "Frosinone Calcio",
   "poste": "MIL",
-  "age": 29,
+  "age": 30,
   "num": 96,
   "depuis": 0
  },
  {
   "nom": "Francisco Conceição",
-  "pop": 45,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4561,7 +4561,7 @@
  },
  {
   "nom": "Franck Kessié",
-  "pop": 52,
+  "pop": 0,
   "nat": "Côte d'Ivoire",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -4573,7 +4573,7 @@
  },
  {
   "nom": "Franco Israel",
-  "pop": 16,
+  "pop": 0,
   "nat": "Uruguay",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -4585,7 +4585,7 @@
  },
  {
   "nom": "Franco Mastantuono",
-  "pop": 37,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -4609,7 +4609,7 @@
  },
  {
   "nom": "Franz Stolz",
-  "pop": 3,
+  "pop": 0,
   "nat": "Autriche",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4664,7 +4664,7 @@
   "club": "Hambourg SV",
   "poste": "MIL",
   "age": 26,
-  "num": 8,
+  "num": 20,
   "depuis": 2026
  },
  {
@@ -4717,7 +4717,7 @@
  },
  {
   "nom": "Gabriele Calvani",
-  "pop": 3,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4729,7 +4729,7 @@
  },
  {
   "nom": "Gaetano Oristanio",
-  "pop": 11,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4741,7 +4741,7 @@
  },
  {
   "nom": "Gauthier Hein",
-  "pop": 12,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4753,7 +4753,7 @@
  },
  {
   "nom": "Gautier Lloris",
-  "pop": 14,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4777,7 +4777,7 @@
  },
  {
   "nom": "Gaëtan Perrin",
-  "pop": 14,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -4825,7 +4825,7 @@
  },
  {
   "nom": "Georginio Rutter",
-  "pop": 19,
+  "pop": 20,
   "nat": "France",
   "cont": "Europe",
   "champ": "Premier League",
@@ -4909,7 +4909,7 @@
  },
  {
   "nom": "Gessime Yassine",
-  "pop": 27,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -4921,7 +4921,7 @@
  },
  {
   "nom": "Giacomo Raspadori",
-  "pop": 37,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4933,7 +4933,7 @@
  },
  {
   "nom": "Giacomo Satalino",
-  "pop": 4,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4945,7 +4945,7 @@
  },
  {
   "nom": "Gianluca Gaetano",
-  "pop": 18,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4957,7 +4957,7 @@
  },
  {
   "nom": "Gianluca Mancini",
-  "pop": 37,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -4969,7 +4969,7 @@
  },
  {
   "nom": "Gianluca Scamacca",
-  "pop": 38,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5017,7 +5017,7 @@
  },
  {
   "nom": "Giorgio Scalvini",
-  "pop": 22,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5029,7 +5029,7 @@
  },
  {
   "nom": "Giovanni Di Lorenzo",
-  "pop": 47,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5041,7 +5041,7 @@
  },
  {
   "nom": "Giovanni Fabbian",
-  "pop": 16,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5053,11 +5053,11 @@
  },
  {
   "nom": "Giovanni Simeone",
-  "pop": 39,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
-  "club": "ACF Fiorentina",
+  "club": "Società Sportiva Calcio Napoli",
   "poste": "ATT",
   "age": 31,
   "num": 18,
@@ -5065,7 +5065,7 @@
  },
  {
   "nom": "Giuliano Simeone",
-  "pop": 37,
+  "pop": 38,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Liga",
@@ -5077,7 +5077,7 @@
  },
  {
   "nom": "Gleison Bremer Silva Nascimento",
-  "pop": 37,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -5101,7 +5101,7 @@
  },
  {
   "nom": "Gonçalo Guedes",
-  "pop": 42,
+  "pop": 43,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Liga",
@@ -5113,7 +5113,7 @@
  },
  {
   "nom": "Gonçalo Ramos",
-  "pop": 45,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5209,7 +5209,7 @@
  },
  {
   "nom": "Gustav Isaksen",
-  "pop": 19,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5227,13 +5227,13 @@
   "champ": "Bundesliga",
   "club": "Bayer Leverkusen",
   "poste": "DEF",
-  "age": 23,
+  "age": 24,
   "num": 20,
   "depuis": 2026
  },
  {
   "nom": "Gvidas Gineitis",
-  "pop": 16,
+  "pop": 0,
   "nat": "Lituanie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5257,7 +5257,7 @@
  },
  {
   "nom": "Hakan Çalhanoğlu",
-  "pop": 58,
+  "pop": 0,
   "nat": "Turquie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5269,7 +5269,7 @@
  },
  {
   "nom": "Hamed Junior Traoré",
-  "pop": 19,
+  "pop": 0,
   "nat": "Côte d'Ivoire",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -5293,7 +5293,7 @@
  },
  {
   "nom": "Haris Belkebla",
-  "pop": 18,
+  "pop": 0,
   "nat": "Algérie",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -5341,7 +5341,7 @@
  },
  {
   "nom": "Harry Winks",
-  "pop": 41,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5377,7 +5377,7 @@
  },
  {
   "nom": "Henrikh Mkhitaryan",
-  "pop": 69,
+  "pop": 0,
   "nat": "Arménie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5401,7 +5401,7 @@
  },
  {
   "nom": "Himad Abdelli",
-  "pop": 13,
+  "pop": 0,
   "nat": "Algérie",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -5478,7 +5478,7 @@
   "cont": "Europe",
   "champ": "Liga",
   "club": "RCD Espanyol",
-  "poste": "ATT",
+  "poste": "DEF",
   "age": 23,
   "num": 38,
   "depuis": 2025
@@ -5503,7 +5503,7 @@
   "champ": "Premier League",
   "club": "Brentford FC",
   "poste": "GB",
-  "age": 24,
+  "age": 25,
   "num": 12,
   "depuis": 2024
  },
@@ -5556,6 +5556,18 @@
   "depuis": 2024
  },
  {
+  "nom": "Ibai Aguirre",
+  "pop": 3,
+  "nat": "Espagne",
+  "cont": "Europe",
+  "champ": "Liga",
+  "club": "Real Sociedad",
+  "poste": "MIL",
+  "age": 19,
+  "num": 26,
+  "depuis": 2026
+ },
+ {
   "nom": "Ibrahim Mbaye",
   "pop": 36,
   "nat": "Sénégal",
@@ -5581,7 +5593,7 @@
  },
  {
   "nom": "Idrissa Touré",
-  "pop": 10,
+  "pop": 0,
   "nat": "Allemagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5617,7 +5629,7 @@
  },
  {
   "nom": "Igor Paixão",
-  "pop": 18,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Ligue 1",
@@ -5713,7 +5725,7 @@
  },
  {
   "nom": "Illya Zabarnyi",
-  "pop": 35,
+  "pop": 0,
   "nat": "Ukraine",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -5785,7 +5797,7 @@
  },
  {
   "nom": "Ivan Provedel",
-  "pop": 23,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -5881,7 +5893,7 @@
  },
  {
   "nom": "Jacen Russell-Rowe",
-  "pop": 13,
+  "pop": 0,
   "nat": "Canada",
   "cont": "Amérique du Nord",
   "champ": "Ligue 1",
@@ -5953,7 +5965,7 @@
  },
  {
   "nom": "Jacob Murphy",
-  "pop": 23,
+  "pop": 24,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Premier League",
@@ -5977,7 +5989,7 @@
  },
  {
   "nom": "Jacopo Fazzini",
-  "pop": 12,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -6037,7 +6049,7 @@
  },
  {
   "nom": "Jakub Piotrowski",
-  "pop": 20,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -6070,6 +6082,18 @@
   "age": 25,
   "num": 37,
   "depuis": 2018
+ },
+ {
+  "nom": "James Justin",
+  "pop": 30,
+  "nat": "Angleterre",
+  "cont": "Europe",
+  "champ": "Premier League",
+  "club": "Leeds United",
+  "poste": "DEF",
+  "age": 28,
+  "num": 24,
+  "depuis": 2025
  },
  {
   "nom": "James Maddison",
@@ -6253,7 +6277,7 @@
  },
  {
   "nom": "Jay Idzes",
-  "pop": 21,
+  "pop": 0,
   "nat": "Indonésie",
   "cont": "Asie",
   "champ": "Serie A",
@@ -6277,7 +6301,7 @@
  },
  {
   "nom": "Jean-Clair Todibo",
-  "pop": 40,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -6301,7 +6325,7 @@
  },
  {
   "nom": "Jean-Victor Makengo",
-  "pop": 15,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -6325,7 +6349,7 @@
  },
  {
   "nom": "Jeff Ekhator",
-  "pop": 12,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -6361,7 +6385,7 @@
  },
  {
   "nom": "Jens Odgaard",
-  "pop": 17,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Serie A",
@@ -6394,6 +6418,18 @@
   "age": 25,
   "num": 30,
   "depuis": 2025
+ },
+ {
+  "nom": "Jeremy Monga",
+  "pop": 12,
+  "nat": "Angleterre",
+  "cont": "Europe",
+  "champ": "Premier League",
+  "club": "Manchester City FC",
+  "poste": "MO",
+  "age": 17,
+  "num": 40,
+  "depuis": 2026
  },
  {
   "nom": "Jeremy Toljan",
@@ -6559,7 +6595,7 @@
   "champ": "Premier League",
   "club": "Aston Villa FC",
   "poste": "ATT",
-  "age": 20,
+  "age": 21,
   "num": 44,
   "depuis": 2026
  },
@@ -6577,7 +6613,7 @@
  },
  {
   "nom": "Johan Vázquez",
-  "pop": 34,
+  "pop": 0,
   "nat": "Mexique",
   "cont": "Amérique du Nord",
   "champ": "Serie A",
@@ -6601,7 +6637,7 @@
  },
  {
   "nom": "John Lucumí",
-  "pop": 29,
+  "pop": 0,
   "nat": "Colombie",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -6619,13 +6655,13 @@
   "champ": "Premier League",
   "club": "Aston Villa FC",
   "poste": "MIL",
-  "age": 31,
+  "age": 32,
   "num": 7,
   "depuis": 2018
  },
  {
   "nom": "John Stones",
-  "pop": 60,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -6757,7 +6793,7 @@
  },
  {
   "nom": "Jonathan Clauss",
-  "pop": 31,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -6781,7 +6817,7 @@
  },
  {
   "nom": "Jonathan Ikoné",
-  "pop": 32,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -6793,7 +6829,7 @@
  },
  {
   "nom": "Jonathan Rowe",
-  "pop": 18,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -6853,7 +6889,7 @@
  },
  {
   "nom": "Jordan Teze",
-  "pop": 20,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -6913,7 +6949,7 @@
  },
  {
   "nom": "Josep Martínez",
-  "pop": 24,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -6925,7 +6961,7 @@
  },
  {
   "nom": "Joseph Scally",
-  "pop": 29,
+  "pop": 30,
   "nat": "États-Unis",
   "cont": "Amérique du Nord",
   "champ": "Bundesliga",
@@ -7081,7 +7117,7 @@
  },
  {
   "nom": "João Neves",
-  "pop": 47,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7129,7 +7165,7 @@
  },
  {
   "nom": "Juan Jesus",
-  "pop": 43,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -7273,7 +7309,7 @@
  },
  {
   "nom": "Junior Messias",
-  "pop": 25,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -7285,7 +7321,7 @@
  },
  {
   "nom": "Jurgen Ekkelenkamp",
-  "pop": 23,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7297,7 +7333,7 @@
  },
  {
   "nom": "Jurrien Timber",
-  "pop": 43,
+  "pop": 44,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Premier League",
@@ -7309,7 +7345,7 @@
  },
  {
   "nom": "Justin Bengui Joao",
-  "pop": 5,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7321,7 +7357,7 @@
  },
  {
   "nom": "Justin Bijlow",
-  "pop": 32,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7333,7 +7369,7 @@
  },
  {
   "nom": "Jérémie Boga",
-  "pop": 25,
+  "pop": 0,
   "nat": "Côte d'Ivoire",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -7357,7 +7393,7 @@
  },
  {
   "nom": "Jérémy Jacquet",
-  "pop": 24,
+  "pop": 25,
   "nat": "France",
   "cont": "Europe",
   "champ": "Premier League",
@@ -7369,7 +7405,7 @@
  },
  {
   "nom": "Jérémy Le Douaron",
-  "pop": 7,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7453,7 +7489,7 @@
  },
  {
   "nom": "Kamil Grabara",
-  "pop": 33,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7489,7 +7525,7 @@
  },
  {
   "nom": "Karim Coulibaly",
-  "pop": 7,
+  "pop": 0,
   "nat": "Allemagne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7501,7 +7537,7 @@
  },
  {
   "nom": "Karl Darlow",
-  "pop": 23,
+  "pop": 24,
   "nat": "Pays de Galles",
   "cont": "Europe",
   "champ": "Premier League",
@@ -7525,7 +7561,7 @@
  },
  {
   "nom": "Keita Baldé",
-  "pop": 41,
+  "pop": 0,
   "nat": "Sénégal",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -7537,7 +7573,7 @@
  },
  {
   "nom": "Keito Nakamura",
-  "pop": 44,
+  "pop": 0,
   "nat": "Japon",
   "cont": "Asie",
   "champ": "Ligue 1",
@@ -7549,7 +7585,7 @@
  },
  {
   "nom": "Kenan Yıldız",
-  "pop": 44,
+  "pop": 0,
   "nat": "Turquie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7573,7 +7609,7 @@
  },
  {
   "nom": "Kenneth Taylor",
-  "pop": 30,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7585,7 +7621,7 @@
  },
  {
   "nom": "Kenny Lala",
-  "pop": 22,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7609,7 +7645,7 @@
  },
  {
   "nom": "Kerim Alajbegović",
-  "pop": 36,
+  "pop": 0,
   "nat": "Bosnie-Herzégovine",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7621,7 +7657,7 @@
  },
  {
   "nom": "Kevin Carlos",
-  "pop": 10,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7645,7 +7681,7 @@
  },
  {
   "nom": "Kevin De Bruyne",
-  "pop": 88,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7681,7 +7717,7 @@
  },
  {
   "nom": "Kevin Trapp",
-  "pop": 52,
+  "pop": 0,
   "nat": "Allemagne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7693,7 +7729,7 @@
  },
  {
   "nom": "Keyliane Abdallah",
-  "pop": 8,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7705,7 +7741,7 @@
  },
  {
   "nom": "Khvicha Kvaratskhelia",
-  "pop": 63,
+  "pop": 0,
   "nat": "Géorgie",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7717,7 +7753,7 @@
  },
  {
   "nom": "Khéphren Thuram-Ulien",
-  "pop": 33,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7765,7 +7801,7 @@
  },
  {
   "nom": "Kike Barja",
-  "pop": 18,
+  "pop": 19,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
@@ -7801,7 +7837,7 @@
  },
  {
   "nom": "Kingsley Ehizibue",
-  "pop": 15,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7861,7 +7897,7 @@
  },
  {
   "nom": "Koni De Winter",
-  "pop": 28,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7885,7 +7921,7 @@
  },
  {
   "nom": "Konstantínos Koulierákis",
-  "pop": 18,
+  "pop": 0,
   "nat": "Grèce",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7945,7 +7981,7 @@
  },
  {
   "nom": "Lamine Yamal",
-  "pop": 94,
+  "pop": 95,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
@@ -7957,7 +7993,7 @@
  },
  {
   "nom": "Laurent Abergel",
-  "pop": 15,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -7969,7 +8005,7 @@
  },
  {
   "nom": "Laurs Skjellerup",
-  "pop": 7,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Serie A",
@@ -7981,7 +8017,7 @@
  },
  {
   "nom": "Lautaro Martínez",
-  "pop": 61,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -8052,6 +8088,18 @@
   "depuis": 2025
  },
  {
+  "nom": "Leny Yoro",
+  "pop": 33,
+  "nat": "France",
+  "cont": "Europe",
+  "champ": "Premier League",
+  "club": "Manchester United FC",
+  "poste": "DC",
+  "age": 20,
+  "num": 15,
+  "depuis": 2024
+ },
+ {
   "nom": "Leo Román",
   "pop": 14,
   "nat": "Espagne",
@@ -8077,7 +8125,7 @@
  },
  {
   "nom": "Leo Skiri Østigård",
-  "pop": 36,
+  "pop": 0,
   "nat": "Norvège",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8101,7 +8149,7 @@
  },
  {
   "nom": "Leonardo Balerdi",
-  "pop": 27,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -8113,7 +8161,7 @@
  },
  {
   "nom": "Leonardo Spinazzola",
-  "pop": 48,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8155,7 +8203,7 @@
   "champ": "Premier League",
   "club": "Leeds United",
   "poste": "DEF",
-  "age": 30,
+  "age": 31,
   "num": 2,
   "depuis": 2014
  },
@@ -8221,7 +8269,7 @@
  },
  {
   "nom": "Lloyd Kelly",
-  "pop": 27,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8233,7 +8281,7 @@
  },
  {
   "nom": "Lorenzo Colombo",
-  "pop": 19,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8245,7 +8293,7 @@
  },
  {
   "nom": "Lorenzo Lucca",
-  "pop": 19,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8257,7 +8305,7 @@
  },
  {
   "nom": "Lorenzo Pellegrini",
-  "pop": 42,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8269,7 +8317,7 @@
  },
  {
   "nom": "Lorenzo Torriani",
-  "pop": 9,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8305,7 +8353,7 @@
  },
  {
   "nom": "Loïs Openda",
-  "pop": 36,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8317,7 +8365,7 @@
  },
  {
   "nom": "Luca Pellegrini",
-  "pop": 28,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8329,7 +8377,7 @@
  },
  {
   "nom": "Luca Ranieri",
-  "pop": 18,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8365,7 +8413,7 @@
  },
  {
   "nom": "Lucas Beraldo",
-  "pop": 31,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Ligue 1",
@@ -8401,7 +8449,7 @@
  },
  {
   "nom": "Lucas Bretelle",
-  "pop": 3,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8413,7 +8461,7 @@
  },
  {
   "nom": "Lucas Calodat",
-  "pop": 5,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8425,7 +8473,7 @@
  },
  {
   "nom": "Lucas Chevalier",
-  "pop": 27,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8437,7 +8485,7 @@
  },
  {
   "nom": "Lucas Digne",
-  "pop": 57,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8449,7 +8497,7 @@
  },
  {
   "nom": "Lucas Hernandez",
-  "pop": 56,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8485,7 +8533,7 @@
  },
  {
   "nom": "Lucas Tousart",
-  "pop": 28,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8509,7 +8557,7 @@
  },
  {
   "nom": "Ludovic Ajorque",
-  "pop": 15,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8521,7 +8569,7 @@
  },
  {
   "nom": "Ludovic Blas",
-  "pop": 21,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8545,7 +8593,7 @@
  },
  {
   "nom": "Luis Milla Manzanares",
-  "pop": 15,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8569,7 +8617,7 @@
  },
  {
   "nom": "Luka Modrić",
-  "pop": 102,
+  "pop": 0,
   "nat": "Croatie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8638,6 +8686,18 @@
   "age": 27,
   "num": 14,
   "depuis": 0
+ },
+ {
+  "nom": "Lukas Pinckert",
+  "pop": 4,
+  "nat": "Allemagne",
+  "cont": "Europe",
+  "champ": "Bundesliga",
+  "club": "SV Elversberg",
+  "poste": "DEF",
+  "age": 26,
+  "num": 19,
+  "depuis": 2022
  },
  {
   "nom": "Lukas Ullrich",
@@ -8713,7 +8773,7 @@
  },
  {
   "nom": "Lukáš Hrádecký",
-  "pop": 39,
+  "pop": 0,
   "nat": "Finlande",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8725,7 +8785,7 @@
  },
  {
   "nom": "Maghnes Akliouche",
-  "pop": 34,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8737,7 +8797,7 @@
  },
  {
   "nom": "Mahdi Camara",
-  "pop": 16,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -8785,7 +8845,7 @@
  },
  {
   "nom": "Mamadou Sarr",
-  "pop": 32,
+  "pop": 33,
   "nat": "Sénégal",
   "cont": "Afrique",
   "champ": "Liga",
@@ -8797,7 +8857,7 @@
  },
  {
   "nom": "Mandela Keita",
-  "pop": 15,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8809,7 +8869,7 @@
  },
  {
   "nom": "Manu Koné",
-  "pop": 35,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8833,7 +8893,7 @@
  },
  {
   "nom": "Manuel Akanji",
-  "pop": 52,
+  "pop": 0,
   "nat": "Suisse",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8845,7 +8905,7 @@
  },
  {
   "nom": "Manuel Lazzari",
-  "pop": 24,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8857,7 +8917,7 @@
  },
  {
   "nom": "Manuel Locatelli",
-  "pop": 50,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -8905,7 +8965,7 @@
  },
  {
   "nom": "Marc Bernal",
-  "pop": 27,
+  "pop": 28,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
@@ -9001,7 +9061,7 @@
  },
  {
   "nom": "Marco Bleve",
-  "pop": 5,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9013,7 +9073,7 @@
  },
  {
   "nom": "Marco Brescianini",
-  "pop": 14,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9049,7 +9109,7 @@
  },
  {
   "nom": "Marco Sportiello",
-  "pop": 25,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9133,7 +9193,7 @@
  },
  {
   "nom": "Marcus Thuram",
-  "pop": 49,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9169,7 +9229,7 @@
  },
  {
   "nom": "Mario Gila",
-  "pop": 22,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9193,7 +9253,7 @@
  },
  {
   "nom": "Mario Mitaj",
-  "pop": 25,
+  "pop": 0,
   "nat": "Albanie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9205,7 +9265,7 @@
  },
  {
   "nom": "Mario Pašalić",
-  "pop": 51,
+  "pop": 0,
   "nat": "Croatie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9289,7 +9349,7 @@
  },
  {
   "nom": "Marquinhos",
-  "pop": 54,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Ligue 1",
@@ -9301,7 +9361,7 @@
  },
  {
   "nom": "Marten de Roon",
-  "pop": 38,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9325,7 +9385,7 @@
  },
  {
   "nom": "Martin Vitík",
-  "pop": 19,
+  "pop": 0,
   "nat": "Tchéquie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9391,7 +9451,7 @@
   "champ": "Premier League",
   "club": "Leeds United",
   "poste": "ATT",
-  "age": 22,
+  "age": 23,
   "num": 0,
   "depuis": 0
  },
@@ -9469,7 +9529,7 @@
  },
  {
   "nom": "Mathieu Gorgelin",
-  "pop": 17,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -9517,7 +9577,7 @@
  },
  {
   "nom": "Matt O'Riley",
-  "pop": 21,
+  "pop": 22,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Premier League",
@@ -9541,7 +9601,7 @@
  },
  {
   "nom": "Matteo Darmian",
-  "pop": 52,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9553,7 +9613,7 @@
  },
  {
   "nom": "Matteo Pessina",
-  "pop": 42,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9565,7 +9625,7 @@
  },
  {
   "nom": "Matteo Pisseri",
-  "pop": 5,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9577,7 +9637,7 @@
  },
  {
   "nom": "Matteo Politano",
-  "pop": 39,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9625,7 +9685,7 @@
  },
  {
   "nom": "Matthis Abline",
-  "pop": 13,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -9637,7 +9697,7 @@
  },
  {
   "nom": "Mattia Felici",
-  "pop": 4,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9649,7 +9709,7 @@
  },
  {
   "nom": "Mattia Zaccagni",
-  "pop": 31,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9673,7 +9733,7 @@
  },
  {
   "nom": "Matvey Safonov",
-  "pop": 37,
+  "pop": 0,
   "nat": "Russie",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -9696,8 +9756,20 @@
   "depuis": 0
  },
  {
+  "nom": "Mauro Echegoyen Berrozpe",
+  "pop": 3,
+  "nat": "Espagne",
+  "cont": "Europe",
+  "champ": "Liga",
+  "club": "Club Atlético Osasuna",
+  "poste": "MDF",
+  "age": 21,
+  "num": 26,
+  "depuis": 2025
+ },
+ {
   "nom": "Mauro Vigorito",
-  "pop": 5,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9757,7 +9829,7 @@
  },
  {
   "nom": "Maxime Lopez",
-  "pop": 25,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -9775,7 +9847,7 @@
   "champ": "Bundesliga",
   "club": "BV 09 Borussia Dortmund",
   "poste": "ATT",
-  "age": 23,
+  "age": 24,
   "num": 14,
   "depuis": 2024
  },
@@ -9805,7 +9877,7 @@
  },
  {
   "nom": "Medon Berisha",
-  "pop": 13,
+  "pop": 0,
   "nat": "Albanie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9817,7 +9889,7 @@
  },
  {
   "nom": "Mehmet Zeki Çelik",
-  "pop": 39,
+  "pop": 0,
   "nat": "Turquie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9829,7 +9901,7 @@
  },
  {
   "nom": "Mergim Vojvoda",
-  "pop": 22,
+  "pop": 0,
   "nat": "Kosovo",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9841,7 +9913,7 @@
  },
  {
   "nom": "Mezian Mesloub",
-  "pop": 7,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -9853,7 +9925,7 @@
  },
  {
   "nom": "Michael Folorunsho",
-  "pop": 23,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9877,7 +9949,7 @@
  },
  {
   "nom": "Michał Skóraś",
-  "pop": 32,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -9889,7 +9961,7 @@
  },
  {
   "nom": "Michel Adopo",
-  "pop": 11,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9973,7 +10045,7 @@
  },
  {
   "nom": "Mika Godts",
-  "pop": 24,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -9985,7 +10057,7 @@
  },
  {
   "nom": "Mikael Egill Ellertsson",
-  "pop": 11,
+  "pop": 0,
   "nat": "Islande",
   "cont": "Europe",
   "champ": "Serie A",
@@ -9997,7 +10069,7 @@
  },
  {
   "nom": "Mike Maignan",
-  "pop": 50,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10093,7 +10165,7 @@
  },
  {
   "nom": "Milutin Osmajić",
-  "pop": 11,
+  "pop": 0,
   "nat": "Monténégro",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10129,7 +10201,7 @@
  },
  {
   "nom": "Mohamed Salim Farès",
-  "pop": 17,
+  "pop": 0,
   "nat": "Algérie",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -10153,7 +10225,7 @@
  },
  {
   "nom": "Mohammed Amoura",
-  "pop": 27,
+  "pop": 0,
   "nat": "Algérie",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -10177,7 +10249,7 @@
  },
  {
   "nom": "Mohammed Salisu",
-  "pop": 33,
+  "pop": 0,
   "nat": "Ghana",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -10201,7 +10273,7 @@
  },
  {
   "nom": "Moise Kean",
-  "pop": 46,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10225,7 +10297,7 @@
  },
  {
   "nom": "Montassar Talbi",
-  "pop": 26,
+  "pop": 0,
   "nat": "Tunisie",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -10249,7 +10321,7 @@
  },
  {
   "nom": "Morgan Sanson",
-  "pop": 28,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -10273,7 +10345,7 @@
  },
  {
   "nom": "Morten Frendrup",
-  "pop": 12,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10309,7 +10381,7 @@
  },
  {
   "nom": "Moïse Bombito",
-  "pop": 25,
+  "pop": 0,
   "nat": "Canada",
   "cont": "Amérique du Nord",
   "champ": "Ligue 1",
@@ -10333,7 +10405,7 @@
  },
  {
   "nom": "Musa Al-Taamari",
-  "pop": 39,
+  "pop": 0,
   "nat": "Jordanie",
   "cont": "Asie",
   "champ": "Ligue 1",
@@ -10381,7 +10453,7 @@
  },
  {
   "nom": "Nadir Zortea",
-  "pop": 9,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10393,7 +10465,7 @@
  },
  {
   "nom": "Nahuel Molina",
-  "pop": 48,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -10417,7 +10489,7 @@
  },
  {
   "nom": "Nathan N'Goumou",
-  "pop": 13,
+  "pop": 0,
   "nat": "Cameroun",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -10429,7 +10501,7 @@
  },
  {
   "nom": "Nathan Ngoy",
-  "pop": 29,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -10465,7 +10537,7 @@
  },
  {
   "nom": "Nayef Aguerd",
-  "pop": 42,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -10501,7 +10573,7 @@
  },
  {
   "nom": "Nemanja Matić",
-  "pop": 53,
+  "pop": 0,
   "nat": "Serbie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10525,7 +10597,7 @@
  },
  {
   "nom": "Nick Woltemade",
-  "pop": 37,
+  "pop": 0,
   "nat": "Allemagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10585,7 +10657,7 @@
  },
  {
   "nom": "Nico Paz",
-  "pop": 44,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -10633,7 +10705,7 @@
  },
  {
   "nom": "Nicola Zalewski",
-  "pop": 33,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10669,7 +10741,7 @@
  },
  {
   "nom": "Nicolás Tagliafico",
-  "pop": 48,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Ligue 1",
@@ -10693,7 +10765,7 @@
  },
  {
   "nom": "Nicolò Barella",
-  "pop": 51,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10705,7 +10777,7 @@
  },
  {
   "nom": "Nicolò Fagioli",
-  "pop": 28,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10717,7 +10789,7 @@
  },
  {
   "nom": "Nicolò Rovella",
-  "pop": 23,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10729,7 +10801,7 @@
  },
  {
   "nom": "Nicolò Zaniolo",
-  "pop": 37,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10741,7 +10813,7 @@
  },
  {
   "nom": "Nidal Čelik",
-  "pop": 22,
+  "pop": 0,
   "nat": "Bosnie-Herzégovine",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -10777,7 +10849,7 @@
  },
  {
   "nom": "Nikola Vlašić",
-  "pop": 46,
+  "pop": 0,
   "nat": "Croatie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10801,7 +10873,7 @@
  },
  {
   "nom": "Noa Lang",
-  "pop": 35,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10837,7 +10909,7 @@
  },
  {
   "nom": "Noel Törnqvist",
-  "pop": 6,
+  "pop": 0,
   "nat": "Suède",
   "cont": "Europe",
   "champ": "Serie A",
@@ -10849,7 +10921,7 @@
  },
  {
   "nom": "Noham Kamara",
-  "pop": 12,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -10861,7 +10933,7 @@
  },
  {
   "nom": "Noni Madueke",
-  "pop": 47,
+  "pop": 48,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Premier League",
@@ -10873,7 +10945,7 @@
  },
  {
   "nom": "Norberto Murara Neto",
-  "pop": 52,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -10909,7 +10981,7 @@
  },
  {
   "nom": "Nuno Mendes",
-  "pop": 52,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -10921,7 +10993,7 @@
  },
  {
   "nom": "Odilon Kossounou",
-  "pop": 36,
+  "pop": 0,
   "nat": "Côte d'Ivoire",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -10945,7 +11017,7 @@
  },
  {
   "nom": "Odsonne Édouard",
-  "pop": 32,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -10957,7 +11029,7 @@
  },
  {
   "nom": "Oier Zarraga",
-  "pop": 16,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11005,7 +11077,7 @@
  },
  {
   "nom": "Oliver Christensen",
-  "pop": 25,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11017,7 +11089,7 @@
  },
  {
   "nom": "Olivier Giroud",
-  "pop": 82,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11053,7 +11125,7 @@
  },
  {
   "nom": "Omari Hutchinson",
-  "pop": 22,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11065,7 +11137,7 @@
  },
  {
   "nom": "Omri Gandelman",
-  "pop": 14,
+  "pop": 0,
   "nat": "Israël",
   "cont": "Asie",
   "champ": "Serie A",
@@ -11077,7 +11149,7 @@
  },
  {
   "nom": "Orlando Gill",
-  "pop": 27,
+  "pop": 0,
   "nat": "Paraguay",
   "cont": "Amérique du Sud",
   "champ": "Ligue 1",
@@ -11101,7 +11173,7 @@
  },
  {
   "nom": "Oso",
-  "pop": 7,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11113,7 +11185,7 @@
  },
  {
   "nom": "Ousmane Dembélé",
-  "pop": 83,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11125,7 +11197,7 @@
  },
  {
   "nom": "Oussama El Azzouzi",
-  "pop": 22,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -11197,7 +11269,7 @@
  },
  {
   "nom": "Pablo Marín",
-  "pop": 13,
+  "pop": 14,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
@@ -11209,7 +11281,7 @@
  },
  {
   "nom": "Pablo Pagis",
-  "pop": 9,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11238,7 +11310,7 @@
   "cont": "Europe",
   "champ": "Premier League",
   "club": "Manchester United FC",
-  "poste": "MIL",
+  "poste": "DEF",
   "age": 31,
   "num": 17,
   "depuis": 2014
@@ -11293,7 +11365,7 @@
  },
  {
   "nom": "Pasquale Mazzocchi",
-  "pop": 13,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11341,7 +11413,7 @@
  },
  {
   "nom": "Patrizio Masini",
-  "pop": 4,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11377,7 +11449,7 @@
  },
  {
   "nom": "Paulo Dybala",
-  "pop": 75,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -11389,7 +11461,7 @@
  },
  {
   "nom": "Pavel Šulc",
-  "pop": 29,
+  "pop": 0,
   "nat": "Tchéquie",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11413,7 +11485,7 @@
  },
  {
   "nom": "Pedro Gonçalves",
-  "pop": 28,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11485,7 +11557,7 @@
  },
  {
   "nom": "Pervis Estupiñán",
-  "pop": 38,
+  "pop": 0,
   "nat": "Équateur",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -11545,7 +11617,7 @@
  },
  {
   "nom": "Pierluigi Gollini",
-  "pop": 29,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11569,7 +11641,7 @@
  },
  {
   "nom": "Pierre Højbjerg",
-  "pop": 45,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11581,7 +11653,7 @@
  },
  {
   "nom": "Pierre Kalulu",
-  "pop": 35,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11593,7 +11665,7 @@
  },
  {
   "nom": "Pierre Lees-Melou",
-  "pop": 15,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11617,7 +11689,7 @@
  },
  {
   "nom": "Piotr Zieliński",
-  "pop": 48,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11641,7 +11713,7 @@
  },
  {
   "nom": "Przemysław Frankowski",
-  "pop": 31,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11665,7 +11737,7 @@
  },
  {
   "nom": "Quentin Ndjantou",
-  "pop": 15,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11689,7 +11761,7 @@
  },
  {
   "nom": "Quinten Timber",
-  "pop": 34,
+  "pop": 35,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Premier League",
@@ -11713,7 +11785,7 @@
  },
  {
   "nom": "Rafael Obrador",
-  "pop": 11,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11743,7 +11815,7 @@
   "champ": "Liga",
   "club": "RCD Espanyol",
   "poste": "MIL",
-  "age": 25,
+  "age": 26,
   "num": 11,
   "depuis": 2025
  },
@@ -11761,7 +11833,7 @@
  },
  {
   "nom": "Randal Kolo Muani",
-  "pop": 48,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11785,7 +11857,7 @@
  },
  {
   "nom": "Raoul Bellanova",
-  "pop": 31,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11821,7 +11893,7 @@
  },
  {
   "nom": "Rasmus Højlund",
-  "pop": 43,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11833,7 +11905,7 @@
  },
  {
   "nom": "Rayan Cherki",
-  "pop": 48,
+  "pop": 49,
   "nat": "France",
   "cont": "Europe",
   "champ": "Premier League",
@@ -11887,7 +11959,7 @@
   "champ": "Liga",
   "club": "Rayo Vallecano",
   "poste": "ATT",
-  "age": 31,
+  "age": 32,
   "num": 0,
   "depuis": 2022
  },
@@ -11905,7 +11977,7 @@
  },
  {
   "nom": "Renaud Ripart",
-  "pop": 9,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -11917,7 +11989,7 @@
  },
  {
   "nom": "Ricardo Rodriguez",
-  "pop": 52,
+  "pop": 0,
   "nat": "Suisse",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11953,7 +12025,7 @@
  },
  {
   "nom": "Riccardo Orsolini",
-  "pop": 30,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -11965,7 +12037,7 @@
  },
  {
   "nom": "Riccardo Sottil",
-  "pop": 17,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12073,7 +12145,7 @@
  },
  {
   "nom": "Robert Sánchez",
-  "pop": 42,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12085,7 +12157,7 @@
  },
  {
   "nom": "Roberto Gagliardini",
-  "pop": 37,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12097,7 +12169,7 @@
  },
  {
   "nom": "Roberto Piccoli",
-  "pop": 17,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12157,7 +12229,7 @@
  },
  {
   "nom": "Robin Risser",
-  "pop": 32,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -12193,7 +12265,7 @@
  },
  {
   "nom": "Robson Junior",
-  "pop": 7,
+  "pop": 0,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -12205,13 +12277,13 @@
  },
  {
   "nom": "Rodri",
-  "pop": 72,
+  "pop": 18,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
   "club": "FC Barcelone",
   "poste": "MDF",
-  "age": 30,
+  "age": 36,
   "num": 16,
   "depuis": 2026
  },
@@ -12229,7 +12301,7 @@
  },
  {
   "nom": "Rodrigo Mora",
-  "pop": 26,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12241,7 +12313,7 @@
  },
  {
   "nom": "Rodrygo",
-  "pop": 58,
+  "pop": 59,
   "nat": "Brésil",
   "cont": "Amérique du Sud",
   "champ": "Liga",
@@ -12265,7 +12337,7 @@
  },
  {
   "nom": "Rolando Mandragora",
-  "pop": 30,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12289,7 +12361,7 @@
  },
  {
   "nom": "Romain Faivre",
-  "pop": 17,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -12301,7 +12373,7 @@
  },
  {
   "nom": "Romain Perraud",
-  "pop": 21,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -12325,7 +12397,7 @@
  },
  {
   "nom": "Romano Schmid",
-  "pop": 36,
+  "pop": 0,
   "nat": "Autriche",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12409,7 +12481,7 @@
  },
  {
   "nom": "Ruben Aguilar",
-  "pop": 22,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -12421,7 +12493,7 @@
  },
  {
   "nom": "Ruben Loftus-Cheek",
-  "pop": 42,
+  "pop": 0,
   "nat": "Angleterre",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12469,7 +12541,7 @@
  },
  {
   "nom": "Rufai Mohammed",
-  "pop": 4,
+  "pop": 0,
   "nat": "Ghana",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -12511,13 +12583,13 @@
   "champ": "Liga",
   "club": "Valence CF",
   "poste": "MIL",
-  "age": 19,
+  "age": 20,
   "num": 39,
   "depuis": 0
  },
  {
   "nom": "Rémy Labeau-Lascary",
-  "pop": 7,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -12577,7 +12649,7 @@
  },
  {
   "nom": "Salis Abdul Samed",
-  "pop": 25,
+  "pop": 0,
   "nat": "Ghana",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -12589,7 +12661,7 @@
  },
  {
   "nom": "Samir El Mourabet",
-  "pop": 24,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -12601,7 +12673,7 @@
  },
  {
   "nom": "Samuel Chukwueze",
-  "pop": 39,
+  "pop": 0,
   "nat": "Nigeria",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -12613,7 +12685,7 @@
  },
  {
   "nom": "Samuel Mbangula",
-  "pop": 17,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12625,7 +12697,7 @@
  },
  {
   "nom": "Samuel Wiafe",
-  "pop": 2,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12637,7 +12709,7 @@
  },
  {
   "nom": "Sander Berge",
-  "pop": 34,
+  "pop": 35,
   "nat": "Norvège",
   "cont": "Europe",
   "champ": "Premier League",
@@ -12673,7 +12745,7 @@
  },
  {
   "nom": "Santiago Castro",
-  "pop": 18,
+  "pop": 0,
   "nat": "Argentine",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -12709,7 +12781,7 @@
  },
  {
   "nom": "Saud Abdulhamid",
-  "pop": 29,
+  "pop": 0,
   "nat": "Arabie saoudite",
   "cont": "Asie",
   "champ": "Ligue 1",
@@ -12745,7 +12817,7 @@
  },
  {
   "nom": "Scott McTominay",
-  "pop": 52,
+  "pop": 0,
   "nat": "Écosse",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12757,7 +12829,7 @@
  },
  {
   "nom": "Sead Kolašinac",
-  "pop": 51,
+  "pop": 0,
   "nat": "Bosnie-Herzégovine",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12805,7 +12877,7 @@
  },
  {
   "nom": "Sebastian Otoa",
-  "pop": 8,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12817,7 +12889,7 @@
  },
  {
   "nom": "Sebastiano Esposito",
-  "pop": 26,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -12877,7 +12949,7 @@
  },
  {
   "nom": "Senny Mayulu",
-  "pop": 28,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -12997,7 +13069,7 @@
  },
  {
   "nom": "Seydou Fini",
-  "pop": 8,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13069,7 +13141,7 @@
  },
  {
   "nom": "Simone Ghidotti",
-  "pop": 3,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13081,7 +13153,7 @@
  },
  {
   "nom": "Simone Panada",
-  "pop": 3,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13093,7 +13165,7 @@
  },
  {
   "nom": "Sinaly Diomande",
-  "pop": 18,
+  "pop": 0,
   "nat": "Côte d'Ivoire",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -13117,7 +13189,7 @@
  },
  {
   "nom": "Sofiane Diop",
-  "pop": 18,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -13129,7 +13201,7 @@
  },
  {
   "nom": "Stanislav Lobotka",
-  "pop": 39,
+  "pop": 0,
   "nat": "Slovaquie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13153,7 +13225,7 @@
  },
  {
   "nom": "Stefano Sabelli",
-  "pop": 14,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13165,7 +13237,7 @@
  },
  {
   "nom": "Stefano Turati",
-  "pop": 10,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13177,7 +13249,7 @@
  },
  {
   "nom": "Stephan El Shaarawy",
-  "pop": 57,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13189,7 +13261,7 @@
  },
  {
   "nom": "Strahinja Pavlović",
-  "pop": 37,
+  "pop": 0,
   "nat": "Serbie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13201,7 +13273,7 @@
  },
  {
   "nom": "Sven Norman Botman",
-  "pop": 33,
+  "pop": 34,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Premier League",
@@ -13261,7 +13333,7 @@
  },
  {
   "nom": "Takumi Minamino",
-  "pop": 66,
+  "pop": 0,
   "nat": "Japon",
   "cont": "Asie",
   "champ": "Ligue 1",
@@ -13285,7 +13357,7 @@
  },
  {
   "nom": "Tanguy Kouassi",
-  "pop": 36,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -13309,7 +13381,7 @@
  },
  {
   "nom": "Tanner Tessmann",
-  "pop": 20,
+  "pop": 0,
   "nat": "États-Unis",
   "cont": "Amérique du Nord",
   "champ": "Ligue 1",
@@ -13333,7 +13405,7 @@
  },
  {
   "nom": "Teddy Boulhendi",
-  "pop": 2,
+  "pop": 0,
   "nat": "Algérie",
   "cont": "Afrique",
   "champ": "Ligue 1",
@@ -13357,7 +13429,7 @@
  },
  {
   "nom": "Teun Koopmeiners",
-  "pop": 43,
+  "pop": 0,
   "nat": "Pays-Bas",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13417,7 +13489,7 @@
  },
  {
   "nom": "Thomas Jørgensen",
-  "pop": 9,
+  "pop": 0,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -13453,7 +13525,7 @@
  },
  {
   "nom": "Thorgan Hazard",
-  "pop": 50,
+  "pop": 0,
   "nat": "Belgique",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -13465,7 +13537,7 @@
  },
  {
   "nom": "Théo Le Bris",
-  "pop": 10,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -13537,7 +13609,7 @@
  },
  {
   "nom": "Timothy Weah",
-  "pop": 45,
+  "pop": 0,
   "nat": "États-Unis",
   "cont": "Amérique du Nord",
   "champ": "Ligue 1",
@@ -13621,7 +13693,7 @@
  },
  {
   "nom": "Tommaso Baldanzi",
-  "pop": 16,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13633,7 +13705,7 @@
  },
  {
   "nom": "Tommaso Pobega",
-  "pop": 21,
+  "pop": 0,
   "nat": "Italie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13741,7 +13813,7 @@
  },
  {
   "nom": "Unai Gómez",
-  "pop": 16,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13765,7 +13837,7 @@
  },
  {
   "nom": "Unai Marrero",
-  "pop": 7,
+  "pop": 8,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
@@ -13825,7 +13897,7 @@
  },
  {
   "nom": "Valentin Rongier",
-  "pop": 21,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -13837,7 +13909,7 @@
  },
  {
   "nom": "Vanja Milinković-Savić",
-  "pop": 37,
+  "pop": 0,
   "nat": "Serbie",
   "cont": "Europe",
   "champ": "Serie A",
@@ -13981,7 +14053,7 @@
  },
  {
   "nom": "Vítor Ferreira",
-  "pop": 51,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -13993,7 +14065,7 @@
  },
  {
   "nom": "Vítor Oliveira",
-  "pop": 14,
+  "pop": 0,
   "nat": "Portugal",
   "cont": "Europe",
   "champ": "Serie A",
@@ -14017,7 +14089,7 @@
  },
  {
   "nom": "Warren Zaïre-Emery",
-  "pop": 43,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -14029,7 +14101,7 @@
  },
  {
   "nom": "Weston McKennie",
-  "pop": 42,
+  "pop": 0,
   "nat": "États-Unis",
   "cont": "Amérique du Nord",
   "champ": "Serie A",
@@ -14053,7 +14125,7 @@
  },
  {
   "nom": "William Osula",
-  "pop": 24,
+  "pop": 25,
   "nat": "Danemark",
   "cont": "Europe",
   "champ": "Premier League",
@@ -14077,13 +14149,13 @@
  },
  {
   "nom": "Willian Pacho",
-  "pop": 37,
+  "pop": 0,
   "nat": "Équateur",
   "cont": "Amérique du Sud",
   "champ": "Ligue 1",
   "club": "Paris Saint-Germain FC",
   "poste": "DC",
-  "age": 24,
+  "age": 25,
   "num": 51,
   "depuis": 2024
  },
@@ -14113,7 +14185,7 @@
  },
  {
   "nom": "Xavi Espart",
-  "pop": 23,
+  "pop": 24,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
@@ -14137,7 +14209,7 @@
  },
  {
   "nom": "Yael Trepy",
-  "pop": 3,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Serie A",
@@ -14173,7 +14245,7 @@
  },
  {
   "nom": "Yangel Herrera",
-  "pop": 28,
+  "pop": 29,
   "nat": "Venezuela",
   "cont": "Amérique du Sud",
   "champ": "Liga",
@@ -14257,7 +14329,7 @@
  },
  {
   "nom": "Yerry Mina",
-  "pop": 51,
+  "pop": 0,
   "nat": "Colombie",
   "cont": "Amérique du Sud",
   "champ": "Serie A",
@@ -14341,7 +14413,7 @@
  },
  {
   "nom": "Yukinari Sugawara",
-  "pop": 42,
+  "pop": 0,
   "nat": "Japon",
   "cont": "Asie",
   "champ": "Serie A",
@@ -14353,7 +14425,7 @@
  },
  {
   "nom": "Yunus Musah",
-  "pop": 30,
+  "pop": 0,
   "nat": "États-Unis",
   "cont": "Amérique du Nord",
   "champ": "Serie A",
@@ -14389,7 +14461,7 @@
  },
  {
   "nom": "Yvon Mvogo",
-  "pop": 34,
+  "pop": 0,
   "nat": "Suisse",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -14401,7 +14473,7 @@
  },
  {
   "nom": "Zacharie Boucher",
-  "pop": 16,
+  "pop": 0,
   "nat": "France",
   "cont": "Europe",
   "champ": "Ligue 1",
@@ -14413,7 +14485,7 @@
  },
  {
   "nom": "Zakaria Aboukhlal",
-  "pop": 36,
+  "pop": 0,
   "nat": "Maroc",
   "cont": "Afrique",
   "champ": "Serie A",
@@ -14461,7 +14533,7 @@
  },
  {
   "nom": "Álex Marchal",
-  "pop": 3,
+  "pop": 4,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Liga",
@@ -14497,7 +14569,7 @@
  },
  {
   "nom": "Álex Valle",
-  "pop": 17,
+  "pop": 0,
   "nat": "Espagne",
   "cont": "Europe",
   "champ": "Serie A",
@@ -14641,7 +14713,7 @@
  },
  {
   "nom": "Łukasz Skorupski",
-  "pop": 33,
+  "pop": 0,
   "nat": "Pologne",
   "cont": "Europe",
   "champ": "Serie A",
